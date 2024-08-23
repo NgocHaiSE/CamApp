@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.stackPanel1 = new DevExpress.Utils.Layout.StackPanel();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.CameraPanel = new System.Windows.Forms.Panel();
             this.CameraComboBox = new DevExpress.XtraEditors.ComboBoxEdit();
             this.sidePanel1 = new DevExpress.XtraEditors.SidePanel();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.stackPanel1)).BeginInit();
             this.stackPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CameraComboBox.Properties)).BeginInit();
@@ -51,6 +51,14 @@
             this.stackPanel1.Name = "stackPanel1";
             this.stackPanel1.Size = new System.Drawing.Size(249, 627);
             this.stackPanel1.TabIndex = 0;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(94, 3);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(61, 16);
+            this.labelControl1.TabIndex = 0;
+            this.labelControl1.Text = "Thông báo";
             // 
             // CameraPanel
             // 
@@ -98,14 +106,6 @@
             this.simpleButton1.Size = new System.Drawing.Size(94, 33);
             this.simpleButton1.TabIndex = 7;
             this.simpleButton1.Text = "Thêm";
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Location = new System.Drawing.Point(94, 3);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(61, 16);
-            this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "Thông báo";
             // 
             // ucViewCam
             // 

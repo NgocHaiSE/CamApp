@@ -15,6 +15,7 @@ using DevExpress.XtraGrid.Views.Grid;
 using System.IO;
 using DevExpress.Utils;
 using DXApplication1.UI.ChildForms;
+using DXApplication1.DAO;
 
 namespace DXApplication1.UI.Modules
 {
@@ -25,127 +26,80 @@ namespace DXApplication1.UI.Modules
             InitializeComponent();
         }
 
+        #region Method
         private void ucPerson_Load(object sender, EventArgs e)
         {
-            LoadDataToGridControl();
+            DataTable dataTable = DataProvider.Instance.ExecuteProcedure("GetPersonInfo");
 
+            if (dataTable != null)
+            {
+                ConvertImagePathsToImages(dataTable);
+
+                gridControl1.DataSource = dataTable;
+                AdjustGridViewSettings();
+                gridView1.BestFitColumns();
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy thông tin nhân viên!");
+            }
         }
 
-        private void LoadDataToGridControl()
+        private void ConvertImagePathsToImages(DataTable dataTable)
         {
-            string connectionString = "server=localhost;user id=root;password=01102000;database=face_db";
-            string query = @"
-            SELECT 
-                p.id AS 'ID',
-                p.name AS 'Tên',
-                p.information AS 'Thông tin',
-                p.create_time AS 'Thời gian tạo',
-                CASE 
-                    WHEN p.is_recog = 1 THEN 'Có'
-                    WHEN p.is_recog = 0 THEN 'Không'
-                END AS 'Nhận diện',
-                i.link AS 'Ảnh'
-            FROM 
-                person p
-            LEFT JOIN 
-                image i ON p.id = i.id_person
-            WHERE 
-                i.id = (
-                    SELECT MIN(id) 
-                    FROM image 
-                    WHERE id_person = p.id
-                );";
-
-            try
+            if (dataTable.Columns.Contains("Link ảnh"))
             {
-                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                DataColumn imageColumn = new DataColumn("Image", typeof(Image));
+                dataTable.Columns.Add(imageColumn);
+                foreach (DataRow row in dataTable.Rows)
                 {
-                    connection.Open();
-                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    string imagePath = row["Link ảnh"].ToString();
+                    if (File.Exists(imagePath))
                     {
-                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
+                        try
                         {
-                            DataTable dataTable = new DataTable();
-                            adapter.Fill(dataTable);
-
-                            // Add a new column for image data
-                            dataTable.Columns.Add(new DataColumn("Hình Ảnh", typeof(byte[])));
-
-                            foreach (DataRow row in dataTable.Rows)
+                            using (Image img = Image.FromFile(imagePath))
                             {
-                                string imagePath = row["Ảnh"].ToString();
-                                if (!string.IsNullOrEmpty(imagePath) && File.Exists(imagePath))
-                                {
-                                    row["Hình Ảnh"] = File.ReadAllBytes(imagePath);
-                                }
-                                else
-                                {
-                                    row["Hình Ảnh"] = null;
-                                }
+                                row["Image"] = new Bitmap(img);
                             }
-                            dataTable.Columns.Remove("Ảnh");
-                            gridControl1.DataSource = dataTable;
-
-                            // Customize the grid to display images
-                            GridView gridView = gridControl1.MainView as GridView;
-
-                            if (!gridView.Columns.Contains(gridView.Columns["Hình Ảnh"]))
-                            {
-                                GridColumn imageColumn = new GridColumn
-                                {
-                                    FieldName = "Hình Ảnh",
-                                    Caption = "Hình Ảnh",
-                                    Visible = true,
-                                    UnboundType = DevExpress.Data.UnboundColumnType.Object
-                                };
-                                gridView.Columns.Add(imageColumn);
-                            }
-
-                            gridView.Columns["Hình Ảnh"].OptionsColumn.FixedWidth = true;
-                            gridView.Columns["Hình Ảnh"].Width = 150;
-
-                            gridView.RowHeight = 150;
-
-                            gridView.CustomColumnDisplayText += (sender, e) =>
-                            {
-                                if (e.Column.FieldName == "Hình Ảnh" && e.Value is byte[])
-                                {
-                                    e.DisplayText = string.Empty;
-                                }
-                            };
-
-                            gridView.CustomDrawCell += (sender, e) =>
-                            {
-                                if (e.Column.FieldName == "Hình Ảnh" && e.CellValue is byte[] imageData)
-                                {
-                                    e.DefaultDraw();
-
-                                    if (imageData != null && imageData.Length > 0)
-                                    {
-                                        using (MemoryStream ms = new MemoryStream(imageData))
-                                        {
-                                            Image img = Image.FromStream(ms);
-                                            e.Graphics.DrawImage(img, e.Bounds);
-                                        }
-                                    }
-                                    e.Handled = true;
-                                }
-                            };
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Lỗi khi tải ảnh từ đường dẫn {imagePath}: {ex.Message}");
+                            row["Image"] = DBNull.Value;
                         }
                     }
+                    else
+                    {
+                        row["Image"] = DBNull.Value;
+                    }
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
+                dataTable.Columns.Remove("Link ảnh");
             }
         }
 
+        private void AdjustGridViewSettings()
+        {
+            if (gridControl1.MainView is DevExpress.XtraGrid.Views.Grid.GridView gridView)
+            {
+                gridView.Columns["Image"].Width = 200; 
+                gridView.RowHeight = 200; 
+
+                gridView.Columns["Image"].OptionsColumn.FixedWidth = true;
+                gridView.Columns["Image"].UnboundType = DevExpress.Data.UnboundColumnType.Object;
+                gridView.Columns["Image"].OptionsColumn.AllowEdit = false;
+                gridView.Columns["Image"].OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            }
+        }
+        #endregion
+
+        #region Events
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             
             addPerson addPerson = new addPerson(); 
             addPerson.Show();
         }
+        #endregion
     }
 }

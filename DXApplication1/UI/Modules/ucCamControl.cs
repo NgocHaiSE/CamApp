@@ -10,8 +10,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using System.Windows.Forms;
 using DXApplication1.UI.ChildForms;
+using DXApplication1.Utils;
+using DXApplication1.DAO;
+using DXApplication1.DTO;
 
 namespace DXApplication1.UI.Modules
 {
@@ -22,33 +24,41 @@ namespace DXApplication1.UI.Modules
             InitializeComponent();
         }
 
+        #region Method
         private void ucCamControl_Load(object sender, EventArgs e)
         {
-            string connectionString = "server=localhost;user id=root;password=01102000;database=face_db";
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
-            {
-                try
-                {
-                    connection.Open();
-                    string query = "SELECT \r\n    id AS \"ID\",\r\n    name AS \"Tên Camera\",\r\n    link AS \"Liên kết\",\r\n    loaction AS \"Vị trí\",\r\n    CASE \r\n        WHEN is_recog = 1 THEN 'Có'\r\n        WHEN is_recog = 0 THEN 'Không'\r\n    END AS \"Nhận diện\"\r\nFROM \r\n    camera;\r\n";
-                    MySqlCommand command = new MySqlCommand(query, connection);
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
-                    DataTable dataTable = new DataTable();
-                    adapter.Fill(dataTable);
+            LoadCameraData();
+        }
 
-                    gridControl1.DataSource = dataTable;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message);
-                }
+        private void LoadCameraData()
+        {
+            DataTable data = DataProvider.Instance.ExecuteProcedure("GetCameraInfo");
+            if (data != null)
+            {
+                gridControl1.DataSource = data;
+                gridView1.BestFitColumns();
+            }
+            else
+            {
+                MessageBox.Show("Hiện không tìm thấy thông tin camera nào!");
             }
         }
+        #endregion
 
+
+        #region Events
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-           addCam addCam = new addCam();
+            addCam addCam = new addCam();
+            addCam.CameraAdded += AddCam_CameraAdded;
             addCam.Show();
         }
+
+        private void AddCam_CameraAdded(object sender, EventArgs e)
+        {
+            LoadCameraData();
+        }
+
+        #endregion
     }
 }

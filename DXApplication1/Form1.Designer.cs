@@ -35,9 +35,9 @@
             this.accordionControlElementView = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementNoti = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementPer = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElementSetting = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementCam = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementUser = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElementSetting = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
@@ -48,9 +48,10 @@
             // fluentDesignFormContainer
             // 
             this.fluentDesignFormContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fluentDesignFormContainer.Location = new System.Drawing.Point(60, 39);
+            this.fluentDesignFormContainer.Location = new System.Drawing.Point(64, 39);
+            this.fluentDesignFormContainer.Margin = new System.Windows.Forms.Padding(5);
             this.fluentDesignFormContainer.Name = "fluentDesignFormContainer";
-            this.fluentDesignFormContainer.Size = new System.Drawing.Size(1242, 632);
+            this.fluentDesignFormContainer.Size = new System.Drawing.Size(1238, 632);
             this.fluentDesignFormContainer.TabIndex = 0;
             // 
             // accordionControl1
@@ -67,10 +68,11 @@
             this.accordionControlElementUser,
             this.accordionControlElementSetting});
             this.accordionControl1.Location = new System.Drawing.Point(0, 39);
+            this.accordionControl1.Margin = new System.Windows.Forms.Padding(5);
             this.accordionControl1.Name = "accordionControl1";
             this.accordionControl1.OptionsMinimizing.State = DevExpress.XtraBars.Navigation.AccordionControlState.Minimized;
             this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Hidden;
-            this.accordionControl1.Size = new System.Drawing.Size(60, 632);
+            this.accordionControl1.Size = new System.Drawing.Size(64, 632);
             this.accordionControl1.TabIndex = 1;
             this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
@@ -98,14 +100,6 @@
             this.accordionControlElementPer.Text = "Nhân viên";
             this.accordionControlElementPer.Click += new System.EventHandler(this.accordionControlElementUser_Click);
             // 
-            // accordionControlElementSetting
-            // 
-            this.accordionControlElementSetting.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElementSetting.ImageOptions.Image")));
-            this.accordionControlElementSetting.Name = "accordionControlElementSetting";
-            this.accordionControlElementSetting.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElementSetting.Text = "Cài đặt";
-            this.accordionControlElementSetting.Click += new System.EventHandler(this.accordionControlElementSetting_Click);
-            // 
             // accordionControlElementCam
             // 
             this.accordionControlElementCam.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElementCam.ImageOptions.SvgImage")));
@@ -121,6 +115,14 @@
             this.accordionControlElementUser.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElementUser.Text = "Tài khoản";
             this.accordionControlElementUser.Click += new System.EventHandler(this.accordionControlElementUser_Click_1);
+            // 
+            // accordionControlElementSetting
+            // 
+            this.accordionControlElementSetting.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElementSetting.ImageOptions.Image")));
+            this.accordionControlElementSetting.Name = "accordionControlElementSetting";
+            this.accordionControlElementSetting.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElementSetting.Text = "Cài đặt";
+            this.accordionControlElementSetting.Click += new System.EventHandler(this.accordionControlElementSetting_Click);
             // 
             // fluentDesignFormControl1
             // 
