@@ -22,6 +22,9 @@ namespace DXApplication1
         public FormMain()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;   // Maximizes the form
+            //this.FormBorderStyle = FormBorderStyle.None;    // Removes the border
+            //this.TopMost = true;
         }
         private void ShowControl(string controlName)
         {

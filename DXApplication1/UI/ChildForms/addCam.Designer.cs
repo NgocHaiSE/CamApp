@@ -44,10 +44,10 @@
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.txtPassword = new DevExpress.XtraEditors.TextEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.cbType = new System.Windows.Forms.ComboBox();
             this.cbCompany = new System.Windows.Forms.ComboBox();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.txtId = new DevExpress.XtraEditors.TextEdit();
+            this.txtType = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCamName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLocation.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLink.Properties)).BeginInit();
@@ -56,6 +56,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtUsername.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtType.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -197,14 +198,6 @@
             this.labelControl8.TabIndex = 18;
             this.labelControl8.Text = "Công ty";
             // 
-            // cbType
-            // 
-            this.cbType.FormattingEnabled = true;
-            this.cbType.Location = new System.Drawing.Point(276, 219);
-            this.cbType.Name = "cbType";
-            this.cbType.Size = new System.Drawing.Size(381, 24);
-            this.cbType.TabIndex = 19;
-            // 
             // cbCompany
             // 
             this.cbCompany.FormattingEnabled = true;
@@ -230,15 +223,23 @@
             this.txtId.Size = new System.Drawing.Size(381, 22);
             this.txtId.TabIndex = 22;
             // 
+            // txtType
+            // 
+            this.txtType.Location = new System.Drawing.Point(276, 219);
+            this.txtType.Margin = new System.Windows.Forms.Padding(4);
+            this.txtType.Name = "txtType";
+            this.txtType.Size = new System.Drawing.Size(381, 22);
+            this.txtType.TabIndex = 23;
+            // 
             // addCam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(940, 581);
+            this.Controls.Add(this.txtType);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.labelControl9);
             this.Controls.Add(this.cbCompany);
-            this.Controls.Add(this.cbType);
             this.Controls.Add(this.labelControl8);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.labelControl7);
@@ -266,6 +267,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtUsername.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtType.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,9 +291,9 @@
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.TextEdit txtPassword;
         private DevExpress.XtraEditors.LabelControl labelControl8;
-        private System.Windows.Forms.ComboBox cbType;
         private System.Windows.Forms.ComboBox cbCompany;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.TextEdit txtId;
+        private DevExpress.XtraEditors.TextEdit txtType;
     }
 }

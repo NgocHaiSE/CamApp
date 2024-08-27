@@ -79,5 +79,25 @@ namespace DXApplication1.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconmonstr_checkbox_9_240 {
+            get {
+                object obj = ResourceManager.GetObject("iconmonstr-checkbox-9-240", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconmonstr_x_mark_square_lined_240 {
+            get {
+                object obj = ResourceManager.GetObject("iconmonstr-x-mark-square-lined-240", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

@@ -47,18 +47,25 @@ namespace DXApplication1.UI.Modules
 
 
         #region Events
-        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void barbtnAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             addCam addCam = new addCam();
-            addCam.CameraAdded += AddCam_CameraAdded;
+            addCam.CameraAdded += RefreshData;
             addCam.Show();
         }
 
-        private void AddCam_CameraAdded(object sender, EventArgs e)
+        private void RefreshData(object sender, EventArgs e)
         {
             LoadCameraData();
         }
 
         #endregion
+
+        private void barbtnAdjust_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            adjustCam adjustCam = new adjustCam();
+            adjustCam.CameraAdjusted += RefreshData;
+            adjustCam.Show();
+        }
     }
 }

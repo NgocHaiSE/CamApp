@@ -301,3 +301,5 @@ D:\C#\AppCamera\DXApplication1\DXApplication1\DXApplication1\bin\Debug\DevExpres
 D:\C#\AppCamera\DXApplication1\DXApplication1\DXApplication1\bin\Debug\DevExpress.XtraRichEdit.v24.1.xml
 D:\C#\AppCamera\DXApplication1\DXApplication1\DXApplication1\bin\Debug\DevExpress.Office.v24.1.Core.xml
 D:\C#\AppCamera\DXApplication1\DXApplication1\DXApplication1\obj\Debug\DXApplication1.XtraForm1.resources
+D:\C#\AppCamera\DXApplication1\DXApplication1\DXApplication1\obj\Debug\DXApplication1.UI.ChildForms.adjustCam.resources
+D:\C#\AppCamera\DXApplication1\DXApplication1\DXApplication1\obj\Debug\DXApplication1.UI.ChildForms.adjustPerson.resources

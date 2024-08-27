@@ -47,13 +47,13 @@ namespace DXApplication1.UI.ChildForms
                 Camera camera = new Camera(
                     id: Convert.ToInt32(txtId.Text),
                     name: txtCamName.Text,
+                    link: string.IsNullOrWhiteSpace(txtLink.Text) ? "" : txtLink.Text,
+                    type: string.IsNullOrWhiteSpace(txtType.Text) ? "" : txtType.Text,
+                    status: checkStatus.Checked ? 1 : 0,
+                    ip: string.IsNullOrWhiteSpace(txtIP.Text) ? "" : txtIP.Text,
                     location: string.IsNullOrWhiteSpace(txtLocation.Text) ? "" : txtLocation.Text,
-                    link: txtLink.Text,
-                    type: Convert.ToInt32(cbType.Text),
-                    ip: txtIP.Text,
                     username: string.IsNullOrWhiteSpace(txtUsername.Text) ? "" : txtUsername.Text,
                     password: string.IsNullOrWhiteSpace(txtPassword.Text) ? "" : txtPassword.Text,
-                    status: checkStatus.Checked ? 1 : 0,
                     companyId: (int)cbCompany.SelectedValue
                 );
 

@@ -42,7 +42,6 @@ namespace DXApplication1.DAO
                     }
                 }
             }
-
             return data;
         }
 
@@ -52,16 +51,14 @@ namespace DXApplication1.DAO
 
             using (MySqlConnection connection = ConnectionUtil.GetConnection())
             {
-                using (MySqlCommand cmd = new MySqlCommand(procedure, connection)
+                using (MySqlCommand cmd = new MySqlCommand(procedure, connection))
                 {
-                    CommandType = CommandType.StoredProcedure
-                })
-                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
                     if (parameters != null)
                     {
                         cmd.Parameters.AddRange(parameters);
                     }
-
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
                     {
                         adapter.Fill(data);
