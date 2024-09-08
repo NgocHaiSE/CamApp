@@ -50,6 +50,7 @@
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
+            this.barHeaderItem1 = new DevExpress.XtraBars.BarHeaderItem();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).BeginInit();
@@ -196,14 +197,15 @@
             // 
             this.fluentDesignFormControl1.FluentDesignForm = this;
             this.fluentDesignFormControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.barStaticItem1});
+            this.barStaticItem1,
+            this.barHeaderItem1});
             this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
             this.fluentDesignFormControl1.Manager = this.fluentFormDefaultManager1;
             this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
             this.fluentDesignFormControl1.Size = new System.Drawing.Size(1302, 39);
             this.fluentDesignFormControl1.TabIndex = 2;
             this.fluentDesignFormControl1.TabStop = false;
-            this.fluentDesignFormControl1.TitleItemLinks.Add(this.barStaticItem1);
+            this.fluentDesignFormControl1.TitleItemLinks.Add(this.barHeaderItem1);
             // 
             // barStaticItem1
             // 
@@ -216,8 +218,15 @@
             // 
             this.fluentFormDefaultManager1.Form = this;
             this.fluentFormDefaultManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.barStaticItem1});
-            this.fluentFormDefaultManager1.MaxItemId = 2;
+            this.barStaticItem1,
+            this.barHeaderItem1});
+            this.fluentFormDefaultManager1.MaxItemId = 3;
+            // 
+            // barHeaderItem1
+            // 
+            this.barHeaderItem1.Caption = "barHeaderItem1";
+            this.barHeaderItem1.Id = 2;
+            this.barHeaderItem1.Name = "barHeaderItem1";
             // 
             // FormMain
             // 
@@ -261,6 +270,7 @@
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator2;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement1;
         private DevExpress.XtraBars.BarStaticItem barStaticItem1;
+        private DevExpress.XtraBars.BarHeaderItem barHeaderItem1;
     }
 }
 

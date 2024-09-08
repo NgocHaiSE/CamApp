@@ -19,9 +19,22 @@ namespace DXApplication1.UI.Login
         public Login()
         {
             InitializeComponent();
+            textEditUsername.KeyDown += new KeyEventHandler(TextEdit_KeyDown);
+            textEditPassword.KeyDown += new KeyEventHandler(TextEdit_KeyDown);
+        }
+        private void TextEdit_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                PerformLogin();
+            }
         }
 
         private void simpleButtonLogin_Click(object sender, EventArgs e)
+        {
+            PerformLogin();
+        }
+        private void PerformLogin()
         {
             string username = textEditUsername.Text.Trim();
             string password = textEditPassword.Text;
@@ -29,7 +42,7 @@ namespace DXApplication1.UI.Login
 
             if (isAuthenticated)
             {
-                FormMain main = new FormMain();
+                FormMain main = new FormMain(textEditUsername.Text);
                 this.Hide();
                 main.Show();
             }
@@ -50,6 +63,5 @@ namespace DXApplication1.UI.Login
                 textEditPassword.Properties.UseSystemPasswordChar = true;
             }
         }
-
     }
 }

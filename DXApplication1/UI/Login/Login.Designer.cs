@@ -132,6 +132,7 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " Đăng nhập";
+            this.Enter += new System.EventHandler(this.simpleButtonLogin_Click);
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditPassword.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditUsername.Properties)).EndInit();

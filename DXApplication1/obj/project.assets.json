@@ -35,25 +35,6 @@
           "lib/AForge.Video.DirectShow.dll": {}
         }
       },
-      "BCrypt.Net-Next/4.0.3": {
-        "type": "package",
-        "dependencies": {
-          "System.Memory": "4.5.4"
-        },
-        "frameworkAssemblies": [
-          "System"
-        ],
-        "compile": {
-          "lib/net472/BCrypt.Net-Next.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net472/BCrypt.Net-Next.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "BouncyCastle.Cryptography/2.3.1": {
         "type": "package",
         "compile": {
@@ -416,6 +397,28 @@
         "runtime": {
           "lib/net45/Microsoft.AspNet.SignalR.SystemWeb.dll": {
             "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Microsoft.AspNet.WebApi.Client/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2",
+          "System.Memory": "4.5.5",
+          "System.Threading.Tasks.Extensions": "4.5.4"
+        },
+        "frameworkAssemblies": [
+          "System.Net.Http"
+        ],
+        "compile": {
+          "lib/net45/System.Net.Http.Formatting.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net45/System.Net.Http.Formatting.dll": {
+            "related": ".xml"
           }
         }
       },
@@ -784,7 +787,7 @@
           }
         }
       },
-      "Newtonsoft.Json/6.0.4": {
+      "Newtonsoft.Json/13.0.1": {
         "type": "package",
         "compile": {
           "lib/net45/Newtonsoft.Json.dll": {
@@ -794,6 +797,22 @@
         "runtime": {
           "lib/net45/Newtonsoft.Json.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/net45/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
           }
         }
       },
@@ -1336,25 +1355,6 @@
           "lib/AForge.Video.DirectShow.dll": {}
         }
       },
-      "BCrypt.Net-Next/4.0.3": {
-        "type": "package",
-        "dependencies": {
-          "System.Memory": "4.5.4"
-        },
-        "frameworkAssemblies": [
-          "System"
-        ],
-        "compile": {
-          "lib/net472/BCrypt.Net-Next.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net472/BCrypt.Net-Next.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "BouncyCastle.Cryptography/2.3.1": {
         "type": "package",
         "compile": {
@@ -1589,6 +1589,28 @@
         "runtime": {
           "lib/net45/Microsoft.AspNet.SignalR.SystemWeb.dll": {
             "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Microsoft.AspNet.WebApi.Client/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2",
+          "System.Memory": "4.5.5",
+          "System.Threading.Tasks.Extensions": "4.5.4"
+        },
+        "frameworkAssemblies": [
+          "System.Net.Http"
+        ],
+        "compile": {
+          "lib/net45/System.Net.Http.Formatting.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net45/System.Net.Http.Formatting.dll": {
+            "related": ".xml"
           }
         }
       },
@@ -1935,7 +1957,7 @@
           }
         }
       },
-      "Newtonsoft.Json/6.0.4": {
+      "Newtonsoft.Json/13.0.1": {
         "type": "package",
         "compile": {
           "lib/net45/Newtonsoft.Json.dll": {
@@ -1945,6 +1967,22 @@
         "runtime": {
           "lib/net45/Newtonsoft.Json.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/net45/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
           }
         }
       },
@@ -2433,25 +2471,6 @@
           "lib/AForge.Video.DirectShow.dll": {}
         }
       },
-      "BCrypt.Net-Next/4.0.3": {
-        "type": "package",
-        "dependencies": {
-          "System.Memory": "4.5.4"
-        },
-        "frameworkAssemblies": [
-          "System"
-        ],
-        "compile": {
-          "lib/net472/BCrypt.Net-Next.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net472/BCrypt.Net-Next.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "BouncyCastle.Cryptography/2.3.1": {
         "type": "package",
         "compile": {
@@ -2699,6 +2718,28 @@
         "runtime": {
           "lib/net45/Microsoft.AspNet.SignalR.SystemWeb.dll": {
             "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Microsoft.AspNet.WebApi.Client/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2",
+          "System.Memory": "4.5.5",
+          "System.Threading.Tasks.Extensions": "4.5.4"
+        },
+        "frameworkAssemblies": [
+          "System.Net.Http"
+        ],
+        "compile": {
+          "lib/net45/System.Net.Http.Formatting.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net45/System.Net.Http.Formatting.dll": {
+            "related": ".xml"
           }
         }
       },
@@ -3045,7 +3086,7 @@
           }
         }
       },
-      "Newtonsoft.Json/6.0.4": {
+      "Newtonsoft.Json/13.0.1": {
         "type": "package",
         "compile": {
           "lib/net45/Newtonsoft.Json.dll": {
@@ -3055,6 +3096,22 @@
         "runtime": {
           "lib/net45/Newtonsoft.Json.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/net45/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
           }
         }
       },
@@ -3543,25 +3600,6 @@
           "lib/AForge.Video.DirectShow.dll": {}
         }
       },
-      "BCrypt.Net-Next/4.0.3": {
-        "type": "package",
-        "dependencies": {
-          "System.Memory": "4.5.4"
-        },
-        "frameworkAssemblies": [
-          "System"
-        ],
-        "compile": {
-          "lib/net472/BCrypt.Net-Next.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net472/BCrypt.Net-Next.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "BouncyCastle.Cryptography/2.3.1": {
         "type": "package",
         "compile": {
@@ -3811,6 +3849,28 @@
         "runtime": {
           "lib/net45/Microsoft.AspNet.SignalR.SystemWeb.dll": {
             "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Microsoft.AspNet.WebApi.Client/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2",
+          "System.Memory": "4.5.5",
+          "System.Threading.Tasks.Extensions": "4.5.4"
+        },
+        "frameworkAssemblies": [
+          "System.Net.Http"
+        ],
+        "compile": {
+          "lib/net45/System.Net.Http.Formatting.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net45/System.Net.Http.Formatting.dll": {
+            "related": ".xml"
           }
         }
       },
@@ -4164,7 +4224,7 @@
           }
         }
       },
-      "Newtonsoft.Json/6.0.4": {
+      "Newtonsoft.Json/13.0.1": {
         "type": "package",
         "compile": {
           "lib/net45/Newtonsoft.Json.dll": {
@@ -4174,6 +4234,22 @@
         "runtime": {
           "lib/net45/Newtonsoft.Json.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/net45/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
           }
         }
       },
@@ -4662,25 +4738,6 @@
           "lib/AForge.Video.DirectShow.dll": {}
         }
       },
-      "BCrypt.Net-Next/4.0.3": {
-        "type": "package",
-        "dependencies": {
-          "System.Memory": "4.5.4"
-        },
-        "frameworkAssemblies": [
-          "System"
-        ],
-        "compile": {
-          "lib/net472/BCrypt.Net-Next.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net472/BCrypt.Net-Next.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "BouncyCastle.Cryptography/2.3.1": {
         "type": "package",
         "compile": {
@@ -4929,6 +4986,28 @@
         "runtime": {
           "lib/net45/Microsoft.AspNet.SignalR.SystemWeb.dll": {
             "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Microsoft.AspNet.WebApi.Client/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2",
+          "System.Memory": "4.5.5",
+          "System.Threading.Tasks.Extensions": "4.5.4"
+        },
+        "frameworkAssemblies": [
+          "System.Net.Http"
+        ],
+        "compile": {
+          "lib/net45/System.Net.Http.Formatting.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net45/System.Net.Http.Formatting.dll": {
+            "related": ".xml"
           }
         }
       },
@@ -5275,7 +5354,7 @@
           }
         }
       },
-      "Newtonsoft.Json/6.0.4": {
+      "Newtonsoft.Json/13.0.1": {
         "type": "package",
         "compile": {
           "lib/net45/Newtonsoft.Json.dll": {
@@ -5285,6 +5364,22 @@
         "runtime": {
           "lib/net45/Newtonsoft.Json.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/net45/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
           }
         }
       },
@@ -5780,37 +5875,6 @@
         "lib/AForge.Video.DirectShow.xml"
       ]
     },
-    "BCrypt.Net-Next/4.0.3": {
-      "sha512": "W+U9WvmZQgi5cX6FS5GDtDoPzUCV4LkBLkywq/kRZhuDwcbavOzcDAr3LXJFqHUi952Yj3LEYoWW0jbEUQChsA==",
-      "type": "package",
-      "path": "bcrypt.net-next/4.0.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "bcrypt.net-next.4.0.3.nupkg.sha512",
-        "bcrypt.net-next.nuspec",
-        "ico.png",
-        "lib/net20/BCrypt.Net-Next.dll",
-        "lib/net20/BCrypt.Net-Next.xml",
-        "lib/net35/BCrypt.Net-Next.dll",
-        "lib/net35/BCrypt.Net-Next.xml",
-        "lib/net462/BCrypt.Net-Next.dll",
-        "lib/net462/BCrypt.Net-Next.xml",
-        "lib/net472/BCrypt.Net-Next.dll",
-        "lib/net472/BCrypt.Net-Next.xml",
-        "lib/net48/BCrypt.Net-Next.dll",
-        "lib/net48/BCrypt.Net-Next.xml",
-        "lib/net5.0/BCrypt.Net-Next.dll",
-        "lib/net5.0/BCrypt.Net-Next.xml",
-        "lib/net6.0/BCrypt.Net-Next.dll",
-        "lib/net6.0/BCrypt.Net-Next.xml",
-        "lib/netstandard2.0/BCrypt.Net-Next.dll",
-        "lib/netstandard2.0/BCrypt.Net-Next.xml",
-        "lib/netstandard2.1/BCrypt.Net-Next.dll",
-        "lib/netstandard2.1/BCrypt.Net-Next.xml",
-        "readme.md"
-      ]
-    },
     "BouncyCastle.Cryptography/2.3.1": {
       "sha512": "buwoISwecYke3CmgG1AQSg+sNZjJeIb93vTAtJiHZX35hP/teYMxsfg0NDXGUKjGx6BKBTNKc77O2M3vKvlXZQ==",
       "type": "package",
@@ -6161,6 +6225,25 @@
         "microsoft.aspnet.signalr.systemweb.2.4.3.nupkg.sha512",
         "microsoft.aspnet.signalr.systemweb.nuspec",
         "packageIcon.png"
+      ]
+    },
+    "Microsoft.AspNet.WebApi.Client/6.0.0": {
+      "sha512": "zXeWP03dTo67AoDHUzR+/urck0KFssdCKOC+dq7Nv1V2YbFh/nIg09L0/3wSvyRONEdwxGB/ssEGmPNIIhAcAw==",
+      "type": "package",
+      "path": "microsoft.aspnet.webapi.client/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "NET.icon.png",
+        "NET_Library_EULA_ENU.txt",
+        "lib/net45/System.Net.Http.Formatting.dll",
+        "lib/net45/System.Net.Http.Formatting.xml",
+        "lib/netstandard1.3/System.Net.Http.Formatting.dll",
+        "lib/netstandard1.3/System.Net.Http.Formatting.xml",
+        "lib/netstandard2.0/System.Net.Http.Formatting.dll",
+        "lib/netstandard2.0/System.Net.Http.Formatting.xml",
+        "microsoft.aspnet.webapi.client.6.0.0.nupkg.sha512",
+        "microsoft.aspnet.webapi.client.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Connections.Abstractions/8.0.8": {
@@ -6639,14 +6722,14 @@
         "mysqlconnector.nuspec"
       ]
     },
-    "Newtonsoft.Json/6.0.4": {
-      "sha512": "FyQLmEpjsCrEP+znauLDGAi+h6i9YnaMkITlfIoiM4RYyX3nki306bTHsr/0okiIvIc7BJhQTbOAIZVocccFUw==",
+    "Newtonsoft.Json/13.0.1": {
+      "sha512": "ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
       "type": "package",
-      "path": "newtonsoft.json/6.0.4",
-      "hasTools": true,
+      "path": "newtonsoft.json/13.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "LICENSE.md",
         "lib/net20/Newtonsoft.Json.dll",
         "lib/net20/Newtonsoft.Json.xml",
         "lib/net35/Newtonsoft.Json.dll",
@@ -6655,15 +6738,36 @@
         "lib/net40/Newtonsoft.Json.xml",
         "lib/net45/Newtonsoft.Json.dll",
         "lib/net45/Newtonsoft.Json.xml",
-        "lib/netcore45/Newtonsoft.Json.dll",
-        "lib/netcore45/Newtonsoft.Json.xml",
-        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.dll",
-        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.xml",
-        "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll",
-        "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.xml",
-        "newtonsoft.json.6.0.4.nupkg.sha512",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "newtonsoft.json.13.0.1.nupkg.sha512",
         "newtonsoft.json.nuspec",
-        "tools/install.ps1"
+        "packageIcon.png"
+      ]
+    },
+    "Newtonsoft.Json.Bson/1.0.2": {
+      "sha512": "QYFyxhaABwmq3p/21VrZNYvCg3DaEoN/wUuw5nmfAf0X3HLjgupwhkEWdgfb9nvGAUIv3osmZoD3kKl4jxEmYQ==",
+      "type": "package",
+      "path": "newtonsoft.json.bson/1.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net45/Newtonsoft.Json.Bson.dll",
+        "lib/net45/Newtonsoft.Json.Bson.pdb",
+        "lib/net45/Newtonsoft.Json.Bson.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.Bson.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.Bson.pdb",
+        "lib/netstandard1.3/Newtonsoft.Json.Bson.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.Bson.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.Bson.pdb",
+        "lib/netstandard2.0/Newtonsoft.Json.Bson.xml",
+        "newtonsoft.json.bson.1.0.2.nupkg.sha512",
+        "newtonsoft.json.bson.nuspec"
       ]
     },
     "Owin/1.0.0": {
@@ -7658,13 +7762,13 @@
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.7.2": [
       "AForge.Video.DirectShow >= 2.2.5",
-      "BCrypt.Net-Next >= 4.0.3",
       "Emgu.CV >= 4.1.1.3497",
       "Emgu.CV.Bitmap >= 4.9.0.5494",
       "Emgu.CV.UI >= 4.9.0.5494",
       "Emgu.CV.runtime.windows >= 4.9.0.5494",
       "Microsoft.AspNet.SignalR >= 2.4.3",
       "Microsoft.AspNet.SignalR.Client >= 2.4.3",
+      "Microsoft.AspNet.WebApi.Client >= 6.0.0",
       "Microsoft.AspNetCore.Http.Connections.Client >= 8.0.8",
       "Microsoft.Bcl.TimeProvider >= 8.0.1",
       "Microsoft.Extensions.Logging >= 8.0.0",
@@ -7723,10 +7827,6 @@
             "target": "Package",
             "version": "[2.2.5, )"
           },
-          "BCrypt.Net-Next": {
-            "target": "Package",
-            "version": "[4.0.3, )"
-          },
           "Emgu.CV": {
             "target": "Package",
             "version": "[4.1.1.3497, )"
@@ -7750,6 +7850,10 @@
           "Microsoft.AspNet.SignalR.Client": {
             "target": "Package",
             "version": "[2.4.3, )"
+          },
+          "Microsoft.AspNet.WebApi.Client": {
+            "target": "Package",
+            "version": "[6.0.0, )"
           },
           "Microsoft.AspNetCore.Http.Connections.Client": {
             "target": "Package",

@@ -96,10 +96,13 @@
             // 
             // dgvCameraList
             // 
+            this.dgvCameraList.AllowUserToAddRows = false;
+            this.dgvCameraList.AllowUserToDeleteRows = false;
             this.dgvCameraList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCameraList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCameraList.Location = new System.Drawing.Point(0, 0);
             this.dgvCameraList.Name = "dgvCameraList";
+            this.dgvCameraList.ReadOnly = true;
             this.dgvCameraList.RowHeadersWidth = 51;
             this.dgvCameraList.RowTemplate.Height = 24;
             this.dgvCameraList.Size = new System.Drawing.Size(420, 612);

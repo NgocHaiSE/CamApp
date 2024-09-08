@@ -302,7 +302,6 @@ D:\C#\AppCamera\DXApplication1\DXApplication1\DXApplication1\obj\Debug\DXApplica
 D:\C#\AppCamera\DXApplication1\DXApplication1\DXApplication1\obj\Debug\DXApplication1.UI.ChildForms.adjustPerson.resources
 D:\C#\AppCamera\DXApplication1\DXApplication1\DXApplication1\obj\Debug\DXApplication1.UI.Modules.ucCamControl.resources
 D:\C#\AppCamera\DXApplication1\DXApplication1\DXApplication1\obj\Debug\DXApplication1.UI.Modules.ucNotification.resources
-D:\C#\AppCamera\DXApplication1\DXApplication1\DXApplication1\obj\Debug\DXApplication1.UI.Modules.ucPerson.resources
 D:\C#\AppCamera\DXApplication1\DXApplication1\DXApplication1\obj\Debug\DXApplication1.UI.Modules.ucSetting.resources
 D:\C#\AppCamera\DXApplication1\DXApplication1\DXApplication1\obj\Debug\DXApplication1.UI.Modules.ucUserControl.resources
 D:\C#\AppCamera\DXApplication1\DXApplication1\DXApplication1\obj\Debug\DXApplication1.UI.Modules.ucViewCam.resources

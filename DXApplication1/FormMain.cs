@@ -23,7 +23,14 @@ namespace DXApplication1
         public FormMain()
         {
             InitializeComponent();
-            this.WindowState = FormWindowState.Maximized;   // Maximizes the form
+            this.WindowState = FormWindowState.Maximized;
+        }
+
+        public FormMain(string user)
+        {
+            InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
+            barHeaderItem1.Caption = "Xin chào: " + user; 
         }
         private void accordionControlPerson_Click(object sender, EventArgs e)
         {

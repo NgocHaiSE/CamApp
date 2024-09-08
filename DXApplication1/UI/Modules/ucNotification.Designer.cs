@@ -38,7 +38,6 @@
             this.barHeaderItem2 = new DevExpress.XtraBars.BarHeaderItem();
             this.barCameraFilter = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
-            this.bar2 = new DevExpress.XtraBars.Bar();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -82,7 +81,6 @@
             // 
             this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
             this.bar1,
-            this.bar2,
             this.bar3});
             this.barManager1.DockControls.Add(this.barDockControlTop);
             this.barManager1.DockControls.Add(this.barDockControlBottom);
@@ -100,7 +98,6 @@
             this.barButtonItem1,
             this.barHeaderItem2,
             this.barCameraFilter});
-            this.barManager1.MainMenu = this.bar2;
             this.barManager1.MaxItemId = 10;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemSearchControl1,
@@ -116,8 +113,6 @@
             this.bar1.DockRow = 1;
             this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barHeaderItem1),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.Width, this.barDateFilter, "", false, true, true, 137),
             new DevExpress.XtraBars.LinkPersistInfo(this.barHeaderItem2),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.Width, this.barCameraFilter, "", false, true, true, 134)});
             this.bar1.Text = "Tools";
@@ -164,17 +159,6 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemComboBox1.Name = "repositoryItemComboBox1";
             // 
-            // bar2
-            // 
-            this.bar2.BarName = "Main menu";
-            this.bar2.DockCol = 0;
-            this.bar2.DockRow = 0;
-            this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar2.FloatLocation = new System.Drawing.Point(482, 151);
-            this.bar2.OptionsBar.MultiLine = true;
-            this.bar2.OptionsBar.UseWholeRow = true;
-            this.bar2.Text = "Main menu";
-            // 
             // bar3
             // 
             this.bar3.BarName = "Status bar";
@@ -193,7 +177,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1055, 46);
+            this.barDockControlTop.Size = new System.Drawing.Size(1055, 25);
             // 
             // barDockControlBottom
             // 
@@ -207,17 +191,17 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 46);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 25);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 575);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 596);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1055, 46);
+            this.barDockControlRight.Location = new System.Drawing.Point(1055, 25);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 575);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 596);
             // 
             // skinDropDownButtonItem1
             // 
@@ -272,11 +256,11 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 46);
+            this.gridControl1.Location = new System.Drawing.Point(0, 25);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1055, 575);
+            this.gridControl1.Size = new System.Drawing.Size(1055, 596);
             this.gridControl1.TabIndex = 5;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -305,7 +289,6 @@
             this.gcolID.Name = "gcolID";
             this.gcolID.Visible = true;
             this.gcolID.VisibleIndex = 0;
-            this.gcolID.Width = 94;
             // 
             // gcolPersonName
             // 
@@ -315,7 +298,7 @@
             this.gcolPersonName.Name = "gcolPersonName";
             this.gcolPersonName.Visible = true;
             this.gcolPersonName.VisibleIndex = 1;
-            this.gcolPersonName.Width = 94;
+            this.gcolPersonName.Width = 265;
             // 
             // gcolCamera
             // 
@@ -325,7 +308,7 @@
             this.gcolCamera.Name = "gcolCamera";
             this.gcolCamera.Visible = true;
             this.gcolCamera.VisibleIndex = 2;
-            this.gcolCamera.Width = 94;
+            this.gcolCamera.Width = 354;
             // 
             // gcolDate
             // 
@@ -336,7 +319,7 @@
             this.gcolDate.UnboundDataType = typeof(System.DateOnly);
             this.gcolDate.Visible = true;
             this.gcolDate.VisibleIndex = 3;
-            this.gcolDate.Width = 94;
+            this.gcolDate.Width = 192;
             // 
             // gcolScore
             // 
@@ -346,7 +329,7 @@
             this.gcolScore.Name = "gcolScore";
             this.gcolScore.Visible = true;
             this.gcolScore.VisibleIndex = 4;
-            this.gcolScore.Width = 94;
+            this.gcolScore.Width = 139;
             // 
             // gcolImageLink
             // 
@@ -388,7 +371,6 @@
         private DevExpress.XtraBars.Bar bar1;
         private DevExpress.XtraBars.BarEditItem barEditItem1;
         private DevExpress.XtraEditors.Repository.RepositoryItemSearchControl repositoryItemSearchControl1;
-        private DevExpress.XtraBars.Bar bar2;
         private DevExpress.XtraBars.Bar bar3;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;

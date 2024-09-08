@@ -44,7 +44,7 @@ namespace DXApplication1.UI.Modules
             barCameraFilter.EditValueChanged += new EventHandler(CameraSelect);
             GridView gridView = gridControl1.MainView as GridView;
             gridView.Columns["Thời gian"].DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            gridView.Columns["Thời gian"].DisplayFormat.FormatString = "dd-MM-yyyy"; // Example: 26-Aug-2024
+            gridView.Columns["Thời gian"].DisplayFormat.FormatString = "dd-MM-yyyy"; 
             LoadCameras();
         }
         private void LoadCameras()
