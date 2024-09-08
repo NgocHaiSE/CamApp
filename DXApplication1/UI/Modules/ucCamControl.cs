@@ -19,6 +19,18 @@ namespace DXApplication1.UI.Modules
 {
     public partial class ucCamControl : DevExpress.XtraEditors.XtraUserControl
     {
+        private static ucCamControl _instace;
+        public static ucCamControl Instance
+        {
+            get
+            {
+                if (_instace == null)
+                {
+                    _instace = new ucCamControl();
+                }
+                return _instace;
+            }
+        }
         public ucCamControl()
         {
             InitializeComponent();
@@ -32,11 +44,10 @@ namespace DXApplication1.UI.Modules
 
         private void LoadCameraData()
         {
-            DataTable data = DataProvider.Instance.ExecuteProcedure("GetCameraInfo");
+            DataTable data = DataProvider.Instance.ExecuteProcedure("GetAllCameras");
             if (data != null)
             {
                 gridControl1.DataSource = data;
-                gridView1.BestFitColumns();
             }
             else
             {
@@ -59,13 +70,14 @@ namespace DXApplication1.UI.Modules
             LoadCameraData();
         }
 
-        #endregion
 
-        private void barbtnAdjust_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void barbtnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             adjustCam adjustCam = new adjustCam();
             adjustCam.CameraAdjusted += RefreshData;
             adjustCam.Show();
         }
+        #endregion
+
     }
 }

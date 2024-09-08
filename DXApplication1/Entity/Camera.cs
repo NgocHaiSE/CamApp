@@ -17,10 +17,9 @@ namespace DXApplication1.Entity
         public string Location { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
-        public int? CompanyId { get; set; }
         public int? IsActivate { get; set; }
 
-        public Camera(int? id, string name, string link, string type, int? status, string ip, string location, string username, string password, int? companyId)
+        public Camera(int? id, string name, string link, string type, int? status, string ip, string location, string username, string password)
         {
             Id = id;
             Name = string.IsNullOrEmpty(name) ? null : name;
@@ -31,7 +30,6 @@ namespace DXApplication1.Entity
             Location = string.IsNullOrEmpty(location) ? null : location;
             Username = string.IsNullOrEmpty(username) ? null : username;
             Password = string.IsNullOrEmpty(password) ? null : password;
-            CompanyId = companyId;
         }
     }
 }

@@ -61,7 +61,6 @@ namespace DXApplication1.DAO
                     cmd.Parameters.AddWithValue("@p_username", camera.Username);
                     cmd.Parameters.AddWithValue("@p_password", camera.Password);
                     cmd.Parameters.AddWithValue("@p_status", camera.Status);
-                    cmd.Parameters.AddWithValue("@p_companyid", camera.CompanyId);
 
                     cmd.ExecuteNonQuery();
                 }
@@ -85,7 +84,6 @@ namespace DXApplication1.DAO
                     cmd.Parameters.AddWithValue("@p_username", camera.Username);
                     cmd.Parameters.AddWithValue("@p_password", camera.Password);
                     cmd.Parameters.AddWithValue("@p_status", camera.Status);
-                    cmd.Parameters.AddWithValue("@p_companyid", camera.CompanyId);
 
                     cmd.ExecuteNonQuery();
                 }

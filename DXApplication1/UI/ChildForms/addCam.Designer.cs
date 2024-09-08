@@ -43,8 +43,6 @@
             this.txtUsername = new DevExpress.XtraEditors.TextEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.txtPassword = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.cbCompany = new System.Windows.Forms.ComboBox();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.txtId = new DevExpress.XtraEditors.TextEdit();
             this.txtType = new DevExpress.XtraEditors.TextEdit();
@@ -112,7 +110,7 @@
             // 
             // checkStatus
             // 
-            this.checkStatus.Location = new System.Drawing.Point(276, 479);
+            this.checkStatus.Location = new System.Drawing.Point(276, 442);
             this.checkStatus.Margin = new System.Windows.Forms.Padding(4);
             this.checkStatus.Name = "checkStatus";
             this.checkStatus.Properties.Caption = "Kích hoạt";
@@ -121,7 +119,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(689, 519);
+            this.btnSave.Location = new System.Drawing.Point(692, 503);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(118, 36);
@@ -189,23 +187,6 @@
             this.txtPassword.Size = new System.Drawing.Size(381, 22);
             this.txtPassword.TabIndex = 16;
             // 
-            // labelControl8
-            // 
-            this.labelControl8.Location = new System.Drawing.Point(131, 440);
-            this.labelControl8.Margin = new System.Windows.Forms.Padding(4);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(43, 16);
-            this.labelControl8.TabIndex = 18;
-            this.labelControl8.Text = "Công ty";
-            // 
-            // cbCompany
-            // 
-            this.cbCompany.FormattingEnabled = true;
-            this.cbCompany.Location = new System.Drawing.Point(276, 437);
-            this.cbCompany.Name = "cbCompany";
-            this.cbCompany.Size = new System.Drawing.Size(381, 24);
-            this.cbCompany.TabIndex = 20;
-            // 
             // labelControl9
             // 
             this.labelControl9.Location = new System.Drawing.Point(131, 13);
@@ -239,8 +220,6 @@
             this.Controls.Add(this.txtType);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.labelControl9);
-            this.Controls.Add(this.cbCompany);
-            this.Controls.Add(this.labelControl8);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.labelControl7);
             this.Controls.Add(this.txtUsername);
@@ -290,8 +269,6 @@
         private DevExpress.XtraEditors.TextEdit txtUsername;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.TextEdit txtPassword;
-        private DevExpress.XtraEditors.LabelControl labelControl8;
-        private System.Windows.Forms.ComboBox cbCompany;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.TextEdit txtId;
         private DevExpress.XtraEditors.TextEdit txtType;

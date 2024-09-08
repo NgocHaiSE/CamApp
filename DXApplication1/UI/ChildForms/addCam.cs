@@ -29,15 +29,6 @@ namespace DXApplication1.UI.ChildForms
 
         private void addCam_Load(object sender, EventArgs e)
         {
-            LoadCompanies();
-        }
-        private void LoadCompanies()
-        {
-            List<CompanyDTO> companyList = CompanyDAO.Instance.GetAllCompanies();
-
-            cbCompany.DataSource = companyList;
-            cbCompany.DisplayMember = "name"; 
-            cbCompany.ValueMember = "id"; 
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -53,8 +44,7 @@ namespace DXApplication1.UI.ChildForms
                     ip: string.IsNullOrWhiteSpace(txtIP.Text) ? "" : txtIP.Text,
                     location: string.IsNullOrWhiteSpace(txtLocation.Text) ? "" : txtLocation.Text,
                     username: string.IsNullOrWhiteSpace(txtUsername.Text) ? "" : txtUsername.Text,
-                    password: string.IsNullOrWhiteSpace(txtPassword.Text) ? "" : txtPassword.Text,
-                    companyId: (int)cbCompany.SelectedValue
+                    password: string.IsNullOrWhiteSpace(txtPassword.Text) ? "" : txtPassword.Text
                 );
 
                 CameraDAO.Instance.Insert(camera);

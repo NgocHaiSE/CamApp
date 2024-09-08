@@ -1,24 +1,99 @@
 ﻿using DevExpress.XtraEditors;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using AForge.Video;
 using AForge.Video.DirectShow;
+using DXApplication1.Entity;
+using Emgu.CV;
+using Emgu.CV.Structure;
 
 namespace DXApplication1.UI.Modules
 {
     public partial class ucViewCam : DevExpress.XtraEditors.XtraUserControl
     {
+        private static ucViewCam _instace;
+        public static ucViewCam Instance
+        {
+            get
+            {
+                if (_instace == null)
+                {
+                    _instace = new ucViewCam();
+                }
+                return _instace;
+            }
+        }
+        private FilterInfoCollection videoDevices; //filter
+        private VideoCaptureDevice videoSource; //device
+
+        static readonly CascadeClassifier cascadeClassifier = new CascadeClassifier("haarcascade_frontalface_default.xml");
+        private void ucViewCam_Load(object sender, EventArgs e)
+        {
+            videoDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+
+            if (videoDevices.Count > 0)
+            {
+                videoSource = new VideoCaptureDevice(videoDevices[0].MonikerString);
+                videoSource.NewFrame += Device_NewFrame;
+                videoSource.Start();
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy camera!");
+            }
+        }
+        private void Device_NewFrame(object sender, NewFrameEventArgs eventArgs)
+        {
+            Bitmap bitmap = (Bitmap)eventArgs.Frame.Clone();
+
+            using (Image<Gray, byte> grayFrame = new Image<Gray, byte>(bitmap))
+            {
+                Rectangle[] rectangles = cascadeClassifier.DetectMultiScale(grayFrame, 1.1, 5, new Size(30, 30));
+
+                if (rectangles.Length > 0)
+                {
+                    foreach (Rectangle rectangle in rectangles)
+                    {
+                        using (Graphics graphics = Graphics.FromImage(bitmap))
+                        {
+                            using (Pen pen = new Pen(Color.Red, 2))
+                            {
+                                graphics.DrawRectangle(pen, rectangle);
+                            }
+                        }
+                    }
+                }
+            }
+
+            pictureBoxCamera.Image = bitmap;
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (videoSource != null && videoSource.IsRunning)
+            {
+                videoSource.SignalToStop();
+                videoSource.WaitForStop();
+            }
+        }
+
+        private ucNotification notificationControl;
+
+        public ucViewCam(ucNotification notificationControl)
+        {
+            InitializeComponent();
+        }
+
+        private void OnNotificationAdded(object sender, NotificationEventArgs e)
+        {
+            CreateNotification(e);
+        }
         public ucViewCam()
         {
             InitializeComponent();
+
         }
 
         string[] rtspUrls = {
@@ -93,6 +168,23 @@ namespace DXApplication1.UI.Modules
                 g.DrawString("Camera", new Font("Arial", 10), Brushes.White, new PointF(10, 40));
             }
             return bmp;
+        }
+        private void CreateNotification(NotificationEventArgs e)
+        {
+            Label notificationLabel = new Label
+            {
+                Text = $"{e.Time:dd-MM-yyyy HH:mm:ss}\n{e.EmployeeName} đã xuất hiện tại {e.CameraName}",
+                AutoSize = true,
+                Padding = new Padding(2),
+                Margin = new Padding(3),
+                BackColor = Color.LightSkyBlue,
+                BorderStyle = BorderStyle.FixedSingle
+            };
+
+            panelNotification.Controls.Add(notificationLabel);
+            panelNotification.Controls.SetChildIndex(notificationLabel, 0);
+
+            panelNotification.ScrollControlIntoView(notificationLabel);
         }
 
     }

@@ -93,6 +93,36 @@ namespace DXApplication1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconmonstr_email_11_240 {
+            get {
+                object obj = ResourceManager.GetObject("iconmonstr-email-11-240", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconmonstr_phone_9_240 {
+            get {
+                object obj = ResourceManager.GetObject("iconmonstr-phone-9-240", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconmonstr_user_circle_thin_240 {
+            get {
+                object obj = ResourceManager.GetObject("iconmonstr-user-circle-thin-240", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iconmonstr_x_mark_square_lined_240 {
             get {
                 object obj = ResourceManager.GetObject("iconmonstr-x-mark-square-lined-240", resourceCulture);

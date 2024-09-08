@@ -46,7 +46,7 @@ namespace DXApplication1.UI.ChildForms
             DataRow row = personData.Rows[0];
             txtCode.Text = row["Mã nhân viên"].ToString();
             txtName.Text = row["Họ tên"].ToString();
-            rtxtInfo.Text = row["Thông tin"].ToString();
+            //rtxtInfo.Text = row["Thông tin"].ToString();
             checkIsRecog.Checked = row["Nhận diện"].ToString() == "Có";
             string imageUrl = row["Link ảnh"].ToString(); 
             if (!string.IsNullOrEmpty(imageUrl))
@@ -147,7 +147,7 @@ namespace DXApplication1.UI.ChildForms
                 (
                     code: string.IsNullOrWhiteSpace(txtCode.Text) ? "" : txtCode.Text,
                     name: string.IsNullOrWhiteSpace(txtName.Text) ? "" : txtName.Text,
-                    information: string.IsNullOrWhiteSpace(rtxtInfo.Text) ? "" : rtxtInfo.Text,
+                    information: null,
                     isRecog: checkIsRecog.Checked ? 1 : 0
                 );
                 adjustedPerson.Id = personId;

@@ -19,11 +19,24 @@ using DevExpress.XtraGrid.Views.Base;
 using System.IO;
 using ZstdSharp.Unsafe;
 using DXApplication1.DTO;
+using DXApplication1.Entity;
 
 namespace DXApplication1.UI.Modules
 {
     public partial class ucNotification : DevExpress.XtraEditors.XtraUserControl
     {
+        private static ucNotification _instace;
+        public static ucNotification Instance
+        {
+            get
+            {
+                if (_instace == null)
+                {
+                    _instace = new ucNotification();
+                }
+                return _instace;
+            }
+        }
         public ucNotification()
         {
             InitializeComponent();
@@ -49,12 +62,10 @@ namespace DXApplication1.UI.Modules
         {
             ApplyFilter();
         }
-
         private void CameraSelect(object sender, EventArgs e)
         {
             ApplyFilter();
         }
-
         private void ApplyFilter()
         {
             string selectedDate = barDateFilter.EditValue?.ToString() ?? string.Empty;
@@ -93,7 +104,7 @@ namespace DXApplication1.UI.Modules
                 AddUnboundColumn(gridView1);
                 gridView1.CustomUnboundColumnData += gridView1_CustomUnboundColumnData;
                 SetImageSize();
-                gridView1.RowHeight = 250;
+                gridView1.RowHeight = 150;
                 //gridView1.BestFitColumns();
             }
             else
@@ -111,7 +122,7 @@ namespace DXApplication1.UI.Modules
                 if (pictureEdit != null)
                 {
                     pictureEdit.SizeMode = PictureSizeMode.Stretch;
-                    pictureEdit.CustomHeight = 250;
+                    pictureEdit.CustomHeight = 150;
                 }
             }
         }
@@ -176,6 +187,7 @@ namespace DXApplication1.UI.Modules
             }
             return img;
         }
+
 
     }
 }

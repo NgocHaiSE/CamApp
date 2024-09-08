@@ -30,11 +30,10 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dgvCameraList = new System.Windows.Forms.DataGridView();
+            this.txtType = new DevExpress.XtraEditors.TextEdit();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.checkStatus = new System.Windows.Forms.CheckBox();
-            this.cbCompany = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.txtPassword = new DevExpress.XtraEditors.TextEdit();
             this.label7 = new System.Windows.Forms.Label();
             this.txtUsername = new DevExpress.XtraEditors.TextEdit();
@@ -48,19 +47,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtType = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCameraList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsername.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLink.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLocation.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCamName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtType.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -79,8 +77,6 @@
             this.splitContainer1.Panel2.Controls.Add(this.btnSave);
             this.splitContainer1.Panel2.Controls.Add(this.btnDelete);
             this.splitContainer1.Panel2.Controls.Add(this.checkStatus);
-            this.splitContainer1.Panel2.Controls.Add(this.cbCompany);
-            this.splitContainer1.Panel2.Controls.Add(this.label8);
             this.splitContainer1.Panel2.Controls.Add(this.txtPassword);
             this.splitContainer1.Panel2.Controls.Add(this.label7);
             this.splitContainer1.Panel2.Controls.Add(this.txtUsername);
@@ -109,9 +105,16 @@
             this.dgvCameraList.Size = new System.Drawing.Size(420, 612);
             this.dgvCameraList.TabIndex = 0;
             // 
+            // txtType
+            // 
+            this.txtType.Location = new System.Drawing.Point(175, 212);
+            this.txtType.Name = "txtType";
+            this.txtType.Size = new System.Drawing.Size(209, 22);
+            this.txtType.TabIndex = 19;
+            // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(273, 534);
+            this.btnSave.Location = new System.Drawing.Point(281, 484);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(122, 35);
             this.btnSave.TabIndex = 18;
@@ -121,7 +124,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(94, 534);
+            this.btnDelete.Location = new System.Drawing.Point(104, 484);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(122, 35);
             this.btnDelete.TabIndex = 17;
@@ -132,29 +135,12 @@
             // checkStatus
             // 
             this.checkStatus.AutoSize = true;
-            this.checkStatus.Location = new System.Drawing.Point(175, 485);
+            this.checkStatus.Location = new System.Drawing.Point(175, 427);
             this.checkStatus.Name = "checkStatus";
             this.checkStatus.Size = new System.Drawing.Size(83, 20);
             this.checkStatus.TabIndex = 16;
             this.checkStatus.Text = "Kích hoạt";
             this.checkStatus.UseVisualStyleBackColor = true;
-            // 
-            // cbCompany
-            // 
-            this.cbCompany.FormattingEnabled = true;
-            this.cbCompany.Location = new System.Drawing.Point(175, 430);
-            this.cbCompany.Name = "cbCompany";
-            this.cbCompany.Size = new System.Drawing.Size(209, 24);
-            this.cbCompany.TabIndex = 15;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(57, 438);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(52, 16);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Công ty";
             // 
             // txtPassword
             // 
@@ -261,13 +247,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên camera";
             // 
-            // txtType
-            // 
-            this.txtType.Location = new System.Drawing.Point(175, 212);
-            this.txtType.Name = "txtType";
-            this.txtType.Size = new System.Drawing.Size(209, 22);
-            this.txtType.TabIndex = 19;
-            // 
             // adjustCam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -282,13 +261,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCameraList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsername.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIP.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLink.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLocation.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCamName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtType.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -308,13 +287,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label8;
         private DevExpress.XtraEditors.TextEdit txtPassword;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.CheckBox checkStatus;
-        private System.Windows.Forms.ComboBox cbCompany;
         private DevExpress.XtraEditors.TextEdit txtType;
     }
 }

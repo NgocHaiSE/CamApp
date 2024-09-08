@@ -15,6 +15,18 @@ namespace DXApplication1.UI.Modules
 {
     public partial class ucUserControl : DevExpress.XtraEditors.XtraUserControl
     {
+        private static ucUserControl _instace;
+        public static ucUserControl Instance
+        {
+            get
+            {
+                if (_instace == null)
+                {
+                    _instace = new ucUserControl();
+                }
+                return _instace;
+            }
+        }
         public ucUserControl()
         {
             InitializeComponent();

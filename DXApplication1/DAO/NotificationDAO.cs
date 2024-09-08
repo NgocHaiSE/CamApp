@@ -25,6 +25,10 @@ namespace DXApplication1.DAO
             DataTable data = DataProvider.Instance.ExecuteProcedure("GetAllNotifications");
             return data;
         }
+        public void AddNotification()
+        {
+            DataProvider.Instance.ExecuteProcedure("AddNotification");
+        }
         #endregion
     }
 }

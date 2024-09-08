@@ -1,4 +1,5 @@
 ﻿using DevExpress.Internal.WinApi.Windows.UI.Notifications;
+using DevExpress.Utils.About;
 using DXApplication1.Entity;
 using DXApplication1.Utils;
 using MySql.Data.MySqlClient;
@@ -55,15 +56,44 @@ namespace DXApplication1.DAO
             DataProvider.Instance.ExecuteNonQuery("UpdatePerson", parameters);
         }
 
-        public DataTable GetPerson(int id)
+        public void UpdatePersonInfo(int id, string info)
         {
             MySqlParameter[] parameters = new MySqlParameter[]
             {
                 new MySqlParameter("@p_id", MySqlDbType.Int32) { Value = id },
+                new MySqlParameter("@p_info", MySqlDbType.VarChar) { Value = info }
+            };
+            DataProvider.Instance.ExecuteNonQuery("UpdatePersonInfo", parameters); 
+        }
+
+        public DataTable GetPerson(int id)
+        {
+            MySqlParameter[] parameters = new MySqlParameter[]
+            {
+                new MySqlParameter("@p_id", MySqlDbType.Int32) { Value = id }
             };
             DataTable data = DataProvider.Instance.ExecuteProcedure("GetPerson", parameters);
             return data;
         }
+
+        public bool DeletePerson(int id)
+        {
+            try
+            {
+                MySqlParameter[] parameters = new MySqlParameter[]
+                {
+                    new MySqlParameter("@p_id", MySqlDbType.Int32) { Value = id }
+                };
+                int rowsAffected = DataProvider.Instance.ExecuteNonQuery("DeletePerson", parameters);
+                return rowsAffected > 0;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error deleting person: " + ex.Message);
+                return false;
+            }
+        }
+
 
         #endregion
     }

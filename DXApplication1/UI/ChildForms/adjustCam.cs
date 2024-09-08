@@ -63,7 +63,6 @@ namespace DXApplication1.UI.ChildForms
                     txtIP.Text = selectedRow["IP"].ToString();
                     txtUsername.Text = selectedRow["Tên tài khoản"].ToString();
                     txtPassword.Text = selectedRow["Mật khẩu"].ToString();
-                    cbCompany.SelectedValue = selectedRow["Công ty"].ToString();
                     checkStatus.Checked = selectedRow["Nhận diện"].ToString() == "Có";
                 }
             }
@@ -86,8 +85,7 @@ namespace DXApplication1.UI.ChildForms
                         string.IsNullOrWhiteSpace(txtIP.Text) ? null : txtIP.Text.Trim(),
                         string.IsNullOrWhiteSpace(txtLocation.Text) ? null : txtLocation.Text.Trim(),
                         string.IsNullOrWhiteSpace(txtUsername.Text) ? null : txtUsername.Text.Trim(),
-                        string.IsNullOrWhiteSpace(txtPassword.Text) ? null : txtPassword.Text.Trim(),
-                        cbCompany.SelectedValue == null ? (int?)null : (int)cbCompany.SelectedValue
+                        string.IsNullOrWhiteSpace(txtPassword.Text) ? null : txtPassword.Text.Trim()
                     );
                     try
                     {

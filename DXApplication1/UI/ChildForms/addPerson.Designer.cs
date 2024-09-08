@@ -29,19 +29,21 @@
         ///
         private void InitializeComponent()
         {
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.ptrMain = new System.Windows.Forms.PictureBox();
             this.btnReset = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.checkIsRecog = new System.Windows.Forms.CheckBox();
+            this.txtCode = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.btnAddImage = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.txtInfo = new System.Windows.Forms.TextBox();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.txtName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -49,24 +51,22 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.windowsUIButtonPanelCloseButton = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.labelControl = new DevExpress.XtraEditors.LabelControl();
-            this.ptrMain = new System.Windows.Forms.PictureBox();
-            this.txtCode = new DevExpress.XtraEditors.TextEdit();
-            this.txtName = new DevExpress.XtraEditors.TextEdit();
+            this.txtInfo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptrMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptrMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // dataLayoutControl1
@@ -110,6 +110,14 @@
             this.panelControl1.Size = new System.Drawing.Size(815, 604);
             this.panelControl1.TabIndex = 4;
             // 
+            // ptrMain
+            // 
+            this.ptrMain.Location = new System.Drawing.Point(61, 21);
+            this.ptrMain.Name = "ptrMain";
+            this.ptrMain.Size = new System.Drawing.Size(207, 223);
+            this.ptrMain.TabIndex = 37;
+            this.ptrMain.TabStop = false;
+            // 
             // btnReset
             // 
             this.btnReset.Location = new System.Drawing.Point(352, 546);
@@ -137,6 +145,14 @@
             this.checkIsRecog.TabIndex = 34;
             this.checkIsRecog.Text = "Nhận diện";
             this.checkIsRecog.UseVisualStyleBackColor = true;
+            // 
+            // txtCode
+            // 
+            this.txtCode.EditValue = "";
+            this.txtCode.Location = new System.Drawing.Point(460, 18);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(305, 22);
+            this.txtCode.TabIndex = 33;
             // 
             // labelControl3
             // 
@@ -173,14 +189,6 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(802, 245);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // txtInfo
-            // 
-            this.txtInfo.Location = new System.Drawing.Point(460, 103);
-            this.txtInfo.Multiline = true;
-            this.txtInfo.Name = "txtInfo";
-            this.txtInfo.Size = new System.Drawing.Size(305, 72);
-            this.txtInfo.TabIndex = 29;
-            // 
             // labelControl2
             // 
             this.labelControl2.Location = new System.Drawing.Point(349, 106);
@@ -188,6 +196,14 @@
             this.labelControl2.Size = new System.Drawing.Size(58, 16);
             this.labelControl2.TabIndex = 21;
             this.labelControl2.Text = " Thông tin";
+            // 
+            // txtName
+            // 
+            this.txtName.EditValue = "";
+            this.txtName.Location = new System.Drawing.Point(460, 56);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(305, 22);
+            this.txtName.TabIndex = 20;
             // 
             // labelControl1
             // 
@@ -238,9 +254,9 @@
             // windowsUIButtonPanelCloseButton
             // 
             this.windowsUIButtonPanelCloseButton.ButtonInterval = 0;
-            windowsUIButtonImageOptions2.ImageUri.Uri = "Backward;Size32x32;GrayScaled";
+            windowsUIButtonImageOptions1.ImageUri.Uri = "Backward;Size32x32;GrayScaled";
             this.windowsUIButtonPanelCloseButton.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
             this.windowsUIButtonPanelCloseButton.ContentAlignment = System.Drawing.ContentAlignment.TopCenter;
             this.windowsUIButtonPanelCloseButton.Dock = System.Windows.Forms.DockStyle.Left;
             this.windowsUIButtonPanelCloseButton.ForeColor = System.Drawing.Color.Gray;
@@ -275,29 +291,13 @@
             this.labelControl.TabIndex = 1;
             this.labelControl.Text = "Quản lý nhân viên";
             // 
-            // ptrMain
+            // txtInfo
             // 
-            this.ptrMain.Location = new System.Drawing.Point(61, 21);
-            this.ptrMain.Name = "ptrMain";
-            this.ptrMain.Size = new System.Drawing.Size(207, 223);
-            this.ptrMain.TabIndex = 37;
-            this.ptrMain.TabStop = false;
-            // 
-            // txtCode
-            // 
-            this.txtCode.EditValue = "";
-            this.txtCode.Location = new System.Drawing.Point(460, 18);
-            this.txtCode.Name = "txtCode";
-            this.txtCode.Size = new System.Drawing.Size(305, 22);
-            this.txtCode.TabIndex = 33;
-            // 
-            // txtName
-            // 
-            this.txtName.EditValue = "";
-            this.txtName.Location = new System.Drawing.Point(460, 56);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(305, 22);
-            this.txtName.TabIndex = 20;
+            this.txtInfo.Location = new System.Drawing.Point(460, 103);
+            this.txtInfo.Multiline = true;
+            this.txtInfo.Name = "txtInfo";
+            this.txtInfo.Size = new System.Drawing.Size(305, 72);
+            this.txtInfo.TabIndex = 29;
             // 
             // addPerson
             // 
@@ -320,15 +320,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptrMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptrMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -347,7 +347,6 @@
         private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private System.Windows.Forms.TextBox txtInfo;
         private DevExpress.XtraEditors.SimpleButton btnAddImage;
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
@@ -357,6 +356,7 @@
         private DevExpress.XtraEditors.SimpleButton btnReset;
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private System.Windows.Forms.PictureBox ptrMain;
+        private System.Windows.Forms.TextBox txtInfo;
     }
 
 }
