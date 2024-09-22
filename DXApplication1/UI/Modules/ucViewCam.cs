@@ -1,19 +1,33 @@
 ﻿using DevExpress.XtraEditors;
 using System;
+using System.ComponentModel;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using AForge.Video;
 using AForge.Video.DirectShow;
 using DXApplication1.Entity;
-using Emgu.CV;
-using Emgu.CV.Structure;
+using System.Threading.Tasks;
+using NetMQ;
+using NetMQ.Sockets;
+using System.IO;
+using System.Net.Http;
+using Vlc.DotNet.Forms;
+using System.Data;
+using DXApplication1.DAO;
 
 namespace DXApplication1.UI.Modules
 {
     public partial class ucViewCam : DevExpress.XtraEditors.XtraUserControl
     {
+        private static readonly HttpClient client = new HttpClient();
+        private List<VlcControl> vlcControls = new List<VlcControl>();
+        List<String> links = new List<String>();
+        private List<int> cameraIds = new List<int>();
+
         private static ucViewCam _instace;
+
         public static ucViewCam Instance
         {
             get
@@ -25,166 +39,182 @@ namespace DXApplication1.UI.Modules
                 return _instace;
             }
         }
-        private FilterInfoCollection videoDevices; //filter
-        private VideoCaptureDevice videoSource; //device
 
-        static readonly CascadeClassifier cascadeClassifier = new CascadeClassifier("haarcascade_frontalface_default.xml");
         private void ucViewCam_Load(object sender, EventArgs e)
         {
-            videoDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
-
-            if (videoDevices.Count > 0)
-            {
-                videoSource = new VideoCaptureDevice(videoDevices[0].MonikerString);
-                videoSource.NewFrame += Device_NewFrame;
-                videoSource.Start();
-            }
-            else
-            {
-                MessageBox.Show("Không tìm thấy camera!");
-            }
         }
-        private void Device_NewFrame(object sender, NewFrameEventArgs eventArgs)
+
+        private void InitializeComboBox()
         {
-            Bitmap bitmap = (Bitmap)eventArgs.Frame.Clone();
-
-            using (Image<Gray, byte> grayFrame = new Image<Gray, byte>(bitmap))
-            {
-                Rectangle[] rectangles = cascadeClassifier.DetectMultiScale(grayFrame, 1.1, 5, new Size(30, 30));
-
-                if (rectangles.Length > 0)
-                {
-                    foreach (Rectangle rectangle in rectangles)
-                    {
-                        using (Graphics graphics = Graphics.FromImage(bitmap))
-                        {
-                            using (Pen pen = new Pen(Color.Red, 2))
-                            {
-                                graphics.DrawRectangle(pen, rectangle);
-                            }
-                        }
-                    }
-                }
-            }
-
-            pictureBoxCamera.Image = bitmap;
+            comboBoxEdit1.Properties.Items.Add("1x1");
+            comboBoxEdit1.Properties.Items.Add("2x2");
+            comboBoxEdit1.Properties.Items.Add("3x3");
+            comboBoxEdit1.Properties.Items.Add("4x4");
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (videoSource != null && videoSource.IsRunning)
-            {
-                videoSource.SignalToStop();
-                videoSource.WaitForStop();
-            }
-        }
-
-        private ucNotification notificationControl;
-
-        public ucViewCam(ucNotification notificationControl)
-        {
-            InitializeComponent();
-        }
-
-        private void OnNotificationAdded(object sender, NotificationEventArgs e)
-        {
-            CreateNotification(e);
-        }
         public ucViewCam()
         {
             InitializeComponent();
-
+            InitializeComboBox();
         }
 
-        string[] rtspUrls = {
-                "rtsp://your_rtsp_url_1",
-                "rtsp://your_rtsp_url_2",
-                "rtsp://your_rtsp_url_3",
-                "rtsp://your_rtsp_url_4"
-            };
+        //MJPEGStream stream;
 
-        private void comboBoxEdit1_SelectedIndexChanged(object sender, EventArgs e)
+        //void stream_NewFrame(object sender, NewFrameEventArgs eventArgs)
+        //{
+        //    Bitmap bmp = (Bitmap)eventArgs.Frame.Clone();
+        //    pictureBoxCamera.Image = bmp;
+        //}
+
+        private async void CameraComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CameraPanel.Controls.Clear();
-            // Tạo lưới camera mới dựa trên lựa chọn của người dùng
-            switch (CameraComboBox.SelectedItem.ToString())
+            DataTable data = CameraDAO.Instance.GetAllCameras();
+            for (int i = 0; i < data.Rows.Count; i++)
+            {
+                int cameraId = Convert.ToInt32(data.Rows[i]["ID"]);
+                string link = data.Rows[i]["Đường dẫn"].ToString();
+                links.Add(link);
+                cameraIds.Add(cameraId);
+            }
+            string selectedSize = comboBoxEdit1.SelectedItem.ToString();
+            int numCameras = 2; 
+
+            switch (selectedSize)
             {
                 case "1x1":
-                    CreateCameraGrid(CameraPanel, 1, 1);
-                    break;
-                case "3x3":
-                    CreateCameraGrid(CameraPanel, 3, 3);
+                    numCameras = 1;
+                    tableLayoutPanel1.ColumnCount = 1;
+                    tableLayoutPanel1.RowCount = 1;
                     break;
                 case "2x2":
-                    CreateCameraGrid(CameraPanel, 2, 2);
+                    numCameras = 4;
+                    tableLayoutPanel1.ColumnCount = 2;
+                    tableLayoutPanel1.RowCount = 2;
+                    break;
+                case "3x3":
+                    numCameras = 9;
+                    tableLayoutPanel1.ColumnCount = 3;
+                    tableLayoutPanel1.RowCount = 3;
                     break;
                 case "4x4":
-                    CreateCameraGrid(CameraPanel, 4, 4);
+                    numCameras = 9;
+                    tableLayoutPanel1.ColumnCount = 3;
+                    tableLayoutPanel1.RowCount = 3;
                     break;
             }
+            int maxCamerasToShow = Math.Min(numCameras, links.Count); 
 
+            await InitializeVlcControls(maxCamerasToShow);
         }
-        private void CreateCameraGrid(Panel panel, int rows, int columns)
+        private async Task StartCameraAsync(int cameraId)
         {
-            TableLayoutPanel tableLayoutPanel = new TableLayoutPanel
+            try
             {
-                Dock = DockStyle.Fill,
-                RowCount = rows,
-                ColumnCount = columns,
-                AutoSize = false,
-                AutoSizeMode = AutoSizeMode.GrowAndShrink
-            };
+                string url = $"http://localhost:8000/start/{cameraId}";
+                HttpResponseMessage response = await client.GetAsync(url); 
 
-            for (int row = 0; row < rows; row++)
-            {
-                tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100f / rows));
-                for (int col = 0; col < columns; col++)
+                if (response.IsSuccessStatusCode)
                 {
-                    if (row == 0)
-                    {
-                        tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100f / columns));
-                    }
-                    // Thêm các control hiển thị camera, ở đây là các PictureBox để minh họa
-                    PictureBox cameraBox = new PictureBox
-                    {
-                        BorderStyle = BorderStyle.FixedSingle,
-                        Dock = DockStyle.Fill,
-                        SizeMode = PictureBoxSizeMode.StretchImage,
-                        Image = GetPlaceholderImage() // Thay thế bằng stream video thực tế
-                    };
-                    tableLayoutPanel.Controls.Add(cameraBox, col, row);
+                    Console.WriteLine($"Camera {cameraId} đã được khởi động thành công."); 
+                }
+                else
+                {
+                    MessageBox.Show($"Không thể khởi động camera {cameraId}. Lỗi: {response.StatusCode}"); 
                 }
             }
-
-            panel.Controls.Add(tableLayoutPanel);
-        }
-        private Image GetPlaceholderImage()
-        {
-            // Tạo một ảnh placeholder đơn giản
-            Bitmap bmp = new Bitmap(100, 100);
-            using (Graphics g = Graphics.FromImage(bmp))
+            catch (Exception ex)
             {
-                g.Clear(Color.Black);
-                g.DrawString("Camera", new Font("Arial", 10), Brushes.White, new PointF(10, 40));
+                MessageBox.Show($"Đã xảy ra lỗi: {ex.Message}"); 
             }
-            return bmp;
         }
-        private void CreateNotification(NotificationEventArgs e)
+
+        private async Task InitializeVlcControls(int numCameras)
         {
-            Label notificationLabel = new Label
+            tableLayoutPanel1.Controls.Clear();
+            vlcControls.Clear();
+            var libDirectory = new System.IO.DirectoryInfo(@"C:\Program Files\VideoLAN\VLC");
+
+            int maxCamerasToShow = Math.Min(numCameras, links.Count); 
+
+            for (int i = 0; i < maxCamerasToShow; i++)
             {
-                Text = $"{e.Time:dd-MM-yyyy HH:mm:ss}\n{e.EmployeeName} đã xuất hiện tại {e.CameraName}",
-                AutoSize = true,
-                Padding = new Padding(2),
-                Margin = new Padding(3),
-                BackColor = Color.LightSkyBlue,
-                BorderStyle = BorderStyle.FixedSingle
-            };
+                var vlcControl = new VlcControl
+                {
+                    Dock = DockStyle.Fill,  
+                    VlcLibDirectory = libDirectory  
+                };
+                vlcControl.EndInit();
 
-            panelNotification.Controls.Add(notificationLabel);
-            panelNotification.Controls.SetChildIndex(notificationLabel, 0);
+                vlcControls.Add(vlcControl); 
+                tableLayoutPanel1.Controls.Add(vlcControl, i % tableLayoutPanel1.ColumnCount, i / tableLayoutPanel1.ColumnCount); // Add control to layout
 
-            panelNotification.ScrollControlIntoView(notificationLabel);
+                await StartCameraAsync(cameraIds[i]);
+            }
+
+            PlayCameras();
+        }
+
+        public void PlayCameras()
+        {
+            for (int i = 0; i < vlcControls.Count; i++)
+            {
+                vlcControls[i].Play(new Uri(links[i])); 
+            }
+        }
+
+        private async Task StartCameraProcess(string cameraId)
+        {
+            try
+            {
+                var url = $"http://localhost:8000/start/{cameraId}";
+                var response = await client.GetAsync(url);
+                if (response.IsSuccessStatusCode)
+                {
+                    MessageBox.Show($"Started camera {cameraId} successfully!");
+                }
+                else
+                {
+                    MessageBox.Show($"Failed to start camera {cameraId}: {response.ReasonPhrase}");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
+        private async Task StopCameraProcess(string cameraId)
+        {
+            try
+            {
+                var url = $"http://localhost:8000/stop/{cameraId}";
+                var response = await client.GetAsync(url);
+                if (response.IsSuccessStatusCode)
+                {
+                    MessageBox.Show($"Stopped camera {cameraId} successfully!");
+                }
+                else
+                {
+                    MessageBox.Show($"Failed to stop camera {cameraId}: {response.ReasonPhrase}");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
+        private async void buttonStartCamera_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonStopCamera_Click(object sender, EventArgs e)
+        {
+            foreach (var vlcControl in vlcControls)
+            {
+                vlcControl.Stop(); 
+            }
         }
 
     }

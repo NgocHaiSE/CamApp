@@ -49,7 +49,7 @@ namespace DXApplication1.UI.Modules
         }
         private void LoadCameras()
         {
-            DataTable data = CameraDAO.Instance.GetCameraList();
+            DataTable data = CameraDAO.Instance.GetAllCameras();
 
             repositoryItemComboBox1.Items.Clear();
             foreach (DataRow row in data.Rows)

@@ -95,7 +95,9 @@ namespace DXApplication1.UI.Modules
 
         private void barButtonEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            adjustPerson adjustPerson = new adjustPerson();
+            int focusedRowHandle = gridView1.FocusedRowHandle;
+            int id = (int)gridView1.GetRowCellValue(focusedRowHandle, "ID");
+            adjustPerson adjustPerson = new adjustPerson(id);
             adjustPerson.PersonAdjusted += ucPerson2_Load;
             adjustPerson.Show();
         }

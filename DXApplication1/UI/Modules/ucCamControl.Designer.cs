@@ -29,7 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucCamControl));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumnID = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -37,6 +42,8 @@
             this.gridColumnLink = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnLocation = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnStatus = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnCheckLink = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.barbtnAdd = new DevExpress.XtraBars.BarButtonItem();
@@ -48,6 +55,7 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,6 +65,8 @@
             this.gridControl1.Location = new System.Drawing.Point(0, 30);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
+            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemButtonEdit1});
             this.gridControl1.Size = new System.Drawing.Size(1057, 566);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -73,7 +83,8 @@
             this.gridColumnName,
             this.gridColumnLink,
             this.gridColumnLocation,
-            this.gridColumnStatus});
+            this.gridColumnStatus,
+            this.gridColumnCheckLink});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
@@ -86,7 +97,7 @@
             this.gridColumnID.Name = "gridColumnID";
             this.gridColumnID.Visible = true;
             this.gridColumnID.VisibleIndex = 0;
-            this.gridColumnID.Width = 62;
+            this.gridColumnID.Width = 71;
             // 
             // gridColumnName
             // 
@@ -96,7 +107,7 @@
             this.gridColumnName.Name = "gridColumnName";
             this.gridColumnName.Visible = true;
             this.gridColumnName.VisibleIndex = 1;
-            this.gridColumnName.Width = 124;
+            this.gridColumnName.Width = 143;
             // 
             // gridColumnLink
             // 
@@ -106,7 +117,7 @@
             this.gridColumnLink.Name = "gridColumnLink";
             this.gridColumnLink.Visible = true;
             this.gridColumnLink.VisibleIndex = 2;
-            this.gridColumnLink.Width = 266;
+            this.gridColumnLink.Width = 308;
             // 
             // gridColumnLocation
             // 
@@ -116,7 +127,7 @@
             this.gridColumnLocation.Name = "gridColumnLocation";
             this.gridColumnLocation.Visible = true;
             this.gridColumnLocation.VisibleIndex = 3;
-            this.gridColumnLocation.Width = 234;
+            this.gridColumnLocation.Width = 271;
             // 
             // gridColumnStatus
             // 
@@ -126,7 +137,26 @@
             this.gridColumnStatus.Name = "gridColumnStatus";
             this.gridColumnStatus.Visible = true;
             this.gridColumnStatus.VisibleIndex = 4;
-            this.gridColumnStatus.Width = 105;
+            this.gridColumnStatus.Width = 163;
+            // 
+            // gridColumnCheckLink
+            // 
+            this.gridColumnCheckLink.Caption = "Kiểm tra Link";
+            this.gridColumnCheckLink.ColumnEdit = this.repositoryItemButtonEdit1;
+            this.gridColumnCheckLink.MinWidth = 25;
+            this.gridColumnCheckLink.Name = "gridColumnCheckLink";
+            this.gridColumnCheckLink.Visible = true;
+            this.gridColumnCheckLink.VisibleIndex = 5;
+            this.gridColumnCheckLink.Width = 71;
+            // 
+            // repositoryItemButtonEdit1
+            // 
+            editorButtonImageOptions1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions1.SvgImage")));
+            this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "Kiểm tra Link", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
+            this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repositoryItemButtonEdit1.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEdit1_ButtonClick);
             // 
             // barManager1
             // 
@@ -231,6 +261,7 @@
             this.Load += new System.EventHandler(this.ucCamControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -255,5 +286,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnLink;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnLocation;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnStatus;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumnCheckLink;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
     }
 }

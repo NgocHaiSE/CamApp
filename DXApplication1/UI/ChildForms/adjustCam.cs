@@ -31,7 +31,7 @@ namespace DXApplication1.UI.ChildForms
 
         private void LoadData()
         {
-            DataTable cameraData = CameraDAO.Instance.GetCameraList();
+            DataTable cameraData = CameraDAO.Instance.GetAllCameras();
             if (cameraData == null)
             {
                 MessageBox.Show("Không có dữ liệu", "Fail", MessageBoxButtons.OK);

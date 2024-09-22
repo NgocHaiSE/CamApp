@@ -38,7 +38,11 @@ namespace DXApplication1.DAO
                 new MySqlParameter("@p_code", MySqlDbType.VarChar) { Value = person.Code },
                 new MySqlParameter("@p_fullname", MySqlDbType.VarChar) { Value = person.Name },
                 new MySqlParameter("@p_information", MySqlDbType.VarChar) { Value = person.Information },
-                new MySqlParameter("@p_isrecog", MySqlDbType.Int32) { Value = person.IsRecog }
+                new MySqlParameter("@p_isrecog", MySqlDbType.Int32) { Value = person.IsRecog },
+                new MySqlParameter("@p_gender", MySqlDbType.Bit) { Value = person.Gender },
+                new MySqlParameter("@p_birth", MySqlDbType.DateTime) { Value = person.Birth },
+                new MySqlParameter("@p_phone", MySqlDbType.VarChar) { Value = person.Phone },
+                new MySqlParameter("@p_address", MySqlDbType.VarChar) { Value = person.Address }
             };
             DataProvider.Instance.ExecuteNonQuery("AddPerson", parameters);
         }
@@ -51,7 +55,11 @@ namespace DXApplication1.DAO
                 new MySqlParameter("@p_code", MySqlDbType.VarChar) { Value = person.Code },
                 new MySqlParameter("@p_fullname", MySqlDbType.VarChar) { Value = person.Name },
                 new MySqlParameter("@p_information", MySqlDbType.VarChar) { Value = person.Information },
-                new MySqlParameter("@p_isrecog", MySqlDbType.Int32) { Value = person.IsRecog }
+                new MySqlParameter("@p_isrecog", MySqlDbType.Int32) { Value = person.IsRecog },
+                new MySqlParameter("@p_gender", MySqlDbType.Bit) { Value = person.Gender },
+                new MySqlParameter("@p_birth", MySqlDbType.DateTime) { Value = person.Birth },
+                new MySqlParameter("@p_phone", MySqlDbType.VarChar) { Value = person.Phone },
+                new MySqlParameter("@p_address", MySqlDbType.VarChar) { Value = person.Address }
             };
             DataProvider.Instance.ExecuteNonQuery("UpdatePerson", parameters);
         }

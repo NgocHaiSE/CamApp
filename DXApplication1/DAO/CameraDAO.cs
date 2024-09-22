@@ -25,20 +25,20 @@ namespace DXApplication1.DAO
         private CameraDAO() { }
 
         #region Method
-        public List<CameraDTO> GetAllCameras()
-        {
-            List<CameraDTO> cameraDTOs = new List<CameraDTO>();
-            DataTable data = DataProvider.Instance.ExecuteProcedure("GetCameraInfo");
+        //public List<CameraDTO> GetAllCameras()
+        //{
+        //    List<CameraDTO> cameraDTOs = new List<CameraDTO>();
+        //    DataTable data = DataProvider.Instance.ExecuteProcedure("GetCameraInfo");
 
-            foreach(DataRow item in data.Rows)
-            {
-                CameraDTO cameraDTO = new CameraDTO(item);
-                cameraDTOs.Add(cameraDTO);
-            }
-            return cameraDTOs;
-        }
+        //    foreach(DataRow item in data.Rows)
+        //    {
+        //        CameraDTO cameraDTO = new CameraDTO(item);
+        //        cameraDTOs.Add(cameraDTO);
+        //    }
+        //    return cameraDTOs;
+        //}
 
-        public DataTable GetCameraList()
+        public DataTable GetAllCameras()
         {
             DataTable data = DataProvider.Instance.ExecuteProcedure("GetAllCameras");
             return data;

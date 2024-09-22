@@ -16,6 +16,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace DXApplication1.UI.ChildForms
 {
@@ -31,7 +33,7 @@ namespace DXApplication1.UI.ChildForms
         {
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private async void btnSave_ClickAsync(object sender, EventArgs e)
         {
             try
             {
@@ -48,6 +50,7 @@ namespace DXApplication1.UI.ChildForms
                 );
 
                 CameraDAO.Instance.Insert(camera);
+                await CallAddCamApi(camera.Id);
                 CameraAdded?.Invoke(this, EventArgs.Empty);
                 XtraMessageBox.Show("Thêm mới camera thành công!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -57,6 +60,31 @@ namespace DXApplication1.UI.ChildForms
                 XtraMessageBox.Show("Lỗi khi thêm mới camera: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private async Task CallAddCamApi(int cameraId)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                try
+                {
+                    string url = $"http://localhost:8000/addCam/{cameraId}"; 
+                    HttpResponseMessage response = await client.GetAsync(url);
 
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string result = await response.Content.ReadAsStringAsync();
+                        MessageBox.Show($"API Response: {result}", "API Call", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        string error = await response.Content.ReadAsStringAsync();
+                        MessageBox.Show($"API Error: {error}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error calling API: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }

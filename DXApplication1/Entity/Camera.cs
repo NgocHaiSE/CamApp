@@ -8,7 +8,7 @@ namespace DXApplication1.Entity
 {
     public class Camera
     {
-        public int? Id { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Link { get; set; }
         public string Type { get; set; }
@@ -19,7 +19,7 @@ namespace DXApplication1.Entity
         public string Password { get; set; }
         public int? IsActivate { get; set; }
 
-        public Camera(int? id, string name, string link, string type, int? status, string ip, string location, string username, string password)
+        public Camera(int id, string name, string link, string type, int? status, string ip, string location, string username, string password)
         {
             Id = id;
             Name = string.IsNullOrEmpty(name) ? null : name;

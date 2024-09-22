@@ -35,6 +35,23 @@
           "lib/AForge.Video.DirectShow.dll": {}
         }
       },
+      "AsyncIO/0.1.69": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "System"
+        ],
+        "compile": {
+          "lib/net40/AsyncIO.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net40/AsyncIO.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
       "BouncyCastle.Cryptography/2.3.1": {
         "type": "package",
         "compile": {
@@ -787,6 +804,46 @@
           }
         }
       },
+      "NaCl.Net/0.1.13": {
+        "type": "package",
+        "dependencies": {
+          "System.Memory": "4.5.3",
+          "System.ValueTuple": "4.5.0"
+        },
+        "compile": {
+          "lib/net472/NaCl.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net472/NaCl.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "NetMQ/4.0.1.13": {
+        "type": "package",
+        "dependencies": {
+          "AsyncIO": "0.1.69",
+          "NaCl.Net": "0.1.13",
+          "System.Threading.Tasks.Extensions": "4.5.4"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "System",
+          "System.ServiceModel"
+        ],
+        "compile": {
+          "lib/net47/NetMQ.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net47/NetMQ.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Newtonsoft.Json/13.0.1": {
         "type": "package",
         "compile": {
@@ -1253,6 +1310,39 @@
           }
         }
       },
+      "Vlc.DotNet.Core/3.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Vlc.DotNet.Core.Interops": "3.1.0"
+        },
+        "compile": {
+          "lib/net45/Vlc.DotNet.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Vlc.DotNet.Core.dll": {}
+        }
+      },
+      "Vlc.DotNet.Core.Interops/3.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Vlc.DotNet.Core.Interops.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Vlc.DotNet.Core.Interops.dll": {}
+        }
+      },
+      "Vlc.DotNet.Forms/3.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Vlc.DotNet.Core": "3.1.0"
+        },
+        "compile": {
+          "lib/net45/Vlc.DotNet.Forms.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Vlc.DotNet.Forms.dll": {}
+        }
+      },
       "ZedGraph/5.1.7": {
         "type": "package",
         "compile": {
@@ -1353,6 +1443,23 @@
         },
         "runtime": {
           "lib/AForge.Video.DirectShow.dll": {}
+        }
+      },
+      "AsyncIO/0.1.69": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "System"
+        ],
+        "compile": {
+          "lib/net40/AsyncIO.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net40/AsyncIO.dll": {
+            "related": ".pdb"
+          }
         }
       },
       "BouncyCastle.Cryptography/2.3.1": {
@@ -1957,6 +2064,46 @@
           }
         }
       },
+      "NaCl.Net/0.1.13": {
+        "type": "package",
+        "dependencies": {
+          "System.Memory": "4.5.3",
+          "System.ValueTuple": "4.5.0"
+        },
+        "compile": {
+          "lib/net472/NaCl.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net472/NaCl.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "NetMQ/4.0.1.13": {
+        "type": "package",
+        "dependencies": {
+          "AsyncIO": "0.1.69",
+          "NaCl.Net": "0.1.13",
+          "System.Threading.Tasks.Extensions": "4.5.4"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "System",
+          "System.ServiceModel"
+        ],
+        "compile": {
+          "lib/net47/NetMQ.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net47/NetMQ.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Newtonsoft.Json/13.0.1": {
         "type": "package",
         "compile": {
@@ -2369,6 +2516,39 @@
           }
         }
       },
+      "Vlc.DotNet.Core/3.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Vlc.DotNet.Core.Interops": "3.1.0"
+        },
+        "compile": {
+          "lib/net45/Vlc.DotNet.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Vlc.DotNet.Core.dll": {}
+        }
+      },
+      "Vlc.DotNet.Core.Interops/3.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Vlc.DotNet.Core.Interops.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Vlc.DotNet.Core.Interops.dll": {}
+        }
+      },
+      "Vlc.DotNet.Forms/3.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Vlc.DotNet.Core": "3.1.0"
+        },
+        "compile": {
+          "lib/net45/Vlc.DotNet.Forms.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Vlc.DotNet.Forms.dll": {}
+        }
+      },
       "ZedGraph/5.1.7": {
         "type": "package",
         "compile": {
@@ -2469,6 +2649,23 @@
         },
         "runtime": {
           "lib/AForge.Video.DirectShow.dll": {}
+        }
+      },
+      "AsyncIO/0.1.69": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "System"
+        ],
+        "compile": {
+          "lib/net40/AsyncIO.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net40/AsyncIO.dll": {
+            "related": ".pdb"
+          }
         }
       },
       "BouncyCastle.Cryptography/2.3.1": {
@@ -3086,6 +3283,46 @@
           }
         }
       },
+      "NaCl.Net/0.1.13": {
+        "type": "package",
+        "dependencies": {
+          "System.Memory": "4.5.3",
+          "System.ValueTuple": "4.5.0"
+        },
+        "compile": {
+          "lib/net472/NaCl.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net472/NaCl.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "NetMQ/4.0.1.13": {
+        "type": "package",
+        "dependencies": {
+          "AsyncIO": "0.1.69",
+          "NaCl.Net": "0.1.13",
+          "System.Threading.Tasks.Extensions": "4.5.4"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "System",
+          "System.ServiceModel"
+        ],
+        "compile": {
+          "lib/net47/NetMQ.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net47/NetMQ.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Newtonsoft.Json/13.0.1": {
         "type": "package",
         "compile": {
@@ -3498,6 +3735,39 @@
           }
         }
       },
+      "Vlc.DotNet.Core/3.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Vlc.DotNet.Core.Interops": "3.1.0"
+        },
+        "compile": {
+          "lib/net45/Vlc.DotNet.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Vlc.DotNet.Core.dll": {}
+        }
+      },
+      "Vlc.DotNet.Core.Interops/3.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Vlc.DotNet.Core.Interops.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Vlc.DotNet.Core.Interops.dll": {}
+        }
+      },
+      "Vlc.DotNet.Forms/3.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Vlc.DotNet.Core": "3.1.0"
+        },
+        "compile": {
+          "lib/net45/Vlc.DotNet.Forms.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Vlc.DotNet.Forms.dll": {}
+        }
+      },
       "ZedGraph/5.1.7": {
         "type": "package",
         "compile": {
@@ -3598,6 +3868,23 @@
         },
         "runtime": {
           "lib/AForge.Video.DirectShow.dll": {}
+        }
+      },
+      "AsyncIO/0.1.69": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "System"
+        ],
+        "compile": {
+          "lib/net40/AsyncIO.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net40/AsyncIO.dll": {
+            "related": ".pdb"
+          }
         }
       },
       "BouncyCastle.Cryptography/2.3.1": {
@@ -4224,6 +4511,46 @@
           }
         }
       },
+      "NaCl.Net/0.1.13": {
+        "type": "package",
+        "dependencies": {
+          "System.Memory": "4.5.3",
+          "System.ValueTuple": "4.5.0"
+        },
+        "compile": {
+          "lib/net472/NaCl.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net472/NaCl.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "NetMQ/4.0.1.13": {
+        "type": "package",
+        "dependencies": {
+          "AsyncIO": "0.1.69",
+          "NaCl.Net": "0.1.13",
+          "System.Threading.Tasks.Extensions": "4.5.4"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "System",
+          "System.ServiceModel"
+        ],
+        "compile": {
+          "lib/net47/NetMQ.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net47/NetMQ.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Newtonsoft.Json/13.0.1": {
         "type": "package",
         "compile": {
@@ -4636,6 +4963,39 @@
           }
         }
       },
+      "Vlc.DotNet.Core/3.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Vlc.DotNet.Core.Interops": "3.1.0"
+        },
+        "compile": {
+          "lib/net45/Vlc.DotNet.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Vlc.DotNet.Core.dll": {}
+        }
+      },
+      "Vlc.DotNet.Core.Interops/3.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Vlc.DotNet.Core.Interops.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Vlc.DotNet.Core.Interops.dll": {}
+        }
+      },
+      "Vlc.DotNet.Forms/3.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Vlc.DotNet.Core": "3.1.0"
+        },
+        "compile": {
+          "lib/net45/Vlc.DotNet.Forms.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Vlc.DotNet.Forms.dll": {}
+        }
+      },
       "ZedGraph/5.1.7": {
         "type": "package",
         "compile": {
@@ -4736,6 +5096,23 @@
         },
         "runtime": {
           "lib/AForge.Video.DirectShow.dll": {}
+        }
+      },
+      "AsyncIO/0.1.69": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "System"
+        ],
+        "compile": {
+          "lib/net40/AsyncIO.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net40/AsyncIO.dll": {
+            "related": ".pdb"
+          }
         }
       },
       "BouncyCastle.Cryptography/2.3.1": {
@@ -5354,6 +5731,46 @@
           }
         }
       },
+      "NaCl.Net/0.1.13": {
+        "type": "package",
+        "dependencies": {
+          "System.Memory": "4.5.3",
+          "System.ValueTuple": "4.5.0"
+        },
+        "compile": {
+          "lib/net472/NaCl.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net472/NaCl.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "NetMQ/4.0.1.13": {
+        "type": "package",
+        "dependencies": {
+          "AsyncIO": "0.1.69",
+          "NaCl.Net": "0.1.13",
+          "System.Threading.Tasks.Extensions": "4.5.4"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "System",
+          "System.ServiceModel"
+        ],
+        "compile": {
+          "lib/net47/NetMQ.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net47/NetMQ.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Newtonsoft.Json/13.0.1": {
         "type": "package",
         "compile": {
@@ -5766,6 +6183,39 @@
           }
         }
       },
+      "Vlc.DotNet.Core/3.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Vlc.DotNet.Core.Interops": "3.1.0"
+        },
+        "compile": {
+          "lib/net45/Vlc.DotNet.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Vlc.DotNet.Core.dll": {}
+        }
+      },
+      "Vlc.DotNet.Core.Interops/3.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Vlc.DotNet.Core.Interops.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Vlc.DotNet.Core.Interops.dll": {}
+        }
+      },
+      "Vlc.DotNet.Forms/3.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Vlc.DotNet.Core": "3.1.0"
+        },
+        "compile": {
+          "lib/net45/Vlc.DotNet.Forms.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Vlc.DotNet.Forms.dll": {}
+        }
+      },
       "ZedGraph/5.1.7": {
         "type": "package",
         "compile": {
@@ -5873,6 +6323,23 @@
         "aforge.video.directshow.nuspec",
         "lib/AForge.Video.DirectShow.dll",
         "lib/AForge.Video.DirectShow.xml"
+      ]
+    },
+    "AsyncIO/0.1.69": {
+      "sha512": "xyXJLi+wjy6AtIyWXHXJkPS0gItqVT4lg5w++7bA5YEjugYKdrFMGxCo6KUJ1yYwjriLQJ1g35LDljZs3Q90XQ==",
+      "type": "package",
+      "path": "asyncio/0.1.69",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "asyncio.0.1.69.nupkg.sha512",
+        "asyncio.nuspec",
+        "lib/net40/AsyncIO.dll",
+        "lib/net40/AsyncIO.pdb",
+        "lib/netstandard1.3/AsyncIO.dll",
+        "lib/netstandard1.3/AsyncIO.pdb",
+        "lib/netstandard2.0/AsyncIO.dll",
+        "lib/netstandard2.0/AsyncIO.pdb"
       ]
     },
     "BouncyCastle.Cryptography/2.3.1": {
@@ -6720,6 +7187,47 @@
         "logo.png",
         "mysqlconnector.2.3.7.nupkg.sha512",
         "mysqlconnector.nuspec"
+      ]
+    },
+    "NaCl.Net/0.1.13": {
+      "sha512": "AVg1455RQnyTy6tiessudruZHvbl70QWRPyx3og2I1Fei17LDNc7Z3DRgqN2+PsySBui/1EDP4A7adhQXydi6g==",
+      "type": "package",
+      "path": "nacl.net/0.1.13",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/NaCl.dll",
+        "lib/net45/NaCl.xml",
+        "lib/net472/NaCl.dll",
+        "lib/net472/NaCl.xml",
+        "lib/netstandard1.3/NaCl.dll",
+        "lib/netstandard1.3/NaCl.xml",
+        "lib/netstandard2.0/NaCl.dll",
+        "lib/netstandard2.0/NaCl.xml",
+        "lib/netstandard2.1/NaCl.dll",
+        "lib/netstandard2.1/NaCl.xml",
+        "nacl.net.0.1.13.nupkg.sha512",
+        "nacl.net.nuspec"
+      ]
+    },
+    "NetMQ/4.0.1.13": {
+      "sha512": "OhjdNuwD2pGMzMYqzc5kBIDMt6DGw4dRWHxifWmrjWPXCpaeXy1A3MQAoKXJ88Z5UmWHMmF60AJ/FRWcutXxJg==",
+      "type": "package",
+      "path": "netmq/4.0.1.13",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "NetMQLogoSquare-256px.png",
+        "lib/net45/NetMQ.dll",
+        "lib/net45/NetMQ.xml",
+        "lib/net47/NetMQ.dll",
+        "lib/net47/NetMQ.xml",
+        "lib/netstandard2.0/NetMQ.dll",
+        "lib/netstandard2.0/NetMQ.xml",
+        "lib/netstandard2.1/NetMQ.dll",
+        "lib/netstandard2.1/NetMQ.xml",
+        "netmq.4.0.1.13.nupkg.sha512",
+        "netmq.nuspec"
       ]
     },
     "Newtonsoft.Json/13.0.1": {
@@ -7712,6 +8220,56 @@
         "version.txt"
       ]
     },
+    "Vlc.DotNet.Core/3.1.0": {
+      "sha512": "t9jinVlEEgS0PHyNeu+jGE06yKeqyQ4RG7Bpno1M1ghxAhogpc7rFkRg5/CMHINsZJw4nr88I3xrUecanlA5kA==",
+      "type": "package",
+      "path": "vlc.dotnet.core/3.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/Vlc.DotNet.Core.dll",
+        "lib/net40/Vlc.DotNet.Core.dll",
+        "lib/net45/Vlc.DotNet.Core.dll",
+        "lib/netstandard1.3/Vlc.DotNet.Core.dll",
+        "lib/netstandard2.0/Vlc.DotNet.Core.dll",
+        "logo.png",
+        "vlc.dotnet.core.3.1.0.nupkg.sha512",
+        "vlc.dotnet.core.nuspec"
+      ]
+    },
+    "Vlc.DotNet.Core.Interops/3.1.0": {
+      "sha512": "22JkrxSBN9OVkxT3zMgwT67kUc+RQx35+NG5md9n9qM7vEI2EUEVqHeKiO8ssF7/mYi6Z8lJx4AgdWa5JAvONw==",
+      "type": "package",
+      "path": "vlc.dotnet.core.interops/3.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/Vlc.DotNet.Core.Interops.dll",
+        "lib/net40/Vlc.DotNet.Core.Interops.dll",
+        "lib/net45/Vlc.DotNet.Core.Interops.dll",
+        "lib/netstandard1.3/Vlc.DotNet.Core.Interops.dll",
+        "lib/netstandard2.0/Vlc.DotNet.Core.Interops.dll",
+        "logo.png",
+        "vlc.dotnet.core.interops.3.1.0.nupkg.sha512",
+        "vlc.dotnet.core.interops.nuspec"
+      ]
+    },
+    "Vlc.DotNet.Forms/3.1.0": {
+      "sha512": "B40j4tmKKwLz4O+BfVv7t5Yeygq4nkSBNJXFr7VQfoVU3a4WLFSisR1FxOnBwM/soM2/BIJuNhICCIF+C5XHWA==",
+      "type": "package",
+      "path": "vlc.dotnet.forms/3.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/Vlc.DotNet.Forms.dll",
+        "lib/net40/Vlc.DotNet.Forms.dll",
+        "lib/net45/Vlc.DotNet.Forms.dll",
+        "lib/netcoreapp3.0/Vlc.DotNet.Forms.dll",
+        "logo.png",
+        "vlc.dotnet.forms.3.1.0.nupkg.sha512",
+        "vlc.dotnet.forms.nuspec"
+      ]
+    },
     "ZedGraph/5.1.7": {
       "sha512": "TcZaInxUjYMJDWIaYvs/CgpssfVJQMqiry8GPP70klyheP4tYSQXFWi5HYwJvqao+epeUu3bsk3yDb3Nf/hVWw==",
       "type": "package",
@@ -7775,8 +8333,10 @@
       "Microsoft.Owin.Host.SystemWeb >= 4.2.2",
       "MySql.Data >= 9.0.0",
       "MySqlConnector >= 2.3.7",
+      "NetMQ >= 4.0.1.13",
       "System.Net.Sockets >= 4.3.0",
-      "System.Threading.Channels >= 8.0.0"
+      "System.Threading.Channels >= 8.0.0",
+      "Vlc.DotNet.Forms >= 3.1.0"
     ]
   },
   "packageFolders": {
@@ -7879,6 +8439,10 @@
             "target": "Package",
             "version": "[2.3.7, )"
           },
+          "NetMQ": {
+            "target": "Package",
+            "version": "[4.0.1.13, )"
+          },
           "System.Net.Sockets": {
             "target": "Package",
             "version": "[4.3.0, )"
@@ -7886,6 +8450,10 @@
           "System.Threading.Channels": {
             "target": "Package",
             "version": "[8.0.0, )"
+          },
+          "Vlc.DotNet.Forms": {
+            "target": "Package",
+            "version": "[3.1.0, )"
           }
         }
       }

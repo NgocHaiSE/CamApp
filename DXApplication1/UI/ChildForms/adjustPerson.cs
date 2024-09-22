@@ -1,6 +1,7 @@
 ﻿using DevExpress.Utils.Menu;
 using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
+using DevExpress.XtraRichEdit.Commands;
 using DXApplication1.DAO;
 using DXApplication1.Entity;
 using MySql.Data.MySqlClient;
@@ -9,7 +10,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net.Http.Headers;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -46,8 +50,11 @@ namespace DXApplication1.UI.ChildForms
             DataRow row = personData.Rows[0];
             txtCode.Text = row["Mã nhân viên"].ToString();
             txtName.Text = row["Họ tên"].ToString();
-            //rtxtInfo.Text = row["Thông tin"].ToString();
-            checkIsRecog.Checked = row["Nhận diện"].ToString() == "Có";
+            txtPhone.Text = row["Số điện thoại"].ToString();
+            txtAddress.Text = row["Địa chỉ"].ToString();
+            cbGender.Text = row["Giới tính"].ToString();
+            dateEditBirth.Text = row["Ngày sinh"].ToString();
+            cbIsRecog.Text = row["Nhận diện"].ToString();
             string imageUrl = row["Link ảnh"].ToString(); 
             if (!string.IsNullOrEmpty(imageUrl))
             {
@@ -67,9 +74,10 @@ namespace DXApplication1.UI.ChildForms
             ptrMain.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
             LoadImageData(row["Mã nhân viên"].ToString());
         }
+
         private void LoadImageData(string personCode)
         {
-            flowLayoutPanel1.Controls.Clear();
+            stackPanel1.Controls.Clear();
             MySqlParameter[] parameters = new MySqlParameter[]
             {
                 new MySqlParameter("@p_personcode", MySqlDbType.VarChar) { Value = personCode }
@@ -84,10 +92,10 @@ namespace DXApplication1.UI.ChildForms
                     {
                         PictureBox pb = new PictureBox();
                         pb.Image = Image.FromFile(imageUrl);
-                        pb.SizeMode = PictureBoxSizeMode.Zoom; 
-                        pb.Width = 185; 
+                        pb.SizeMode = PictureBoxSizeMode.StretchImage; 
+                        pb.Width = 180; 
                         pb.Height = 240; 
-                        pb.Padding = new Padding(10);
+                        pb.Padding = new Padding(3);
                         pb.MouseUp += (sender, e) =>
                         {
                             if (e.Button == MouseButtons.Right)
@@ -96,8 +104,7 @@ namespace DXApplication1.UI.ChildForms
                                 popupMenu1.ShowPopup(barManager1, Control.MousePosition); 
                             }
                         };
-
-                        flowLayoutPanel1.Controls.Add(pb);
+                        stackPanel1.Controls.Add(pb);
                     }
                     catch (Exception ex)
                     {
@@ -110,7 +117,7 @@ namespace DXApplication1.UI.ChildForms
 
         #region Events
         private List<string> imagePaths = new List<string>();
-        private void btnAddImage_Click(object sender, EventArgs e)
+        private async void btnAddImage_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
@@ -119,27 +126,149 @@ namespace DXApplication1.UI.ChildForms
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-
                     foreach (string fileName in openFileDialog.FileNames)
                     {
-                        imagePaths.Add(fileName);
-
-                        PictureBox pictureBox = new PictureBox
+                        string result = await UploadImageToAPI(fileName);
+                        if (result.Contains("Upload Successful"))
                         {
-                            Image = System.Drawing.Image.FromFile(fileName),
-                            SizeMode = PictureBoxSizeMode.StretchImage,
-                            Height = 250,
-                            Width = 190,
-                            Margin = new Padding(10)
-                        };
-                        flowLayoutPanel1.Controls.Add(pictureBox);
+                            imagePaths.Add(fileName);
+                            PictureBox pictureBox = new PictureBox
+                            {
+                                Image = Image.FromFile(fileName),
+                                SizeMode = PictureBoxSizeMode.StretchImage,
+                                Width = 180,
+                                Height = 240,
+                                Margin = new Padding(3),
+                            };
+                            pictureBox.MouseUp += (sender2, e2) =>
+                            {
+                                if (e2.Button == MouseButtons.Right)
+                                {
+                                    popupMenu1.Tag = pictureBox;
+                                    popupMenu1.ShowPopup(barManager1, Control.MousePosition);
+                                }
+                            };
+
+                            stackPanel1.Controls.Add(pictureBox);
+                            MessageBox.Show("Tải ảnh lên thành công.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show($"Tải ảnh thất bại: {result}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
-                
+
             }
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void barbtnReset_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            txtCode.Text = string.Empty;
+            txtName.Text = string.Empty;
+            memoInfo.Text = string.Empty;
+            cbIsRecog.SelectedItem = false;
+
+            if (ptrMain.Image != null)
+            {
+                ptrMain.Image.Dispose();
+                ptrMain.Image = null;
+            }
+            stackPanel1.Controls.Clear();
+            imagePaths.Clear();
+        }
+
+        private async void barbtnReplace_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            PictureBox selectedPictureBox = popupMenu1.Tag as PictureBox;
+            if (selectedPictureBox != null)
+            {
+                using (OpenFileDialog openFileDialog = new OpenFileDialog())
+                {
+                    openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png";
+                    if (openFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        string newImagePath = openFileDialog.FileName;
+                        try
+                        {
+                            string result = await UploadImageToAPI(newImagePath);
+                            if (result.Contains("Upload Successful"))
+                            {
+                                selectedPictureBox.Image = Image.FromFile(newImagePath);
+                                MessageBox.Show("Tải ảnh lên thành công.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show($"Tải ảnh thất bại: {result}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Không thể thay thế ảnh: " + ex.Message);
+                        }
+                    }
+                }
+            }
+        }
+
+        public async Task<string> UploadImageToAPI(string imagePath)
+        {
+            try
+            {
+                using (HttpClient client = new HttpClient())
+                {
+                    string url = "http://localhost:8000/upload-face";
+                    using (var formData = new MultipartFormDataContent())
+                    {
+                        var fileStream = new FileStream(imagePath, FileMode.Open, FileAccess.Read);
+                        var fileContent = new StreamContent(fileStream);
+                        fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse("image/jpeg");
+                        formData.Add(fileContent, "file", Path.GetFileName(imagePath));
+
+                        HttpResponseMessage response = await client.PostAsync(url, formData);
+
+                        string responseString = await response.Content.ReadAsStringAsync();
+
+                        if (response.IsSuccessStatusCode)
+                        {
+                            return $"Upload Successful: {responseString}";
+                        }
+                        else
+                        {
+                            return $"Upload Failed: {responseString}";
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return $"Error: {ex.Message}";
+            }
+        }
+
+        private void barbtnDelete_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            PictureBox selectedPictureBox = popupMenu1.Tag as PictureBox;
+            if (selectedPictureBox != null)
+            {
+                try
+                {
+                    stackPanel1.Controls.Remove(selectedPictureBox);
+                    selectedPictureBox.Dispose();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Không thể xóa ảnh: " + ex.Message);
+                }
+            }
+        }
+        #endregion
+
+        private void barbtnSave_ItemClick(object sender, ItemClickEventArgs e)
         {
             try
             {
@@ -147,8 +276,12 @@ namespace DXApplication1.UI.ChildForms
                 (
                     code: string.IsNullOrWhiteSpace(txtCode.Text) ? "" : txtCode.Text,
                     name: string.IsNullOrWhiteSpace(txtName.Text) ? "" : txtName.Text,
-                    information: null,
-                    isRecog: checkIsRecog.Checked ? 1 : 0
+                    information: string.IsNullOrWhiteSpace(memoInfo.Text) ? "" : memoInfo.Text,
+                    gender: cbGender.SelectedItem.ToString() == "Nam" ? 1 : 0,
+                    birth: dateEditBirth.EditValue == null ? (DateTime?)null : dateEditBirth.DateTime,
+                    phone: string.IsNullOrWhiteSpace(txtPhone.Text) ? "" : txtPhone.Text,
+                    address: string.IsNullOrWhiteSpace(txtAddress.Text) ? "" : txtAddress.Text,
+                    isRecog: cbIsRecog.SelectedItem.ToString() == "Có" ? 1 : 0
                 );
                 adjustedPerson.Id = personId;
 
@@ -167,53 +300,6 @@ namespace DXApplication1.UI.ChildForms
             catch (Exception ex)
             {
                 MessageBox.Show("Đã có lỗi xảy ra: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-
-        }
-        #endregion
-
-        private void barbtnReplace_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            PictureBox selectedPictureBox = popupMenu1.Tag as PictureBox;
-            if (selectedPictureBox != null)
-            {
-                using (OpenFileDialog openFileDialog = new OpenFileDialog())
-                {
-                    openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png";
-                    if (openFileDialog.ShowDialog() == DialogResult.OK)
-                    {
-                        string newImagePath = openFileDialog.FileName;
-
-                        try
-                        {
-                            selectedPictureBox.Image = Image.FromFile(newImagePath);
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("Không thể thay thế ảnh: " + ex.Message);
-                        }
-                    }
-                }
-            }
-        }
-
-        private void barbtnDelete_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            PictureBox selectedPictureBox = popupMenu1.Tag as PictureBox;
-            if (selectedPictureBox != null)
-            {
-                try
-                {
-                    flowLayoutPanel1.Controls.Remove(selectedPictureBox);
-                    selectedPictureBox.Dispose();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Không thể xóa ảnh: " + ex.Message);
-                }
             }
         }
     }

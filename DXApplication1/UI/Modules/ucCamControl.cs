@@ -14,6 +14,7 @@ using DXApplication1.UI.ChildForms;
 using DXApplication1.Utils;
 using DXApplication1.DAO;
 using DXApplication1.DTO;
+using System.Net.Http;
 
 namespace DXApplication1.UI.Modules
 {
@@ -56,7 +57,6 @@ namespace DXApplication1.UI.Modules
         }
         #endregion
 
-
         #region Events
         private void barbtnAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -70,7 +70,6 @@ namespace DXApplication1.UI.Modules
             LoadCameraData();
         }
 
-
         private void barbtnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             adjustCam adjustCam = new adjustCam();
@@ -79,5 +78,38 @@ namespace DXApplication1.UI.Modules
         }
         #endregion
 
+        private async Task CallCheckLinkApi(string cameraLink)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                try
+                {
+                    string url = $"http://localhost:8000/checkLink/{cameraLink}";
+                    HttpResponseMessage response = await client.GetAsync(url);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string result = await response.Content.ReadAsStringAsync();
+                        MessageBox.Show($"Link camera vẫn hoạt động", "API Call", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        string error = await response.Content.ReadAsStringAsync();
+                        MessageBox.Show($"Link camera không còn hoạt động", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error calling API: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void repositoryItemButtonEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            int focusedRowHandle = gridView1.FocusedRowHandle;
+            string cameraLink = gridView1.GetRowCellValue(focusedRowHandle, "Đường dẫn").ToString();
+            CallCheckLinkApi(cameraLink);
+        }
     }
 }

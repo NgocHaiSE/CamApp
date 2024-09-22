@@ -13,7 +13,7 @@
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -94,6 +95,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="API.cs" />
     <Compile Include="DAO\CameraDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\ImageDAO.cs" />
@@ -110,6 +112,12 @@
     <Compile Include="Entity\NotificationEventArgs.cs" />
     <Compile Include="Entity\Person.cs" />
     <Compile Include="Entity\User.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,12 +211,9 @@
       <DependentUpon>ucViewCam.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\ConnectionUtil.cs" />
-    <Compile Include="XtraForm1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="XtraForm1.Designer.cs">
-      <DependentUpon>XtraForm1.cs</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -264,9 +269,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Modules\ucViewCam.resx">
       <DependentUpon>ucViewCam.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="XtraForm1.resx">
-      <DependentUpon>XtraForm1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">
@@ -350,11 +352,17 @@
     <PackageReference Include="MySqlConnector">
       <Version>2.3.7</Version>
     </PackageReference>
+    <PackageReference Include="NetMQ">
+      <Version>4.0.1.13</Version>
+    </PackageReference>
     <PackageReference Include="System.Net.Sockets">
       <Version>4.3.0</Version>
     </PackageReference>
     <PackageReference Include="System.Threading.Channels">
       <Version>8.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Vlc.DotNet.Forms">
+      <Version>3.1.0</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

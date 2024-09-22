@@ -15,12 +15,21 @@ namespace DXApplication1.Entity
         public string CreateTime {  get; set; }
         public int? IsRecog { get; set; }
         public string Code { get; set; }
-        public Person(string code, string name, string information, int? isRecog)
+        public DateTime? Birth { get; set; }
+        public int? Gender { get; set; }
+        public string Phone { get; set; }
+        public string Address { get; set; }
+        public Person(string code, string name, int? gender, DateTime? birth, 
+            string phone, string address, string information, int? isRecog)
         {
             Name = name;
             Information = information;
             IsRecog = isRecog;
-            this.Code = code;
+            Code = code;
+            Gender = gender;
+            Birth = birth;
+            Phone = phone;
+            Address = address;
         }
     }
 }

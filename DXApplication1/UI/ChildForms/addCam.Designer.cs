@@ -125,7 +125,7 @@
             this.btnSave.Size = new System.Drawing.Size(118, 36);
             this.btnSave.TabIndex = 8;
             this.btnSave.Text = "Lưu";
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnSave.Click += new System.EventHandler(this.btnSave_ClickAsync);
             // 
             // labelControl4
             // 
