@@ -647,26 +647,6 @@
         <para>“The selected index cannot be set because there are no possible values.”</para>
       </summary>
     </member>
-    <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.MsgConversionActionsRemoved">
-      <summary>
-        <para>“Document contains actions incompatible with the target format. Actions were removed.”</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.MsgConversionAnnotationsRemoved">
-      <summary>
-        <para>“Document contains annotations incompatible with the target format. Annotations were removed. Exported document may differ from the original.”</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.MsgConversionEmbeddedFilesNotValidated">
-      <summary>
-        <para>“Document contains embedded files. Output may be invalid if files are incompatible with PDF/A-2 format. Internal compatibility verification failed.”</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.MsgConversionEmbeddedFilesRemoved">
-      <summary>
-        <para>“Embedded files are not compatible with the target format. Embedded files were removed.”</para>
-      </summary>
-    </member>
     <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.MsgConversionIssueDeviceCmyk">
       <summary>
         <para>“DeviceCMYK color space is used without an ICC profile. The default CMYK ICC profile was embedded.”</para>
@@ -705,26 +685,6 @@
     <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.MsgConversionIssueFontSubstituted">
       <summary>
         <para>“Font not found: {0}. It was replaced with the following font: {1}. A subset for that font was embedded.”</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.MsgConversionIssueTransparencyRemoved">
-      <summary>
-        <para>“Document contains transparent graphics. Transparency was removed and the document visual appearance may be changed.”</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.MsgConversionOpiRemoved">
-      <summary>
-        <para>“OPI information is incompatible with the target format. All OPI information was removed.”</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.MsgConversionOptionalContentRemoved">
-      <summary>
-        <para>“Optional content is incompatible with the target format. Optional content properties were removed. Optional content groups are always visible in the exported document.”</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.MsgConversionXfaRemoved">
-      <summary>
-        <para>“XFA forms are incompatible with the target format. All XFA forms were removed.”</para>
       </summary>
     </member>
     <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.MsgEmptyCustomPropertyName">
@@ -1235,101 +1195,6 @@
     <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.SignatureAppearanceReasonFormatString">
       <summary>
         <para>“Reason: {0}”</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.SignatureTreeInfoCertificateDetails">
-      <summary>
-        <para>“Certificate details…”</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.SignatureTreeInfoDocumentHasBeenAltered">
-      <summary>
-        <para>“Document has been altered or corrupted since it was signed.”</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.SignatureTreeInfoDocumentHasNotBeenModified">
-      <summary>
-        <para>“Document has not been modified since it was signed.”</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.SignatureTreeInfoEmbeddedTimestamp">
-      <summary>
-        <para>“The signature includes an embedded timestamp.”</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.SignatureTreeInfoField">
-      <summary>
-        <para>“Field: {0} on page {1}”</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.SignatureTreeInfoLastChecked">
-      <summary>
-        <para>“Last checked: {0}”</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.SignatureTreeInfoLocation">
-      <summary>
-        <para>“Location: {0}”</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.SignatureTreeInfoReason">
-      <summary>
-        <para>“Reason: {0}”</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.SignatureTreeInfoSignatureDetails">
-      <summary>
-        <para>“Signature details”</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.SignatureTreeInfoSignatureIsInvalid">
-      <summary>
-        <para>“Signature is invalid”</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.SignatureTreeInfoSignatureIsUnknown">
-      <summary>
-        <para>“Signature validity is unknown”</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.SignatureTreeInfoSignatureIsValid">
-      <summary>
-        <para>“Signature is valid”</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.SignatureTreeInfoSignedBy">
-      <summary>
-        <para>“Rev.{0}: Signed by {1}”</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.SignatureTreeInfoSignersIdentityIsUnknown">
-      <summary>
-        <para>“The signer’s identity is unknown because it has not been included in your list of trusted certificates.“</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.SignatureTreeInfoSignersIdentityIsValid">
-      <summary>
-        <para>“The signer’s identity is valid.“</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.SignatureTreeInfoSigningTime">
-      <summary>
-        <para>“Signing time is from the clock on the signer’s computer.“</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.SignatureTreeInfoTimestampTime">
-      <summary>
-        <para>“Timestamp time: {0}“</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.SignatureTreeInfoWasValidatedAtSigningTime">
-      <summary>
-        <para>“Signature was validated at the time of signing: {0}“</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.SignatureTreeInfoWasValidatedTimestamp">
-      <summary>
-        <para>“Signature was validated at the time of the Timestamp: {0}“</para>
       </summary>
     </member>
     <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.StickyNoteDefaultSubject">
@@ -7124,22 +6989,11 @@
       </summary>
       <value>The optional content group to which the visibility settings apply.</value>
     </member>
-    <member name="P:DevExpress.Pdf.PdfOptionalContentGroupVisibility.Locked">
-      <summary>
-        <para>Do not allow the layer to be deleted or its settings to be modified by the user.</para>
-      </summary>
-      <value>true to lock the layer; otherwise, false.</value>
-    </member>
     <member name="P:DevExpress.Pdf.PdfOptionalContentGroupVisibility.ManualVisibilityOverride">
       <summary>
         <para>Specifies whether the current visibility settings override the layer’s configuration.</para>
       </summary>
       <value>true to override the layer’s configuration; otherwise, false</value>
-    </member>
-    <member name="E:DevExpress.Pdf.PdfOptionalContentGroupVisibility.PropertyChanged">
-      <summary>
-        <para>Occurs every time any of the <see cref="T:DevExpress.Pdf.PdfOptionalContentGroupVisibility"/> class properties has changed its value.</para>
-      </summary>
     </member>
     <member name="P:DevExpress.Pdf.PdfOptionalContentGroupVisibility.Visible">
       <summary>
@@ -7306,11 +7160,23 @@
       </summary>
       <value>true, if the language is preferred; otherwise false.</value>
     </member>
-    <member name="P:DevExpress.Pdf.PdfOptionalContentUsage.Language">
+    <member name="P:DevExpress.Pdf.PdfOptionalContentUsage.LanguageCulture">
       <summary>
         <para>Gets the language of the content controlled by this optional content group.</para>
       </summary>
-      <value>An object that contains the language of the content.</value>
+      <value>A <see cref="T:System.Globalization.CultureInfo"/> object containing the language of the content.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfOptionalContentUsage.MaxZoom">
+      <summary>
+        <para>Gets the magnification factor below which the content in this optional content group is best viewed.</para>
+      </summary>
+      <value>A double value that is the magnification factor below which the group will be ON.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfOptionalContentUsage.MinZoom">
+      <summary>
+        <para>Gets the minimum magnification factor at which the content in this optional content group is best viewed.</para>
+      </summary>
+      <value>A double value that is the minimum magnification factor at which the group will be ON. The default value: 0.</value>
     </member>
     <member name="P:DevExpress.Pdf.PdfOptionalContentUsage.PageElement">
       <summary>
@@ -7335,11 +7201,6 @@
         <para>Gets a value that indicates whether the group is set to either the ON or OFF state when the document is opened.</para>
       </summary>
       <value>A <see cref="T:DevExpress.Utils.DefaultBoolean"/> enumeration member that specifies whether the group is set to the state when the document is opened.</value>
-    </member>
-    <member name="P:DevExpress.Pdf.PdfOptionalContentUsage.Zoom">
-      <summary>
-        <para>Gets the magnification factor at which the content in this optional content group is best viewed.</para>
-      </summary>
     </member>
     <member name="T:DevExpress.Pdf.PdfOptionalContentUsageApplication">
       <summary>
@@ -7409,6 +7270,12 @@
         <para>Provides access to visibility settings of optional content (layers).</para>
       </summary>
     </member>
+    <member name="M:DevExpress.Pdf.PdfOptionalContentVisibility.#ctor(DevExpress.Pdf.PdfOptionalContentProperties)">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.Pdf.PdfOptionalContentVisibility"/> class with specified settings.</para>
+      </summary>
+      <param name="optionalContentProperties">An object that contains information about layers and their configuration in the document.</param>
+    </member>
     <member name="P:DevExpress.Pdf.PdfOptionalContentVisibility.ActiveUsages">
       <summary>
         <para>Specifies which usage categories will be used to automatically manipulate the state of layers (optional content groups).</para>
@@ -7420,17 +7287,6 @@
         <para>Provides access to objects stored in the PdfOptionalContentGroupVisibilityCollection.</para>
       </summary>
       <value>A collection of <see cref="T:DevExpress.Pdf.PdfOptionalContentGroupVisibility"/> objects.</value>
-    </member>
-    <member name="P:DevExpress.Pdf.PdfOptionalContentVisibility.OptionalContentProperties">
-      <summary>
-        <para>Provides access to the document’s optional content properties.</para>
-      </summary>
-      <value>An object that represents the document’s optional content properties.</value>
-    </member>
-    <member name="M:DevExpress.Pdf.PdfOptionalContentVisibility.ResetConfiguration">
-      <summary>
-        <para>Resets layer settings and return to the initial document state.</para>
-      </summary>
     </member>
     <member name="T:DevExpress.Pdf.PdfOptionsFormFieldOption">
       <summary>
@@ -9056,6 +8912,18 @@
       <summary>
         <para>Contains information about the PKCS#7 signature and methods used to verify it.</para>
       </summary>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfPkcs7Signature.GetSignatureCertificate">
+      <summary>
+        <para>Gets the PKCS#7 signature certificate.</para>
+      </summary>
+      <returns>The X.509 certificate.</returns>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfPkcs7Signature.GetSignatureCertificateChain">
+      <summary>
+        <para>Gets the certificate chain of the PKCS#7 signature.</para>
+      </summary>
+      <returns>A collection of X.509 certificates.</returns>
     </member>
     <member name="M:DevExpress.Pdf.PdfPkcs7Signature.GetTimeStampDate">
       <summary>

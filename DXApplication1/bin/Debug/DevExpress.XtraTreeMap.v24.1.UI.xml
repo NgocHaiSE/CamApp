@@ -251,7 +251,7 @@
       <summary>
         <para>Overrides the <see cref="P:System.Windows.Forms.Control.Text"/> property.</para>
       </summary>
-      <value>A <see cref="T:System.String"/> value. Always returns System.String.Empty.</value>
+      <value>A <see cref="T:System.String"/> value. Always returns <see cref="F:System.String.Empty"/>.</value>
     </member>
     <member name="P:DevExpress.XtraTreeMap.HierarchicalChartControlBase.Titles">
       <summary>
@@ -404,7 +404,7 @@
     </member>
     <member name="M:DevExpress.XtraTreeMap.TreeMapControl.GetItemBounds(DevExpress.TreeMap.ITreeMapItem)">
       <summary>
-        <para>Returns a <see cref="T:System.Drawing.Rectangle"/> object that defines the location of an item passed as a parameter.</para>
+        <para>Returns a Rectangle object that defines the location of an item passed as a parameter.</para>
       </summary>
       <param name="item">A TreeMap item whose location is returned.</param>
       <returns>A Rectangle object that defines the TreeMap item’s location.</returns>

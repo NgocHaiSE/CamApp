@@ -1642,13 +1642,13 @@
     </member>
     <member name="P:DevExpress.XtraBars.BarButtonItem.Command">
       <summary>
-        <para>Gets or sets the <see cref="T:System.Windows.Input.ICommand"></see> whose <see cref="Overload:System.Windows.Input.ICommand.Execute">Execute(Object)</see> method will be called when the Click event is invoked.</para>
+        <para>Gets or sets the ICommand whose Execute(Object) method will be called when the Click event is invoked.</para>
       </summary>
       <value>The command.</value>
     </member>
     <member name="E:DevExpress.XtraBars.BarButtonItem.CommandCanExecuteChanged">
       <summary>
-        <para>Occurs when the <see cref="Overload:System.Windows.Input.ICommand.CanExecute">CanExecute(Object)</see> status of the <see cref="P:DevExpress.XtraBars.BarButtonItem.Command"/> has changed.</para>
+        <para>Occurs when the CanExecute(Object) status of the <see cref="P:DevExpress.XtraBars.BarButtonItem.Command"/> has changed.</para>
       </summary>
     </member>
     <member name="E:DevExpress.XtraBars.BarButtonItem.CommandChanged">
@@ -1994,13 +1994,13 @@
     </member>
     <member name="P:DevExpress.XtraBars.BarCheckItem.Command">
       <summary>
-        <para>Gets or sets the <see cref="T:System.Windows.Input.ICommand"></see> whose <see cref="Overload:System.Windows.Input.ICommand.Execute">Execute(Object)</see> method will be called when the Click event is invoked.</para>
+        <para>Gets or sets the ICommand whose Execute(Object) method will be called when the Click event is invoked.</para>
       </summary>
       <value>The command.</value>
     </member>
     <member name="E:DevExpress.XtraBars.BarCheckItem.CommandCanExecuteChanged">
       <summary>
-        <para>Occurs when the <see cref="Overload:System.Windows.Input.ICommand.CanExecute">CanExecute(Object)</see> status of the <see cref="P:DevExpress.XtraBars.BarCheckItem.Command"/> has changed.</para>
+        <para>Occurs when the CanExecute(Object) status of the <see cref="P:DevExpress.XtraBars.BarCheckItem.Command"/> has changed.</para>
       </summary>
     </member>
     <member name="E:DevExpress.XtraBars.BarCheckItem.CommandChanged">
@@ -2325,9 +2325,9 @@
     </member>
     <member name="P:DevExpress.XtraBars.BarDockControl.Controls">
       <summary>
-        <para>Gets the collection of bars displayed within the bar dock control.</para>
+        <para>Gets the collection of controls contained within the bar dock control.</para>
       </summary>
-      <value>The collection of bars displayed within the bar dock control.</value>
+      <value>A <see cref="T:System.Windows.Forms.Control.ControlCollection"/> object which represents the collection of controls contained within the bar dock control.</value>
     </member>
     <member name="P:DevExpress.XtraBars.BarDockControl.DisplayRectangle">
       <summary>
@@ -2393,7 +2393,7 @@
       <summary>
         <para>Gets or sets the width and height of the bar dock control.</para>
       </summary>
-      <value>A System.Drawing.Size structure which specifies the width and height of the bar dock control, in pixels.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> structure which specifies the width and height of the bar dock control, in pixels.</value>
     </member>
     <member name="P:DevExpress.XtraBars.BarDockControl.TabIndex">
       <summary>
@@ -2969,9 +2969,9 @@
     </member>
     <member name="P:DevExpress.XtraBars.BarHeaderItem.MultiColumn">
       <summary>
-        <para>Gets or sets whether to arrange items displayed below the <see cref="T:DevExpress.XtraBars.BarHeaderItem"/> in columns.</para>
+        <para>Gets or sets whether the items below the current <see cref="T:DevExpress.XtraBars.BarHeaderItem"/> are displayed in columns.</para>
       </summary>
-      <value>A <see cref="T:DevExpress.Utils.DefaultBoolean"/> enumeration value that specifies whether to arrange items in columns.</value>
+      <value>A <see cref="T:DevExpress.Utils.DefaultBoolean"/> enumeration value that specifies whether the items are displayed in columns.</value>
     </member>
     <member name="P:DevExpress.XtraBars.BarHeaderItem.OptionsMultiColumn">
       <summary>
@@ -3072,9 +3072,9 @@
     </member>
     <member name="P:DevExpress.XtraBars.BarItem.Alignment">
       <summary>
-        <para>Gets or sets the horizontal alignment of the bar item’s link(s).</para>
+        <para>Gets or sets the horizontal alignment of the item’s link(s).</para>
       </summary>
-      <value>The horizontal alignment of the bar item’s link(s).</value>
+      <value>A DevExpress.XtraBars.BarItemLinkAlignment enumeration value that specifies the horizontal alignment of the item’s link(s).</value>
     </member>
     <member name="P:DevExpress.XtraBars.BarItem.AllowGlyphSkinning">
       <summary>
@@ -3391,7 +3391,7 @@
     </member>
     <member name="P:DevExpress.XtraBars.BarItem.Links">
       <summary>
-        <para>Gets the collection of links to the <see href="https://docs.devexpress.com/WindowsForms/1087/controls-and-libraries/ribbon-bars-and-menu/bars/tutorials/bar-item-links">bar item</see>.</para>
+        <para>Gets the collection of links to the <see href="https://docs.devexpress.com/WindowsForms/1087/controls-and-libraries/ribbon-bars-and-menu/bars/tutorials/bar-item-links">item</see>.</para>
       </summary>
       <value>A <see cref="T:DevExpress.XtraBars.BarItemLinkCollection"/> object representing the item’s link collection.</value>
     </member>
@@ -3873,7 +3873,7 @@
       <summary>
         <para>Gets or sets the size of the default vector image.</para>
       </summary>
-      <value>A System.Drawing.Size object specifying the size of the default vector image.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> object specifying the size of the default vector image.</value>
     </member>
     <member name="P:DevExpress.XtraBars.BarItemImageOptions.DisabledImage">
       <summary>
@@ -3976,7 +3976,7 @@
       <summary>
         <para>Gets or sets the required size of the vector image.</para>
       </summary>
-      <value>A System.Drawing.Size structure that specifies the required size for rendering the vector image.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> structure that specifies the required size for rendering the vector image.</value>
     </member>
     <member name="T:DevExpress.XtraBars.BarItemLink">
       <summary>
@@ -4508,7 +4508,7 @@
     </member>
     <member name="T:DevExpress.XtraBars.BarItemLinkCollection">
       <summary>
-        <para>A collection of <see href="https://docs.devexpress.com/WindowsForms/1087/controls-and-libraries/ribbon-bars-and-menu/bars/tutorials/bar-item-links">bar item links</see>.</para>
+        <para>Represents a collection of <see href="https://docs.devexpress.com/WindowsForms/1087/controls-and-libraries/ribbon-bars-and-menu/bars/tutorials/bar-item-links">links</see>.</para>
       </summary>
     </member>
     <member name="M:DevExpress.XtraBars.BarItemLinkCollection.#ctor">
@@ -4940,7 +4940,7 @@
       <summary>
         <para>Gets or sets the minimum width and height of the links that refer to the current item.</para>
       </summary>
-      <value>A System.Drawing.Size structure that identifies the minimum width and height of the corresponding links.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> structure that identifies the minimum width and height of the corresponding links.</value>
     </member>
     <member name="P:DevExpress.XtraBars.BarLargeButtonItem.ShowCaptionOnBar">
       <summary>
@@ -7403,13 +7403,13 @@
     </member>
     <member name="P:DevExpress.XtraBars.BarToggleSwitchItem.Command">
       <summary>
-        <para>Gets or sets the <see cref="T:System.Windows.Input.ICommand"></see> whose <see cref="Overload:System.Windows.Input.ICommand.Execute">Execute(Object)</see> method will be called when the Click event is invoked.</para>
+        <para>Gets or sets the ICommand whose Execute(Object) method will be called when the Click event is invoked.</para>
       </summary>
       <value>The command.</value>
     </member>
     <member name="E:DevExpress.XtraBars.BarToggleSwitchItem.CommandCanExecuteChanged">
       <summary>
-        <para>Occurs when the <see cref="Overload:System.Windows.Input.ICommand.CanExecute">CanExecute(Object)</see> status of the <see cref="P:DevExpress.XtraBars.BarToggleSwitchItem.Command"/> has changed.</para>
+        <para>Occurs when the CanExecute(Object) status of the <see cref="P:DevExpress.XtraBars.BarToggleSwitchItem.Command"/> has changed.</para>
       </summary>
     </member>
     <member name="E:DevExpress.XtraBars.BarToggleSwitchItem.CommandChanged">
@@ -8978,7 +8978,7 @@
       <summary>
         <para>Gets or sets the size of the panel when it is floating.</para>
       </summary>
-      <value>A System.Drawing.Size structure representing the panel’s size, in pixels.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> structure representing the panel’s size, in pixels.</value>
     </member>
     <member name="P:DevExpress.XtraBars.Docking.DockPanel.FloatVertical">
       <summary>
@@ -9122,13 +9122,13 @@
       <summary>
         <para>Gets the control’s maximum size. This property is not supported.</para>
       </summary>
-      <value>Always an empty System.Drawing.Size structure.</value>
+      <value>Always an empty <see cref="T:System.Drawing.Size"/> structure.</value>
     </member>
     <member name="P:DevExpress.XtraBars.Docking.DockPanel.MinimumSize">
       <summary>
         <para>Gets the control’s minimum size. This property is not supported.</para>
       </summary>
-      <value>Always an empty System.Drawing.Size structure.</value>
+      <value>Always an empty <see cref="T:System.Drawing.Size"/> structure.</value>
     </member>
     <member name="F:DevExpress.XtraBars.Docking.DockPanel.OptimizeBoundsCalculation">
       <summary>
@@ -9232,7 +9232,7 @@
       <summary>
         <para>Gets or sets the dock panel’s size.</para>
       </summary>
-      <value>A System.Drawing.Size structure that specifies the dock panel’s height and width.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> structure that specifies the dock panel’s height and width.</value>
     </member>
     <member name="P:DevExpress.XtraBars.Docking.DockPanel.State">
       <summary>
@@ -9857,13 +9857,13 @@
       <param name="panel">A <see cref="T:DevExpress.XtraBars.Docking.DockPanel"/> object which represents the processed dock panel. This value is assigned to the <see cref="P:DevExpress.XtraBars.Docking.DockPanelEventArgs.Panel">DockPanelEventArgs.Panel</see> property.</param>
       <param name="sizingSide">A DevExpress.XtraBars.Docking.SizingSide enumeration member which represents the edge of the dock panel being dragged. This value is assigned to the <see cref="P:DevExpress.XtraBars.Docking.StartSizingEventArgs.SizingSide">StartSizingEventArgs.SizingSide</see> property.</param>
       <param name="ptClient">A <see cref="T:System.Drawing.Point"/> structure which specifies the current coordinates of the mouse pointer, in client coordinates. This value is assigned to the <see cref="P:DevExpress.XtraBars.Docking.SizingEventArgs.PtClient">SizingEventArgs.PtClient</see> property.</param>
-      <param name="newSize">A System.Drawing.Size structure which specifies the dock panel’s new size. This value is assigned to the <see cref="P:DevExpress.XtraBars.Docking.SizingEventArgs.NewSize">SizingEventArgs.NewSize</see> property.</param>
+      <param name="newSize">A <see cref="T:System.Drawing.Size"/> structure which specifies the dock panel’s new size. This value is assigned to the <see cref="P:DevExpress.XtraBars.Docking.SizingEventArgs.NewSize">SizingEventArgs.NewSize</see> property.</param>
     </member>
     <member name="P:DevExpress.XtraBars.Docking.SizingEventArgs.NewSize">
       <summary>
         <para>Gets the dock panel’s new size.</para>
       </summary>
-      <value>A System.Drawing.Size structure which specifies the dock panel’s new size.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> structure which specifies the dock panel’s new size.</value>
     </member>
     <member name="P:DevExpress.XtraBars.Docking.SizingEventArgs.PtClient">
       <summary>
@@ -10762,7 +10762,7 @@
       <summary>
         <para>Gets or sets the size of the “Windows” dialog.</para>
       </summary>
-      <value>A <see cref="T:System.Nullable`1"/>&lt;System.Drawing.Size,&gt; structure that is the “Windows” dialog size.</value>
+      <value>A <see cref="T:System.Nullable`1"/>&lt;<see cref="T:System.Drawing.Size"/>,&gt; structure that is the “Windows” dialog size.</value>
     </member>
     <member name="T:DevExpress.XtraBars.Docking2010.DocumentManager">
       <summary>
@@ -17062,7 +17062,7 @@
       <summary>
         <para>Returns the current size of Overview container tiles.</para>
       </summary>
-      <value>A <see cref="T:System.Nullable`1"/>&lt;System.Drawing.Size,&gt; value that is the current size of Overview container tiles.</value>
+      <value>A <see cref="T:System.Nullable`1"/>&lt;<see cref="T:System.Drawing.Size"/>,&gt; value that is the current size of Overview container tiles.</value>
     </member>
     <member name="P:DevExpress.XtraBars.Docking2010.Views.WindowsUI.OverviewContainerDefaultProperties.AllowHtmlDraw">
       <summary>
@@ -18344,13 +18344,13 @@
     </member>
     <member name="P:DevExpress.XtraBars.Docking2010.WindowsUIButton.Command">
       <summary>
-        <para>Gets or sets the <see cref="T:System.Windows.Input.ICommand"></see> whose <see cref="Overload:System.Windows.Input.ICommand.Execute">Execute(Object)</see> method will be called when the Click event is invoked.</para>
+        <para>Gets or sets the ICommand whose Execute(Object) method will be called when the Click event is invoked.</para>
       </summary>
       <value>The command.</value>
     </member>
     <member name="E:DevExpress.XtraBars.Docking2010.WindowsUIButton.CommandCanExecuteChanged">
       <summary>
-        <para>Occurs when the <see cref="Overload:System.Windows.Input.ICommand.CanExecute">CanExecute(Object)</see> status of the <see cref="P:DevExpress.XtraBars.Docking2010.WindowsUIButton.Command"/> has changed.</para>
+        <para>Occurs when the CanExecute(Object) status of the <see cref="P:DevExpress.XtraBars.Docking2010.WindowsUIButton.Command"/> has changed.</para>
       </summary>
     </member>
     <member name="E:DevExpress.XtraBars.Docking2010.WindowsUIButton.CommandChanged">
@@ -20824,13 +20824,13 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
     </member>
     <member name="P:DevExpress.XtraBars.Navigation.AccordionControlElement.Command">
       <summary>
-        <para>Gets or sets the <see cref="T:System.Windows.Input.ICommand"></see> whose <see cref="Overload:System.Windows.Input.ICommand.Execute">Execute(Object)</see> method will be called when the Click event is invoked.</para>
+        <para>Gets or sets the ICommand whose Execute(Object) method will be called when the Click event is invoked.</para>
       </summary>
       <value>The command.</value>
     </member>
     <member name="E:DevExpress.XtraBars.Navigation.AccordionControlElement.CommandCanExecuteChanged">
       <summary>
-        <para>Occurs when the <see cref="Overload:System.Windows.Input.ICommand.CanExecute">CanExecute(Object)</see> status of the <see cref="P:DevExpress.XtraBars.Navigation.AccordionControlElement.Command"/> has changed.</para>
+        <para>Occurs when the CanExecute(Object) status of the <see cref="P:DevExpress.XtraBars.Navigation.AccordionControlElement.Command"/> has changed.</para>
       </summary>
     </member>
     <member name="E:DevExpress.XtraBars.Navigation.AccordionControlElement.CommandChanged">
@@ -21589,13 +21589,13 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
     </member>
     <member name="P:DevExpress.XtraBars.Navigation.NavButton.Command">
       <summary>
-        <para>Gets or sets the <see cref="T:System.Windows.Input.ICommand"></see> whose <see cref="Overload:System.Windows.Input.ICommand.Execute">Execute(Object)</see> method will be called when the Click event is invoked.</para>
+        <para>Gets or sets the ICommand whose Execute(Object) method will be called when the Click event is invoked.</para>
       </summary>
       <value>The command.</value>
     </member>
     <member name="E:DevExpress.XtraBars.Navigation.NavButton.CommandCanExecuteChanged">
       <summary>
-        <para>Occurs when the <see cref="Overload:System.Windows.Input.ICommand.CanExecute">CanExecute(Object)</see> status of the <see cref="P:DevExpress.XtraBars.Navigation.NavButton.Command"/> has changed.</para>
+        <para>Occurs when the CanExecute(Object) status of the <see cref="P:DevExpress.XtraBars.Navigation.NavButton.Command"/> has changed.</para>
       </summary>
     </member>
     <member name="E:DevExpress.XtraBars.Navigation.NavButton.CommandChanged">
@@ -21783,13 +21783,13 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
     </member>
     <member name="P:DevExpress.XtraBars.Navigation.NavigationBarItem.Command">
       <summary>
-        <para>Gets or sets the <see cref="T:System.Windows.Input.ICommand"></see> whose <see cref="Overload:System.Windows.Input.ICommand.Execute">Execute(Object)</see> method will be called when the Click event is invoked.</para>
+        <para>Gets or sets the ICommand whose Execute(Object) method will be called when the Click event is invoked.</para>
       </summary>
       <value>The command.</value>
     </member>
     <member name="E:DevExpress.XtraBars.Navigation.NavigationBarItem.CommandCanExecuteChanged">
       <summary>
-        <para>Occurs when the <see cref="Overload:System.Windows.Input.ICommand.CanExecute">CanExecute(Object)</see> status of the <see cref="P:DevExpress.XtraBars.Navigation.NavigationBarItem.Command"/> has changed.</para>
+        <para>Occurs when the CanExecute(Object) status of the <see cref="P:DevExpress.XtraBars.Navigation.NavigationBarItem.Command"/> has changed.</para>
       </summary>
     </member>
     <member name="E:DevExpress.XtraBars.Navigation.NavigationBarItem.CommandChanged">
@@ -23815,13 +23815,13 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
     </member>
     <member name="P:DevExpress.XtraBars.Navigation.TileNavElement.Command">
       <summary>
-        <para>Gets or sets the <see cref="T:System.Windows.Input.ICommand"></see> whose <see cref="Overload:System.Windows.Input.ICommand.Execute">Execute(Object)</see> method will be called when the Click event is invoked.</para>
+        <para>Gets or sets the ICommand whose Execute(Object) method will be called when the Click event is invoked.</para>
       </summary>
       <value>The command.</value>
     </member>
     <member name="E:DevExpress.XtraBars.Navigation.TileNavElement.CommandCanExecuteChanged">
       <summary>
-        <para>Occurs when the <see cref="Overload:System.Windows.Input.ICommand.CanExecute">CanExecute(Object)</see> status of the <see cref="P:DevExpress.XtraBars.Navigation.TileNavElement.Command"/> has changed.</para>
+        <para>Occurs when the CanExecute(Object) status of the <see cref="P:DevExpress.XtraBars.Navigation.TileNavElement.Command"/> has changed.</para>
       </summary>
     </member>
     <member name="E:DevExpress.XtraBars.Navigation.TileNavElement.CommandChanged">
@@ -25202,13 +25202,13 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
     </member>
     <member name="P:DevExpress.XtraBars.Ribbon.BackstageViewButtonItem.Command">
       <summary>
-        <para>Gets or sets the <see cref="T:System.Windows.Input.ICommand"></see> whose <see cref="Overload:System.Windows.Input.ICommand.Execute">Execute(Object)</see> method will be called when the Click event is invoked.</para>
+        <para>Gets or sets the ICommand whose Execute(Object) method will be called when the Click event is invoked.</para>
       </summary>
       <value>The command.</value>
     </member>
     <member name="E:DevExpress.XtraBars.Ribbon.BackstageViewButtonItem.CommandCanExecuteChanged">
       <summary>
-        <para>Occurs when the <see cref="Overload:System.Windows.Input.ICommand.CanExecute">CanExecute(Object)</see> status of the <see cref="P:DevExpress.XtraBars.Ribbon.BackstageViewButtonItem.Command"/> has changed.</para>
+        <para>Occurs when the CanExecute(Object) status of the <see cref="P:DevExpress.XtraBars.Ribbon.BackstageViewButtonItem.Command"/> has changed.</para>
       </summary>
     </member>
     <member name="E:DevExpress.XtraBars.Ribbon.BackstageViewButtonItem.CommandChanged">
@@ -26328,7 +26328,7 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
       <summary>
         <para>Gets or sets the size of hover images.</para>
       </summary>
-      <value>A System.Drawing.Size structure which specifies the size of hover images.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> structure which specifies the size of hover images.</value>
     </member>
     <member name="P:DevExpress.XtraBars.Ribbon.Gallery.BaseGallery.HtmlImages">
       <summary>
@@ -26346,7 +26346,7 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
       <summary>
         <para>Gets or sets the display size of gallery item images.</para>
       </summary>
-      <value>A System.Drawing.Size structure which specifies the display size of gallery item images.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> structure which specifies the display size of gallery item images.</value>
     </member>
     <member name="M:DevExpress.XtraBars.Ribbon.Gallery.BaseGallery.Invalidate">
       <summary>
@@ -27693,13 +27693,13 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
     </member>
     <member name="P:DevExpress.XtraBars.Ribbon.GalleryItem.Command">
       <summary>
-        <para>Gets or sets the <see cref="T:System.Windows.Input.ICommand"></see> whose <see cref="Overload:System.Windows.Input.ICommand.Execute">Execute(Object)</see> method will be called when the Click event is invoked.</para>
+        <para>Gets or sets the ICommand whose Execute(Object) method will be called when the Click event is invoked.</para>
       </summary>
       <value>The command.</value>
     </member>
     <member name="E:DevExpress.XtraBars.Ribbon.GalleryItem.CommandCanExecuteChanged">
       <summary>
-        <para>Occurs when the <see cref="Overload:System.Windows.Input.ICommand.CanExecute">CanExecute(Object)</see> status of the <see cref="P:DevExpress.XtraBars.Ribbon.GalleryItem.Command"/> has changed.</para>
+        <para>Occurs when the CanExecute(Object) status of the <see cref="P:DevExpress.XtraBars.Ribbon.GalleryItem.Command"/> has changed.</para>
       </summary>
     </member>
     <member name="E:DevExpress.XtraBars.Ribbon.GalleryItem.CommandChanged">
@@ -28845,13 +28845,13 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
     </member>
     <member name="P:DevExpress.XtraBars.Ribbon.RecentItemBase.Command">
       <summary>
-        <para>Gets or sets the <see cref="T:System.Windows.Input.ICommand"></see> whose <see cref="Overload:System.Windows.Input.ICommand.Execute">Execute(Object)</see> method will be called when the Click event is invoked.</para>
+        <para>Gets or sets the ICommand whose Execute(Object) method will be called when the Click event is invoked.</para>
       </summary>
       <value>The command.</value>
     </member>
     <member name="E:DevExpress.XtraBars.Ribbon.RecentItemBase.CommandCanExecuteChanged">
       <summary>
-        <para>Occurs when the <see cref="Overload:System.Windows.Input.ICommand.CanExecute">CanExecute(Object)</see> status of the <see cref="P:DevExpress.XtraBars.Ribbon.RecentItemBase.Command"/> has changed.</para>
+        <para>Occurs when the CanExecute(Object) status of the <see cref="P:DevExpress.XtraBars.Ribbon.RecentItemBase.Command"/> has changed.</para>
       </summary>
     </member>
     <member name="E:DevExpress.XtraBars.Ribbon.RecentItemBase.CommandChanged">
@@ -30609,7 +30609,7 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
       <summary>
         <para>This member overrides the <see cref="P:System.Windows.Forms.Control.Text"/> property.</para>
       </summary>
-      <value>Always the System.String.Empty value.</value>
+      <value>Always the <see cref="F:System.String.Empty"/> value.</value>
     </member>
     <member name="P:DevExpress.XtraBars.Ribbon.RibbonControl.Toolbar">
       <summary>
@@ -32785,7 +32785,7 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
       <summary>
         <para>Gets or sets the control’s text.</para>
       </summary>
-      <value>Always the System.String.Empty value.</value>
+      <value>Always the <see cref="F:System.String.Empty"/> value.</value>
     </member>
     <member name="P:DevExpress.XtraBars.Ribbon.RibbonStatusBar.ToolTipController">
       <summary>
@@ -33982,7 +33982,7 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
       <summary>
         <para>Gets or sets the width and height of the <see cref="T:DevExpress.XtraBars.StandaloneBarDockControl"/>.</para>
       </summary>
-      <value>The System.Drawing.Size that represents the height and width of the control in pixels.</value>
+      <value>The <see cref="T:System.Drawing.Size"/> that represents the height and width of the control in pixels.</value>
     </member>
     <member name="T:DevExpress.XtraBars.StateAppearances">
       <summary>
@@ -37353,7 +37353,7 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
       <summary>
         <para>Gets or sets the dimensions of the rectangle for the item icons.</para>
       </summary>
-      <value>A System.Drawing.Size structure that specifies the dimensions of the rectangle for the item icons.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> structure that specifies the dimensions of the rectangle for the item icons.</value>
     </member>
     <member name="P:DevExpress.XtraToolbox.ToolboxOptionsView.ItemViewMode">
       <summary>

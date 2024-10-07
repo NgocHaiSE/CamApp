@@ -4,19 +4,15 @@ using NetMQ.Sockets;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 using System.IO;
 using System.Windows.Forms;
-using NetMQ.Sockets;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using NetMQ;
-using NetMQ.Sockets;
 namespace WindowsFormsApp1
 {
     public partial class Form1 : Form

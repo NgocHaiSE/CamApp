@@ -340,7 +340,7 @@
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraNavBar.NavBarCalcHintSizeEventArgs"/> class.</para>
       </summary>
       <param name="hintInfo">A DevExpress.XtraNavBar.ViewInfo.NavBarHintInfo object containing information on the NavBarControl’s element for which the event was fired. This value is assigned to the <see cref="P:DevExpress.XtraNavBar.NavBarCustomHintEventArgs.HintInfo">NavBarCustomHintEventArgs.HintInfo</see> property.</param>
-      <param name="size">A System.Drawing.Size structure specifying the size of the hint’s region. This value is assigned to the <see cref="P:DevExpress.XtraNavBar.NavBarCalcHintSizeEventArgs.Size">NavBarCalcHintSizeEventArgs.Size</see> property.</param>
+      <param name="size">A <see cref="T:System.Drawing.Size"/> structure specifying the size of the hint’s region. This value is assigned to the <see cref="P:DevExpress.XtraNavBar.NavBarCalcHintSizeEventArgs.Size">NavBarCalcHintSizeEventArgs.Size</see> property.</param>
     </member>
     <member name="P:DevExpress.XtraNavBar.NavBarCalcHintSizeEventArgs.Size">
       <summary>
@@ -1477,7 +1477,7 @@ The Default value is equivalent to False.</value>
       <summary>
         <para>Gets or sets the height and width of the container.</para>
       </summary>
-      <value>The System.Drawing.Size object that represents the height and width of the container in pixels.</value>
+      <value>The <see cref="T:System.Drawing.Size"/> object that represents the height and width of the container in pixels.</value>
     </member>
     <member name="P:DevExpress.XtraNavBar.NavBarGroupControlContainer.TabStop">
       <summary>
@@ -1872,13 +1872,13 @@ The Default value is equivalent to False.</value>
     </member>
     <member name="P:DevExpress.XtraNavBar.NavBarItem.Command">
       <summary>
-        <para>Gets or sets the <see cref="T:System.Windows.Input.ICommand"></see> whose <see cref="Overload:System.Windows.Input.ICommand.Execute">Execute(Object)</see> method will be called when the Click event is invoked.</para>
+        <para>Gets or sets the ICommand whose Execute(Object) method will be called when the Click event is invoked.</para>
       </summary>
       <value>The command.</value>
     </member>
     <member name="E:DevExpress.XtraNavBar.NavBarItem.CommandCanExecuteChanged">
       <summary>
-        <para>Occurs when the <see cref="Overload:System.Windows.Input.ICommand.CanExecute">CanExecute(Object)</see> status of the <see cref="P:DevExpress.XtraNavBar.NavBarItem.Command"/> has changed.</para>
+        <para>Occurs when the CanExecute(Object) status of the <see cref="P:DevExpress.XtraNavBar.NavBarItem.Command"/> has changed.</para>
       </summary>
     </member>
     <member name="E:DevExpress.XtraNavBar.NavBarItem.CommandChanged">
@@ -1981,7 +1981,7 @@ The Default value is equivalent to False.</value>
       <summary>
         <para>Returns the width and height of the image displayed within the <see cref="T:DevExpress.XtraNavBar.NavBarItemLink"/>.</para>
       </summary>
-      <returns>A System.Drawing.Size structure which specifies the width and height of the image displayed within the link.</returns>
+      <returns>A <see cref="T:System.Drawing.Size"/> structure which specifies the width and height of the image displayed within the link.</returns>
     </member>
     <member name="P:DevExpress.XtraNavBar.NavBarItemLink.Group">
       <summary>
@@ -2694,7 +2694,7 @@ The Default value is equivalent to False.</value>
       <summary>
         <para>Gets or sets the size of the frame into which the header image of an expanded group is fitted.</para>
       </summary>
-      <value>A System.Drawing.Size structure that specifies the size of the frame into which the header image of an expanded group is fitted.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> structure that specifies the size of the frame into which the header image of an expanded group is fitted.</value>
     </member>
     <member name="P:DevExpress.XtraNavBar.OptionsNavPane.IsAnimationInProgress">
       <summary>
@@ -2724,7 +2724,7 @@ The Default value is equivalent to False.</value>
       <summary>
         <para>Gets or sets the popup form’s size.</para>
       </summary>
-      <value>A System.Drawing.Size structure that specifies the popup form’s width and height, in pixels.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> structure that specifies the popup form’s width and height, in pixels.</value>
     </member>
     <member name="P:DevExpress.XtraNavBar.OptionsNavPane.ShowExpandButton">
       <summary>

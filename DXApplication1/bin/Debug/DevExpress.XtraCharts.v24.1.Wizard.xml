@@ -10662,7 +10662,7 @@
       <summary>
         <para>Gets or sets the dimensions of the Chart Wizard window.</para>
       </summary>
-      <value>A System.Drawing.Size object, composed of a pair of integers, representing the width and the height of a Chart Wizard window.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> object, composed of a pair of integers, representing the width and the height of a Chart Wizard window.</value>
     </member>
     <member name="P:DevExpress.XtraCharts.Wizard.ChartWizard.SplitterPositionPercentage">
       <summary>

@@ -16,16 +16,22 @@ using System.Net.Http;
 using Vlc.DotNet.Forms;
 using System.Data;
 using DXApplication1.DAO;
+using System.Threading;
+using DXApplication1.DesignUI;
+using CustomControls;
+using DXApplication1.Custom_Component;
+using System.Windows.Media.Media3D;
 
 namespace DXApplication1.UI.Modules
 {
     public partial class ucViewCam : DevExpress.XtraEditors.XtraUserControl
     {
         private static readonly HttpClient client = new HttpClient();
+        private List<CustomCameraControl> cameraControls = new List<CustomCameraControl>();
         private List<VlcControl> vlcControls = new List<VlcControl>();
-        List<String> links = new List<String>();
+        private List<String> links = new List<String>();
         private List<int> cameraIds = new List<int>();
-
+        
         private static ucViewCam _instace;
 
         public static ucViewCam Instance
@@ -42,29 +48,40 @@ namespace DXApplication1.UI.Modules
 
         private void ucViewCam_Load(object sender, EventArgs e)
         {
-        }
-
-        private void InitializeComboBox()
-        {
-            comboBoxEdit1.Properties.Items.Add("1x1");
-            comboBoxEdit1.Properties.Items.Add("2x2");
-            comboBoxEdit1.Properties.Items.Add("3x3");
-            comboBoxEdit1.Properties.Items.Add("4x4");
+            StartAll();
         }
 
         public ucViewCam()
         {
             InitializeComponent();
-            InitializeComboBox();
         }
 
-        //MJPEGStream stream;
+        private void StartSubscriber(string cameraid, PictureBox pictureBox)
+        {
+            using (var subscriber = new SubscriberSocket())
+            {
+                int customPort = 8000; 
+                customPort += int.Parse(cameraid);
+                subscriber.Connect($"tcp://localhost:{customPort}");
 
-        //void stream_NewFrame(object sender, NewFrameEventArgs eventArgs)
-        //{
-        //    Bitmap bmp = (Bitmap)eventArgs.Frame.Clone();
-        //    pictureBoxCamera.Image = bmp;
-        //}
+                subscriber.Subscribe("newframe");
+
+                while (true)
+                {
+                    string receivedTopic = subscriber.ReceiveFrameString();
+                    byte[] frameBytes = subscriber.ReceiveFrameBytes();
+
+                    using (var ms = new MemoryStream(frameBytes))
+                    {
+                        var img = Image.FromStream(ms);
+                        this.Invoke((MethodInvoker)delegate
+                        {
+                            pictureBox.Image = img;
+                        });
+                    }
+                }
+            }
+        }
 
         private async void CameraComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -76,90 +93,72 @@ namespace DXApplication1.UI.Modules
                 links.Add(link);
                 cameraIds.Add(cameraId);
             }
+
             string selectedSize = comboBoxEdit1.SelectedItem.ToString();
-            int numCameras = 2; 
+            int numCameras = 2;
 
             switch (selectedSize)
             {
                 case "1x1":
                     numCameras = 1;
-                    tableLayoutPanel1.ColumnCount = 1;
-                    tableLayoutPanel1.RowCount = 1;
                     break;
                 case "2x2":
                     numCameras = 4;
-                    tableLayoutPanel1.ColumnCount = 2;
-                    tableLayoutPanel1.RowCount = 2;
                     break;
                 case "3x3":
                     numCameras = 9;
-                    tableLayoutPanel1.ColumnCount = 3;
-                    tableLayoutPanel1.RowCount = 3;
                     break;
                 case "4x4":
-                    numCameras = 9;
-                    tableLayoutPanel1.ColumnCount = 3;
-                    tableLayoutPanel1.RowCount = 3;
+                    numCameras = 16;
                     break;
             }
-            int maxCamerasToShow = Math.Min(numCameras, links.Count); 
 
-            await InitializeVlcControls(maxCamerasToShow);
-        }
-        private async Task StartCameraAsync(int cameraId)
-        {
-            try
-            {
-                string url = $"http://localhost:8000/start/{cameraId}";
-                HttpResponseMessage response = await client.GetAsync(url); 
+            int columnCount = (int)Math.Sqrt(numCameras);
+            int rowCount = (int)Math.Ceiling((double)numCameras / columnCount);
 
-                if (response.IsSuccessStatusCode)
-                {
-                    Console.WriteLine($"Camera {cameraId} đã được khởi động thành công."); 
-                }
-                else
-                {
-                    MessageBox.Show($"Không thể khởi động camera {cameraId}. Lỗi: {response.StatusCode}"); 
-                }
-            }
-            catch (Exception ex)
+            tableLayoutPanel2.ColumnCount = columnCount;
+            tableLayoutPanel2.RowCount = rowCount;
+
+            tableLayoutPanel2.ColumnStyles.Clear();
+            tableLayoutPanel2.RowStyles.Clear();
+
+            for (int i = 0; i < columnCount; i++)
             {
-                MessageBox.Show($"Đã xảy ra lỗi: {ex.Message}"); 
+                tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F / columnCount));
             }
+            for (int i = 0; i < rowCount; i++)
+            {
+                tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F / rowCount));
+            }
+
+            int maxCamerasToShow = Math.Min(numCameras, links.Count);
+            await InitializeCameraControls(maxCamerasToShow);
         }
 
-        private async Task InitializeVlcControls(int numCameras)
-        {
-            tableLayoutPanel1.Controls.Clear();
-            vlcControls.Clear();
-            var libDirectory = new System.IO.DirectoryInfo(@"C:\Program Files\VideoLAN\VLC");
 
-            int maxCamerasToShow = Math.Min(numCameras, links.Count); 
+        private async Task InitializeCameraControls(int numCameras)
+        {
+            tableLayoutPanel2.Controls.Clear();
+            cameraControls.Clear();
+            int maxCamerasToShow = Math.Min(numCameras, links.Count);
 
             for (int i = 0; i < maxCamerasToShow; i++)
             {
-                var vlcControl = new VlcControl
-                {
-                    Dock = DockStyle.Fill,  
-                    VlcLibDirectory = libDirectory  
-                };
-                vlcControl.EndInit();
+                CustomCameraControl cameraControl = new CustomCameraControl(links[i], cameraIds[i]);
+                cameraControl.Dock = DockStyle.Fill;
 
-                vlcControls.Add(vlcControl); 
-                tableLayoutPanel1.Controls.Add(vlcControl, i % tableLayoutPanel1.ColumnCount, i / tableLayoutPanel1.ColumnCount); // Add control to layout
+                cameraControls.Add(cameraControl);
+                tableLayoutPanel2.Controls.Add(cameraControl, i % tableLayoutPanel2.ColumnCount, i / tableLayoutPanel2.ColumnCount);
 
-                await StartCameraAsync(cameraIds[i]);
+                // Start the camera for each CameraControl
+                //cameraControl.StartCamera(links[i]);
+                //await StartCameraAsync(cameraIds[i]);
             }
+            //for (int i = 0; i < maxCamerasToShow; i++)
+            //{
+            //    cameraControls[i].StartCamera(links[i]);
 
-            PlayCameras();
-        }
-
-        public void PlayCameras()
-        {
-            for (int i = 0; i < vlcControls.Count; i++)
-            {
-                vlcControls[i].Play(new Uri(links[i])); 
-            }
+            //}
         }
 
         private async Task StartCameraProcess(string cameraId)
@@ -183,37 +182,20 @@ namespace DXApplication1.UI.Modules
             }
         }
 
-        private async Task StopCameraProcess(string cameraId)
+        private async Task StartAll()
         {
             try
             {
-                var url = $"http://localhost:8000/stop/{cameraId}";
+                var url = $"http://localhost:8000/startall";
                 var response = await client.GetAsync(url);
                 if (response.IsSuccessStatusCode)
                 {
-                    MessageBox.Show($"Stopped camera {cameraId} successfully!");
-                }
-                else
-                {
-                    MessageBox.Show($"Failed to stop camera {cameraId}: {response.ReasonPhrase}");
+                    MessageBox.Show($"Started all cameras successfully!");
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error: {ex.Message}");
-            }
-        }
-
-        private async void buttonStartCamera_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonStopCamera_Click(object sender, EventArgs e)
-        {
-            foreach (var vlcControl in vlcControls)
-            {
-                vlcControl.Stop(); 
             }
         }
 

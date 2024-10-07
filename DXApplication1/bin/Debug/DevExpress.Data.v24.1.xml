@@ -496,16 +496,6 @@
       </summary>
       <value>Result type.</value>
     </member>
-    <member name="T:DevExpress.Data.AsyncDownloadPolicy.FailedEventArgs">
-      <summary>
-        <para>Contains data for the <see cref="E:DevExpress.Data.AsyncDownloadPolicy.Failed"/> event.</para>
-      </summary>
-    </member>
-    <member name="M:DevExpress.Data.AsyncDownloadPolicy.FailedEventArgs.#ctor(System.Uri,System.Type,System.Runtime.ExceptionServices.ExceptionDispatchInfo)">
-      <summary>
-        <para>Initializes a new instance of the <see cref="T:DevExpress.Data.AsyncDownloadPolicy.FailedEventArgs"/> class with specified settings.</para>
-      </summary>
-    </member>
     <member name="P:DevExpress.Data.AsyncDownloadPolicy.IsThrowAlwaysMode">
       <summary>
         <para>This member supports the internal infrastructure, and is not intended to be used directly from your code.</para>
@@ -3088,7 +3078,7 @@
         <para>Enables serialization of the specified enumeration type values in <see href="https://docs.devexpress.com/CoreLibraries/4928/devexpress-data-library/criteria-language-syntax">Criteria Language</see> expressions.</para>
       </summary>
       <param name="enumType">A <see cref="T:System.Type"/> object specifying the type of enumeration to be registered.</param>
-      <param name="toStringName">A string that specifies the enumeration name to be used in criteria instead of <see cref="Overload:System.Type.FullName">FullName</see>.</param>
+      <param name="toStringName">A string that specifies the enumeration name to be used in criteria instead of FullName.</param>
     </member>
     <member name="M:DevExpress.Data.Filtering.EnumProcessingHelper.RegisterEnum(System.Type)">
       <summary>
@@ -3103,7 +3093,7 @@
     </member>
     <member name="M:DevExpress.Data.Filtering.EnumProcessingHelper.RegisterEnums">
       <summary>
-        <para>Enables serializing values of enumerations from all assembies that are loaded to the <see cref="Overload:System.AppDomain.CurrentDomain">current application domain</see> in <see href="https://docs.devexpress.com/CoreLibraries/4928/devexpress-data-library/criteria-language-syntax">Criteria Language</see> expressions.</para>
+        <para>Enables serializing values of enumerations from all assembies that are loaded to the current application domain in <see href="https://docs.devexpress.com/CoreLibraries/4928/devexpress-data-library/criteria-language-syntax">Criteria Language</see> expressions.</para>
       </summary>
     </member>
     <member name="M:DevExpress.Data.Filtering.EnumProcessingHelper.RegisterEnums(System.Reflection.Assembly,System.Boolean)">
@@ -6433,7 +6423,7 @@
       <summary>
         <para>Specifies the data source from which the <see cref="T:DevExpress.Data.RealTimeSource"/> component retrieves its data.</para>
       </summary>
-      <value>An <see cref="T:System.Collections.IList">IList</see> or <see cref="T:System.ComponentModel.IListSource">IListSource</see> object that represents the data source from which the <see cref="T:DevExpress.Data.RealTimeSource"/> component retrieves its data.</value>
+      <value>An IList or IListSource object that represents the data source from which the <see cref="T:DevExpress.Data.RealTimeSource"/> component retrieves its data.</value>
     </member>
     <member name="P:DevExpress.Data.RealTimeSource.DisplayableProperties">
       <summary>
@@ -11184,7 +11174,7 @@
     <member name="F:DevExpress.Utils.FormatType.DateTime">
       <summary>
         <para>Specifies that values should be formatted as the <see cref="T:System.DateTime"/> type.</para>
-        <para>Setting <see cref="P:DevExpress.Utils.FormatInfo.FormatType">FormatInfo.FormatType</see> to DateTime assigns the static <see cref="Overload:System.Globalization.DateTimeFormatInfo.CurrentInfo"/> format provider to the <see cref="P:DevExpress.Utils.FormatInfo.Format">FormatInfo.Format</see> property. This defines the format provider for the current culture.</para>
+        <para>Setting <see cref="P:DevExpress.Utils.FormatInfo.FormatType">FormatInfo.FormatType</see> to DateTime assigns the static <see cref="P:System.Globalization.DateTimeFormatInfo.CurrentInfo"/> format provider to the <see cref="P:DevExpress.Utils.FormatInfo.Format">FormatInfo.Format</see> property. This defines the format provider for the current culture.</para>
         <para>Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString">FormatInfo.FormatString</see> is set to “d” (short date pattern).</para>
       </summary>
     </member>
@@ -12299,7 +12289,7 @@
     </member>
     <member name="F:DevExpress.Utils.UrlAccessSecurityLevel.FilesFromBaseDirectory">
       <summary>
-        <para>Enables loading of images from an application’s working directory (defined by the <see cref="Overload:System.AppDomain.BaseDirectory">AppDomain.CurrentDomain.BaseDirectory</see> property).</para>
+        <para>Enables loading of images from an application’s working directory (defined by the AppDomain.CurrentDomain.BaseDirectory property).</para>
       </summary>
     </member>
     <member name="F:DevExpress.Utils.UrlAccessSecurityLevel.Unrestricted">
@@ -20220,9 +20210,9 @@
     </member>
     <member name="P:DevExpress.XtraReports.Configuration.DataSourceSettings.AllowAddDataSource">
       <summary>
-        <para>Hides the Add Data Source button in the Field List and the Add Data Source menu command.</para>
+        <para>Hides the UI element that allows a user to remove the data source from the Web End-User Report Designer in the Field List.</para>
       </summary>
-      <value>True to show the Add Data Source button and command; otherwise, false.</value>
+      <value>true to show the UI element that allows a user to remove the data source from the Web End-User Report Designer in the Field List; otherwise, false.</value>
     </member>
     <member name="P:DevExpress.XtraReports.Configuration.DataSourceSettings.AllowEditDataSource">
       <summary>

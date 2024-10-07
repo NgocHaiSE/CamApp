@@ -44,33 +44,13 @@
       "frameworks": {
         "net472": {
           "dependencies": {
-            "AForge.Video.DirectShow": {
+            "AForge.Video": {
               "target": "Package",
               "version": "[2.2.5, )"
             },
-            "Emgu.CV": {
+            "AForge.Video.DirectShow": {
               "target": "Package",
-              "version": "[4.1.1.3497, )"
-            },
-            "Emgu.CV.Bitmap": {
-              "target": "Package",
-              "version": "[4.9.0.5494, )"
-            },
-            "Emgu.CV.UI": {
-              "target": "Package",
-              "version": "[4.9.0.5494, )"
-            },
-            "Emgu.CV.runtime.windows": {
-              "target": "Package",
-              "version": "[4.9.0.5494, )"
-            },
-            "Microsoft.AspNet.SignalR": {
-              "target": "Package",
-              "version": "[2.4.3, )"
-            },
-            "Microsoft.AspNet.SignalR.Client": {
-              "target": "Package",
-              "version": "[2.4.3, )"
+              "version": "[2.2.5, )"
             },
             "Microsoft.AspNet.WebApi.Client": {
               "target": "Package",
@@ -111,6 +91,10 @@
             "System.Threading.Channels": {
               "target": "Package",
               "version": "[8.0.0, )"
+            },
+            "VideoLAN.LibVLC.Windows": {
+              "target": "Package",
+              "version": "[3.0.21, )"
             },
             "Vlc.DotNet.Forms": {
               "target": "Package",

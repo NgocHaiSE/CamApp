@@ -530,13 +530,13 @@
       <summary>
         <para>Gets or sets the maximum size of the layout item.</para>
       </summary>
-      <value>A System.Drawing.Size structure that defines the item’s maximum width and height.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> structure that defines the item’s maximum width and height.</value>
     </member>
     <member name="P:DevExpress.XtraLayout.BaseLayoutItem.MinSize">
       <summary>
         <para>Gets or sets the item’s minimum size.</para>
       </summary>
-      <value>A System.Drawing.Size structure that defines the item’s minimum width and height.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> structure that defines the item’s minimum width and height.</value>
     </member>
     <member name="E:DevExpress.XtraLayout.BaseLayoutItem.MouseDown">
       <summary>
@@ -688,7 +688,7 @@
       <summary>
         <para>Gets or sets the layout item’s size.</para>
       </summary>
-      <value>A System.Drawing.Size structure that defines the item’s width and height.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> structure that defines the item’s width and height.</value>
     </member>
     <member name="P:DevExpress.XtraLayout.BaseLayoutItem.Spacing">
       <summary>
@@ -729,7 +729,7 @@
       <summary>
         <para>Gets or sets the size of the text region.</para>
       </summary>
-      <value>A System.Drawing.Size structure that defines the width and height of the item’s text region.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> structure that defines the width and height of the item’s text region.</value>
     </member>
     <member name="P:DevExpress.XtraLayout.BaseLayoutItem.TextToControlDistance">
       <summary>
@@ -1383,13 +1383,13 @@ is dependent on the type of control embedded in this layout item.</value>
       <summary>
         <para>Not supported.</para>
       </summary>
-      <value>A System.Drawing.Size.Empty structure.</value>
+      <value>A <see cref="F:System.Drawing.Size.Empty"/> structure.</value>
     </member>
     <member name="P:DevExpress.XtraLayout.EmptySpaceItem.ControlMinSize">
       <summary>
         <para>Not supported.</para>
       </summary>
-      <value>A System.Drawing.Size.Empty structure.</value>
+      <value>A <see cref="F:System.Drawing.Size.Empty"/> structure.</value>
     </member>
     <member name="P:DevExpress.XtraLayout.EmptySpaceItem.FillControlToClientArea">
       <summary>
@@ -1436,13 +1436,13 @@ is dependent on the type of control embedded in this layout item.</value>
       <summary>
         <para>Gets or sets the maximum size of the <see cref="T:DevExpress.XtraLayout.EmptySpaceItem"/>.</para>
       </summary>
-      <value>A System.Drawing.Size structure that defines the item’s maximum width and height.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> structure that defines the item’s maximum width and height.</value>
     </member>
     <member name="P:DevExpress.XtraLayout.EmptySpaceItem.MinSize">
       <summary>
         <para>Gets or sets the minimum size of the <see cref="T:DevExpress.XtraLayout.EmptySpaceItem"/>.</para>
       </summary>
-      <value>A System.Drawing.Size structure that defines the item’s minimum width and height.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> structure that defines the item’s minimum width and height.</value>
     </member>
     <member name="P:DevExpress.XtraLayout.EmptySpaceItem.TextLocation">
       <summary>
@@ -1865,13 +1865,13 @@ is dependent on the type of control embedded in this layout item.</value>
       <summary>
         <para>Not supported.</para>
       </summary>
-      <value>A System.Drawing.Size.Empty structure.</value>
+      <value>A <see cref="F:System.Drawing.Size.Empty"/> structure.</value>
     </member>
     <member name="P:DevExpress.XtraLayout.LayoutControl.AutoScrollMinSize">
       <summary>
         <para>Not supported.</para>
       </summary>
-      <value>A System.Drawing.Size.Empty structure.</value>
+      <value>A <see cref="F:System.Drawing.Size.Empty"/> structure.</value>
     </member>
     <member name="P:DevExpress.XtraLayout.LayoutControl.AutoScrollPosition">
       <summary>
@@ -3120,13 +3120,13 @@ is dependent on the type of control embedded in this layout item.</value>
       <summary>
         <para>Gets or sets the client area’s maximum size.</para>
       </summary>
-      <value>A System.Drawing.Size structure that defines the client area’s maximum width and height.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> structure that defines the client area’s maximum width and height.</value>
     </member>
     <member name="P:DevExpress.XtraLayout.LayoutControlItem.ControlMinSize">
       <summary>
         <para>Gets or sets the control’s minimum size.</para>
       </summary>
-      <value>A System.Drawing.Size structure that defines the control’s minimum width and height.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> structure that defines the control’s minimum width and height.</value>
     </member>
     <member name="P:DevExpress.XtraLayout.LayoutControlItem.ControlName">
       <summary>
@@ -3209,13 +3209,13 @@ is dependent on the type of control embedded in this layout item.</value>
       <summary>
         <para>Gets or sets the layout item’s maximum size.</para>
       </summary>
-      <value>A System.Drawing.Size structure that defines the item’s maximum width and height.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> structure that defines the item’s maximum width and height.</value>
     </member>
     <member name="P:DevExpress.XtraLayout.LayoutControlItem.MinSize">
       <summary>
         <para>Gets or sets the item’s minimum size.</para>
       </summary>
-      <value>A System.Drawing.Size structure that defines the item’s minimum width and height.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> structure that defines the item’s minimum width and height.</value>
     </member>
     <member name="P:DevExpress.XtraLayout.LayoutControlItem.OptionsPrint">
       <summary>
@@ -3785,13 +3785,13 @@ is dependent on the type of control embedded in this layout item.</value>
       <summary>
         <para>Gets the maximum size of the group.</para>
       </summary>
-      <value>A System.Drawing.Size structure that defines the group’s maximum width and height.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> structure that defines the group’s maximum width and height.</value>
     </member>
     <member name="P:DevExpress.XtraLayout.LayoutGroup.MinSize">
       <summary>
         <para>Gets the minimum size of the group.</para>
       </summary>
-      <value>A System.Drawing.Size structure that defines the group’s minimum width and height.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> structure that defines the group’s minimum width and height.</value>
     </member>
     <member name="M:DevExpress.XtraLayout.LayoutGroup.Move(DevExpress.XtraLayout.Customization.LayoutItemDragController)">
       <summary>
@@ -3887,7 +3887,7 @@ is dependent on the type of control embedded in this layout item.</value>
       <summary>
         <para>Gets or sets the group’s size.</para>
       </summary>
-      <value>A System.Drawing.Size structure that defines the group’s width and height.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> structure that defines the group’s width and height.</value>
     </member>
     <member name="P:DevExpress.XtraLayout.LayoutGroup.TabbedGroupParentName">
       <summary>
@@ -4025,7 +4025,7 @@ is dependent on the type of control embedded in this layout item.</value>
       <summary>
         <para>Not supported.</para>
       </summary>
-      <value>A System.Drawing.Size.Empty structure.</value>
+      <value>A <see cref="F:System.Drawing.Size.Empty"/> structure.</value>
     </member>
     <member name="P:DevExpress.XtraLayout.LayoutItemContainer.TextToControlDistance">
       <summary>
@@ -5487,13 +5487,13 @@ is dependent on the type of control embedded in this layout item.</value>
       <summary>
         <para>Gets or set the maximum size of the splitter item. This member supports the .NET Framework infrastructure and is not intended to be used directly from your code.</para>
       </summary>
-      <value>A System.Drawing.Size structure that defines the item’s maximum width and height.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> structure that defines the item’s maximum width and height.</value>
     </member>
     <member name="P:DevExpress.XtraLayout.SplitterItem.MinSize">
       <summary>
         <para>Gets or sets the minimum size of the splitter item. This member supports the .NET Framework infrastructure and is not intended to be used directly from your code.</para>
       </summary>
-      <value>A System.Drawing.Size structure that defines the item’s minimum width and height.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> structure that defines the item’s minimum width and height.</value>
     </member>
     <member name="P:DevExpress.XtraLayout.SplitterItem.Padding">
       <summary>
@@ -5528,7 +5528,7 @@ is dependent on the type of control embedded in this layout item.</value>
       <summary>
         <para>Gets or sets the splitter item’s size.</para>
       </summary>
-      <value>A System.Drawing.Size structure that defines the splitter item’s width and height.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> structure that defines the splitter item’s width and height.</value>
     </member>
     <member name="P:DevExpress.XtraLayout.SplitterItem.SizeConstraintsType">
       <summary>
@@ -5564,7 +5564,7 @@ is dependent on the type of control embedded in this layout item.</value>
       <summary>
         <para>Gets or sets the size of the text region. This member supports the .NET Framework infrastructure and is not intended to be used directly from your code.</para>
       </summary>
-      <value>A System.Drawing.Size structure that defines the width and height of the item’s text region.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> structure that defines the width and height of the item’s text region.</value>
     </member>
     <member name="P:DevExpress.XtraLayout.SplitterItem.TextVisible">
       <summary>
@@ -5800,13 +5800,13 @@ is dependent on the type of control embedded in this layout item.</value>
       <summary>
         <para>Gets the maximum size of the tabbed group.</para>
       </summary>
-      <value>A System.Drawing.Size structure that specifies the tabbed group’s maximum size.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> structure that specifies the tabbed group’s maximum size.</value>
     </member>
     <member name="P:DevExpress.XtraLayout.TabbedGroup.MinSize">
       <summary>
         <para>Gets the minimum size of the tabbed group.</para>
       </summary>
-      <value>A System.Drawing.Size structure that defines the tabbed group’s minimum width and height.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> structure that defines the tabbed group’s minimum width and height.</value>
     </member>
     <member name="M:DevExpress.XtraLayout.TabbedGroup.MoveTabPage(DevExpress.XtraLayout.Customization.LayoutItemDragController)">
       <summary>

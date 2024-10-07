@@ -7344,7 +7344,7 @@
       <summary>
         <para>Gets or sets an initial size of a map.</para>
       </summary>
-      <value>A System.Drawing.Size object, which represents a map size with the zoom level equal to one.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> object, which represents a map size with the zoom level equal to one.</value>
     </member>
     <member name="P:DevExpress.XtraMap.MapControl.InteractiveClusterMode">
       <summary>
@@ -10898,7 +10898,7 @@
       <summary>
         <para>Gets or sets the size of an overlay item.</para>
       </summary>
-      <value>A System.Drawing.Size value specifying the size.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> value specifying the size.</value>
     </member>
     <member name="P:DevExpress.XtraMap.MapOverlayItemBase.Visible">
       <summary>
@@ -11608,7 +11608,7 @@
       <summary>
         <para>Overrides the <see cref="P:DevExpress.XtraMap.MapPushpin.Fill">MapPushpin.Fill</see> property to hide it.</para>
       </summary>
-      <value>Always the <see cref="Overload:System.Drawing.Color.Empty"/> value.</value>
+      <value>Always the Empty value.</value>
     </member>
     <member name="P:DevExpress.XtraMap.MapPushpin.HighlightedFill">
       <summary>

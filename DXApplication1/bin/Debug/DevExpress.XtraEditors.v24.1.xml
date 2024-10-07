@@ -175,7 +175,7 @@
       <summary>
         <para>Returns the button’s size.</para>
       </summary>
-      <returns>A System.Drawing.Size structure that specifies the button’s size.</returns>
+      <returns>A <see cref="T:System.Drawing.Size"/> structure that specifies the button’s size.</returns>
     </member>
     <member name="P:DevExpress.XtraBars.Alerter.AlertButton.Hint">
       <summary>
@@ -917,13 +917,13 @@
     </member>
     <member name="P:DevExpress.XtraEditors.BaseButton.Command">
       <summary>
-        <para>Gets or sets the <see cref="T:System.Windows.Input.ICommand"></see> whose <see cref="Overload:System.Windows.Input.ICommand.Execute">Execute(Object)</see> method will be called when the Click event is invoked.</para>
+        <para>Gets or sets the ICommand whose Execute(Object) method will be called when the Click event is invoked.</para>
       </summary>
       <value>The command.</value>
     </member>
     <member name="E:DevExpress.XtraEditors.BaseButton.CommandCanExecuteChanged">
       <summary>
-        <para>Occurs when the <see cref="Overload:System.Windows.Input.ICommand.CanExecute">CanExecute(Object)</see> status of the <see cref="P:DevExpress.XtraEditors.BaseButton.Command"/> has changed.</para>
+        <para>Occurs when the CanExecute(Object) status of the <see cref="P:DevExpress.XtraEditors.BaseButton.Command"/> has changed.</para>
       </summary>
     </member>
     <member name="E:DevExpress.XtraEditors.BaseButton.CommandChanged">
@@ -1605,7 +1605,7 @@
         <para>Retrieves the size of a rectangular area into which the control can be fitted.</para>
       </summary>
       <param name="proposedSize">The custom-sized area for the control.</param>
-      <returns>A System.Drawing.Size value.</returns>
+      <returns>A <see cref="T:System.Drawing.Size"/> value.</returns>
     </member>
     <member name="P:DevExpress.XtraEditors.BaseEdit.InplaceType">
       <summary>
@@ -2321,7 +2321,7 @@
       <summary>
         <para>Gets or sets whether incremental searching for items is enabled.</para>
       </summary>
-      <value>true to activate incremental search; otherwise, false.</value>
+      <value>true if incremental searching for items is enabled; otherwise, false.</value>
     </member>
     <member name="M:DevExpress.XtraEditors.BaseListBoxControl.IndexFromPoint(System.Drawing.Point)">
       <summary>
@@ -2385,9 +2385,9 @@
     </member>
     <member name="P:DevExpress.XtraEditors.BaseListBoxControl.MultiColumn">
       <summary>
-        <para>Gets or sets whether to arrange items across multiple columns if the ListBox cannot fit all items vertically.</para>
+        <para>Gets or sets whether listbox items can be arranged across multiple columns.</para>
       </summary>
-      <value>true to arrange items across multiple columns; otherwise, false.</value>
+      <value>true if the items can be arranged in multiple columns; otherwise, false.</value>
     </member>
     <member name="E:DevExpress.XtraEditors.BaseListBoxControl.ParseSearchControlText">
       <summary>
@@ -5959,7 +5959,7 @@ The object specifies dates that lie in the range between the DateRange.StartDate
         <para>Retrieves the size of a rectangular area into which the control can be fitted.</para>
       </summary>
       <param name="proposedSize">The custom-sized area for the control.</param>
-      <returns>A System.Drawing.Size value.</returns>
+      <returns>A <see cref="T:System.Drawing.Size"/> value.</returns>
     </member>
     <member name="M:DevExpress.XtraEditors.Controls.CalendarControlBase.GetStartDate">
       <summary>
@@ -7640,13 +7640,13 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.False.</value>
     </member>
     <member name="P:DevExpress.XtraEditors.Controls.EditorButton.Command">
       <summary>
-        <para>Gets or sets the <see cref="T:System.Windows.Input.ICommand"></see> whose <see cref="Overload:System.Windows.Input.ICommand.Execute">Execute(Object)</see> method will be called when the Click event is invoked.</para>
+        <para>Gets or sets the ICommand whose Execute(Object) method will be called when the Click event is invoked.</para>
       </summary>
       <value>The command.</value>
     </member>
     <member name="E:DevExpress.XtraEditors.Controls.EditorButton.CommandCanExecuteChanged">
       <summary>
-        <para>Occurs when the <see cref="Overload:System.Windows.Input.ICommand.CanExecute">CanExecute(Object)</see> status of the <see cref="P:DevExpress.XtraEditors.Controls.EditorButton.Command"/> has changed.</para>
+        <para>Occurs when the CanExecute(Object) status of the <see cref="P:DevExpress.XtraEditors.Controls.EditorButton.Command"/> has changed.</para>
       </summary>
     </member>
     <member name="E:DevExpress.XtraEditors.Controls.EditorButton.CommandChanged">
@@ -17897,11 +17897,6 @@ The FormatConditionAutomaticType.Default value is equivalent to FormatConditionA
         <para>Allows you to specify custom in-place editors (Repository Items) for individual &lt;input&gt; tags in edit mode. The event is not in effect for &lt;input&gt; tags used to embed external controls.</para>
       </summary>
     </member>
-    <member name="E:DevExpress.XtraEditors.HtmlContentControl.CustomFieldValue">
-      <summary>
-        <para>Allows you to supply data to custom data fields.</para>
-      </summary>
-    </member>
     <member name="P:DevExpress.XtraEditors.HtmlContentControl.DataContext">
       <summary>
         <para>Gets or sets the control’s data context (a business object or data source item).</para>
@@ -18928,13 +18923,13 @@ The FormatConditionAutomaticType.Default value is equivalent to FormatConditionA
     </member>
     <member name="P:DevExpress.XtraEditors.LabelControl.Command">
       <summary>
-        <para>Gets or sets the <see cref="T:System.Windows.Input.ICommand"></see> whose <see cref="Overload:System.Windows.Input.ICommand.Execute">Execute(Object)</see> method will be called when the Click event is invoked.</para>
+        <para>Gets or sets the ICommand whose Execute(Object) method will be called when the Click event is invoked.</para>
       </summary>
       <value>The command.</value>
     </member>
     <member name="E:DevExpress.XtraEditors.LabelControl.CommandCanExecuteChanged">
       <summary>
-        <para>Occurs when the <see cref="Overload:System.Windows.Input.ICommand.CanExecute">CanExecute(Object)</see> status of the <see cref="P:DevExpress.XtraEditors.LabelControl.Command"/> has changed.</para>
+        <para>Occurs when the CanExecute(Object) status of the <see cref="P:DevExpress.XtraEditors.LabelControl.Command"/> has changed.</para>
       </summary>
     </member>
     <member name="E:DevExpress.XtraEditors.LabelControl.CommandChanged">
@@ -18958,7 +18953,7 @@ The FormatConditionAutomaticType.Default value is equivalent to FormatConditionA
         <para>Retrieves the size of a rectangular area into which the control can be fitted.</para>
       </summary>
       <param name="proposedSize">The custom-sized area for the control.</param>
-      <returns>A System.Drawing.Size value.</returns>
+      <returns>A <see cref="T:System.Drawing.Size"/> value.</returns>
     </member>
     <member name="M:DevExpress.XtraEditors.LabelControl.GetTextBaselineY">
       <summary>
@@ -19745,9 +19740,9 @@ The FormatConditionAutomaticType.Default value is equivalent to FormatConditionA
     </member>
     <member name="P:DevExpress.XtraEditors.Mask.MaskProperties.UseMaskAsDisplayFormat">
       <summary>
-        <para>Gets or sets whether to use mask settings to format the editor’s display text when the editor is not focused.</para>
+        <para>Gets or sets whether display values are still formatted using the mask when the editor is not focused.</para>
       </summary>
-      <value>true to use mask settings to format the editor’s display text when the editor is not focused; false to use formatting settings specified by the <see cref="P:DevExpress.XtraEditors.Repository.RepositoryItem.DisplayFormat"/> property.</value>
+      <value>true if the mask settings are used to format display values when the editor is not focused; false if the <see cref="P:DevExpress.XtraEditors.Repository.RepositoryItem.DisplayFormat">RepositoryItem.DisplayFormat</see> object’s settings are used instead.</value>
     </member>
     <member name="T:DevExpress.XtraEditors.Mask.MaskType">
       <summary>
@@ -19956,7 +19951,7 @@ The FormatConditionAutomaticType.Default value is equivalent to FormatConditionA
       <summary>
         <para>Gets the minimum size that can be applied to the navigator.</para>
       </summary>
-      <value>A System.Drawing.Size object representing the minimum size of the rectangular region that can be occupied by the navigator.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> object representing the minimum size of the rectangular region that can be occupied by the navigator.</value>
     </member>
     <member name="E:DevExpress.XtraEditors.NavigatorBase.NavigatorException">
       <summary>
@@ -20077,13 +20072,13 @@ The FormatConditionAutomaticType.Default value is equivalent to FormatConditionA
     </member>
     <member name="P:DevExpress.XtraEditors.NavigatorButtonBase.Command">
       <summary>
-        <para>Gets or sets the <see cref="T:System.Windows.Input.ICommand"></see> whose <see cref="Overload:System.Windows.Input.ICommand.Execute">Execute(Object)</see> method will be called when the Click event is invoked.</para>
+        <para>Gets or sets the ICommand whose Execute(Object) method will be called when the Click event is invoked.</para>
       </summary>
       <value>The command.</value>
     </member>
     <member name="E:DevExpress.XtraEditors.NavigatorButtonBase.CommandCanExecuteChanged">
       <summary>
-        <para>Occurs when the <see cref="Overload:System.Windows.Input.ICommand.CanExecute">CanExecute(Object)</see> status of the <see cref="P:DevExpress.XtraEditors.NavigatorButtonBase.Command"/> has changed.</para>
+        <para>Occurs when the CanExecute(Object) status of the <see cref="P:DevExpress.XtraEditors.NavigatorButtonBase.Command"/> has changed.</para>
       </summary>
     </member>
     <member name="E:DevExpress.XtraEditors.NavigatorButtonBase.CommandChanged">
@@ -20237,7 +20232,7 @@ The FormatConditionAutomaticType.Default value is equivalent to FormatConditionA
       <summary>
         <para>Specifies the control’s size.</para>
       </summary>
-      <param name="size">The System.Drawing.Size object representing the control’s size.</param>
+      <param name="size">The <see cref="T:System.Drawing.Size"/> object representing the control’s size.</param>
     </member>
     <member name="P:DevExpress.XtraEditors.NavigatorButtonsBase.CustomButtons">
       <summary>
@@ -20845,7 +20840,7 @@ The FormatConditionAutomaticType.Default value is equivalent to FormatConditionA
       <summary>
         <para>Gets or sets the required size of the vector image.</para>
       </summary>
-      <value>A System.Drawing.Size structure that specifies the required size for rendering the vector image.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> structure that specifies the required size for rendering the vector image.</value>
     </member>
     <member name="P:DevExpress.XtraEditors.PictureEdit.TabStop">
       <summary>
@@ -22553,7 +22548,7 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
     </member>
     <member name="E:DevExpress.XtraEditors.Repository.RepositoryItem.EditValueChanged">
       <summary>
-        <para>Fires when the editor’s <see cref="P:DevExpress.XtraEditors.BaseEdit.EditValue"/> property changes.</para>
+        <para>Fires when the editor’s <see cref="P:DevExpress.XtraEditors.BaseEdit.EditValue">BaseEdit.EditValue</see> property changes.</para>
       </summary>
     </member>
     <member name="P:DevExpress.XtraEditors.Repository.RepositoryItem.EditValueChangedDelay">
@@ -23113,7 +23108,7 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
       <summary>
         <para>Gets or sets the minimum size of the editor’s dropdown window.</para>
       </summary>
-      <value>A System.Drawing.Size structure that specifies the dropdown window’s minimum size.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> structure that specifies the dropdown window’s minimum size.</value>
     </member>
     <member name="P:DevExpress.XtraEditors.Repository.RepositoryItemBaseSpinEdit.PopupFormSize">
       <summary>
@@ -23242,7 +23237,7 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
       <summary>
         <para>Gets or sets the size the editor’s popup window should have when first opened.</para>
       </summary>
-      <value>A System.Drawing.Size structure representing the size of the popup window on its first occurrence.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> structure representing the size of the popup window on its first occurrence.</value>
     </member>
     <member name="P:DevExpress.XtraEditors.Repository.RepositoryItemBlobBaseEdit.PopupWidthMode">
       <summary>
@@ -25121,7 +25116,7 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
     </member>
     <member name="P:DevExpress.XtraEditors.Repository.RepositoryItemDateEdit.MaxValue">
       <summary>
-        <para>Use the <see cref="P:DevExpress.XtraEditors.Repository.RepositoryItemDateEdit.MaxDate"/> property instead.</para>
+        <para>Gets or sets the editor’s maximum value.</para>
       </summary>
       <value>A <see cref="T:System.DateTime"/> structure which represents the maximum allowed date.</value>
     </member>
@@ -25133,7 +25128,7 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
     </member>
     <member name="P:DevExpress.XtraEditors.Repository.RepositoryItemDateEdit.MinValue">
       <summary>
-        <para>Use the <see cref="P:DevExpress.XtraEditors.Repository.RepositoryItemDateEdit.MinDate"/> property instead.</para>
+        <para>Gets or sets the editor’s minimum value.</para>
       </summary>
       <value>A <see cref="T:System.DateTime"/> structure that represents the minimum allowed date.</value>
     </member>
@@ -27319,7 +27314,7 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
       <summary>
         <para>Gets or sets the required size of the vector image.</para>
       </summary>
-      <value>A System.Drawing.Size structure that specifies the required size for rendering the vector image.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> structure that specifies the required size for rendering the vector image.</value>
     </member>
     <member name="E:DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit.TakePictureDialogClosed">
       <summary>
@@ -27485,7 +27480,7 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
       <summary>
         <para>Gets or sets the minimum size for the associated dropdown window.</para>
       </summary>
-      <value>A System.Drawing.Size structure that specifies the dropdown window’s minimum size.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> structure that specifies the dropdown window’s minimum size.</value>
     </member>
     <member name="P:DevExpress.XtraEditors.Repository.RepositoryItemPopupBase.PopupFormSize">
       <summary>
@@ -28894,7 +28889,7 @@ The default value is <see cref="F:DevExpress.Utils.DefaultBoolean.Default">Defau
       <summary>
         <para>Gets or sets the minimum size of the editor’s dropdown window.</para>
       </summary>
-      <value>A System.Drawing.Size structure that specifies the dropdown window’s minimum size.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> structure that specifies the dropdown window’s minimum size.</value>
     </member>
     <member name="P:DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit.PopupFormSize">
       <summary>
@@ -30554,7 +30549,7 @@ The default value is <see cref="F:DevExpress.Utils.DefaultBoolean.Default">Defau
     </member>
     <member name="E:DevExpress.XtraEditors.StepProgressBar.PaintEx">
       <summary>
-        <para>A <see href="https://docs.devexpress.com/WindowsForms/119441/common-features/graphics-performance-and-high-dpi/directx-hardware-acceleration">DirectX</see>-compatible event that replaces the standard <see cref="Overload:System.Windows.Forms.Control.Paint">Control.Paint</see> event.</para>
+        <para>A <see href="https://docs.devexpress.com/WindowsForms/119441/common-features/graphics-performance-and-high-dpi/directx-hardware-acceleration">DirectX</see>-compatible event that replaces the standard Control.Paint event.</para>
       </summary>
     </member>
     <member name="P:DevExpress.XtraEditors.StepProgressBar.ProgressMode">
@@ -32931,13 +32926,13 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
     </member>
     <member name="P:DevExpress.XtraEditors.TileItem.Command">
       <summary>
-        <para>Gets or sets the <see cref="T:System.Windows.Input.ICommand"></see> whose <see cref="Overload:System.Windows.Input.ICommand.Execute">Execute(Object)</see> method will be called when the Click event is invoked.</para>
+        <para>Gets or sets the ICommand whose Execute(Object) method will be called when the Click event is invoked.</para>
       </summary>
       <value>The command.</value>
     </member>
     <member name="E:DevExpress.XtraEditors.TileItem.CommandCanExecuteChanged">
       <summary>
-        <para>Occurs when the <see cref="Overload:System.Windows.Input.ICommand.CanExecute">CanExecute(Object)</see> status of the <see cref="P:DevExpress.XtraEditors.TileItem.Command"/> has changed.</para>
+        <para>Occurs when the CanExecute(Object) status of the <see cref="P:DevExpress.XtraEditors.TileItem.Command"/> has changed.</para>
       </summary>
     </member>
     <member name="E:DevExpress.XtraEditors.TileItem.CommandChanged">
@@ -34899,7 +34894,7 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
         <para>Retrieves the size of a rectangular area into which the control can be fitted.</para>
       </summary>
       <param name="proposedSize">The custom-sized area for the control.</param>
-      <returns>A System.Drawing.Size value.</returns>
+      <returns>A <see cref="T:System.Drawing.Size"/> value.</returns>
     </member>
     <member name="P:DevExpress.XtraEditors.TrackBarControl.ImeMode">
       <summary>
@@ -39265,8 +39260,8 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
       <summary>
         <para>Returns the tab control’s size, calculated from the size of its page.</para>
       </summary>
-      <param name="clientSize">A System.Drawing.Size structure which represents the size of a tab page’s client region.</param>
-      <returns>A System.Drawing.Size structure which represents the tab control’s size, calculated from the size of its page.</returns>
+      <param name="clientSize">A <see cref="T:System.Drawing.Size"/> structure which represents the size of a tab page’s client region.</param>
+      <returns>A <see cref="T:System.Drawing.Size"/> structure which represents the tab control’s size, calculated from the size of its page.</returns>
     </member>
     <member name="M:DevExpress.XtraTab.XtraTabControl.CancelUpdate">
       <summary>
@@ -39740,7 +39735,7 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
       <summary>
         <para>Gets or sets the control’s height and width.</para>
       </summary>
-      <value>A System.Drawing.Size object that represents the control’s height and width, in pixels.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> object that represents the control’s height and width, in pixels.</value>
     </member>
     <member name="M:DevExpress.XtraTab.XtraTabPage.StartAnimation">
       <summary>
@@ -40069,7 +40064,7 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
         <para>Retrieves the size of a rectangular area into which the control can be fitted.</para>
       </summary>
       <param name="proposedSize">The custom-sized area for the control.</param>
-      <returns>A System.Drawing.Size value.</returns>
+      <returns>A <see cref="T:System.Drawing.Size"/> value.</returns>
     </member>
     <member name="P:DevExpress.XtraWaitForm.ProgressPanel.ImageHorzOffset">
       <summary>

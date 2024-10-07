@@ -2160,7 +2160,7 @@
       <summary>
         <para>Specifies the dimensions of the wizard window.</para>
       </summary>
-      <value>A System.Drawing.Size structure.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> structure.</value>
     </member>
     <member name="P:DevExpress.DataAccess.UI.Wizard.IWizardCustomization`1.WizardTitle">
       <summary>
@@ -3524,7 +3524,7 @@ A dictionary, specifying a value pair that includes the DBSet‘s name and the D
         <para>Creates a Data Source Wizard view.</para>
       </summary>
       <param name="wizardTitle">A <see cref="T:System.String"/> value.</param>
-      <param name="wizardSize">A System.Drawing.Size structure.</param>
+      <param name="wizardSize">A <see cref="T:System.Drawing.Size"/> structure.</param>
       <returns>An object implementing the <see cref="T:DevExpress.Data.WizardFramework.IWizardView"/> interface.</returns>
     </member>
     <member name="M:DevExpress.DataAccess.UI.Wizard.WizardRunnerContext.Dispose">

@@ -5546,7 +5546,7 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
       <summary>
         <para>Gets or sets the width and height of the field’s filter dropdown.</para>
       </summary>
-      <value>A System.Drawing.Size structure that specifies the width and height (in pixels) of the field’s filter dropdown.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> structure that specifies the width and height (in pixels) of the field’s filter dropdown.</value>
     </member>
     <member name="M:DevExpress.XtraPivotGrid.PivotGridField.ExpandAllAsync">
       <summary>

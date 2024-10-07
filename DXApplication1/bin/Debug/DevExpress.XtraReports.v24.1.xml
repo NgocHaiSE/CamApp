@@ -10179,7 +10179,7 @@
     </member>
     <member name="T:DevExpress.XtraReports.UI.DesignerOptions">
       <summary>
-        <para>Allows you to disable certain report layout validation indicators.</para>
+        <para>Provides settings that determine the availability of popup hints and warnings in the Report Designer.</para>
       </summary>
     </member>
     <member name="M:DevExpress.XtraReports.UI.DesignerOptions.#ctor">
@@ -10189,19 +10189,19 @@
     </member>
     <member name="P:DevExpress.XtraReports.UI.DesignerOptions.ShowDesignerHints">
       <summary>
-        <para>Allows you to hide or show tooltips with export or print warnings.</para>
+        <para>Specifies whether designer hints should be displayed.</para>
       </summary>
       <value>true to display designer hints; otherwise, false.</value>
     </member>
     <member name="P:DevExpress.XtraReports.UI.DesignerOptions.ShowExportWarnings">
       <summary>
-        <para>Specifies whether to highlight report controls that overlap.</para>
+        <para>Specifies whether to highlight the report controls that overlap.</para>
       </summary>
       <value>true, to display export warnings; otherwise, false.</value>
     </member>
     <member name="P:DevExpress.XtraReports.UI.DesignerOptions.ShowPrintingWarnings">
       <summary>
-        <para>Specifies whether to highlight report controls that extend beyond the right page margin.</para>
+        <para>Specifies whether or not to highlight report controls that protrude beyond the right page margin, to indicate the resulting extraneous document pages.</para>
       </summary>
       <value>true, to display print warnings; otherwise, false.</value>
     </member>

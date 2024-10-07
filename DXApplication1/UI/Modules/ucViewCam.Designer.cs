@@ -33,12 +33,13 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelNotification = new DevExpress.Utils.Layout.StackPanel();
             this.sidePanel1 = new DevExpress.XtraEditors.SidePanel();
+            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButtonStop = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonStart = new DevExpress.XtraEditors.SimpleButton();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.StackPanel)).BeginInit();
             this.StackPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -46,6 +47,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelNotification)).BeginInit();
             this.sidePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
+            this.panelControl2.SuspendLayout();
             this.SuspendLayout();
             // 
             // StackPanel
@@ -107,6 +110,23 @@
             this.sidePanel1.TabIndex = 7;
             this.sidePanel1.Text = "sidePanel1";
             // 
+            // comboBoxEdit1
+            // 
+            this.comboBoxEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxEdit1.Location = new System.Drawing.Point(708, 11);
+            this.comboBoxEdit1.Name = "comboBoxEdit1";
+            this.comboBoxEdit1.Properties.AutoHeight = false;
+            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEdit1.Properties.Items.AddRange(new object[] {
+            "1x1",
+            "2x2",
+            "3x3",
+            "4x4"});
+            this.comboBoxEdit1.Size = new System.Drawing.Size(88, 30);
+            this.comboBoxEdit1.TabIndex = 14;
+            this.comboBoxEdit1.SelectedIndexChanged += new System.EventHandler(this.CameraComboBox_SelectedIndexChanged);
+            // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
@@ -132,7 +152,6 @@
             this.simpleButtonStop.Size = new System.Drawing.Size(94, 29);
             this.simpleButtonStop.TabIndex = 9;
             this.simpleButtonStop.Text = "Stop";
-            this.simpleButtonStop.Click += new System.EventHandler(this.buttonStopCamera_Click);
             // 
             // simpleButtonStart
             // 
@@ -141,39 +160,36 @@
             this.simpleButtonStart.Size = new System.Drawing.Size(94, 29);
             this.simpleButtonStart.TabIndex = 8;
             this.simpleButtonStart.Text = "Start";
-            this.simpleButtonStart.Click += new System.EventHandler(this.buttonStartCamera_Click);
             // 
-            // tableLayoutPanel1
+            // panelControl2
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 47);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(814, 627);
-            this.tableLayoutPanel1.TabIndex = 8;
+            this.panelControl2.Controls.Add(this.tableLayoutPanel2);
+            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl2.Location = new System.Drawing.Point(0, 47);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(814, 627);
+            this.panelControl2.TabIndex = 8;
             // 
-            // comboBoxEdit1
+            // tableLayoutPanel2
             // 
-            this.comboBoxEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit1.Location = new System.Drawing.Point(708, 11);
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.AutoHeight = false;
-            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(88, 30);
-            this.comboBoxEdit1.TabIndex = 14;
-            this.comboBoxEdit1.SelectedIndexChanged += new System.EventHandler(this.CameraComboBox_SelectedIndexChanged);
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(2, 2);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(810, 623);
+            this.tableLayoutPanel2.TabIndex = 0;
             // 
             // ucViewCam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.sidePanel1);
             this.Controls.Add(this.StackPanel);
             this.Name = "ucViewCam";
@@ -188,6 +204,8 @@
             this.sidePanel1.ResumeLayout(false);
             this.sidePanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
+            this.panelControl2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -203,7 +221,8 @@
         private DevExpress.XtraEditors.SimpleButton simpleButtonStart;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
+        private DevExpress.XtraEditors.PanelControl panelControl2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
     }
 }

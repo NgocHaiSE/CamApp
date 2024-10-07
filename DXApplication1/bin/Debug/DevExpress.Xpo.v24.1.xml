@@ -93,6 +93,26 @@
       <param name="result">A list of retrieved objects.</param>
       <param name="ex">A <see cref="T:System.Exception"/> object containing the exception information related to an operation that asynchronously retrieved the objects.</param>
     </member>
+    <member name="T:DevExpress.Xpo.CacheBehavior">
+      <summary>
+        <para>Defines how references to instances of persistent objects are stored in a session’s cache.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Xpo.CacheBehavior.Default">
+      <summary>
+        <para>The behavior is determined by XPO. For instance, in XPO version 8.1 this is equal to CacheBehavior.Weak.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Xpo.CacheBehavior.Strong">
+      <summary>
+        <para>Direct references to objects are used.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Xpo.CacheBehavior.Weak">
+      <summary>
+        <para>Instances of the System.WeakReference class are used.</para>
+      </summary>
+    </member>
     <member name="T:DevExpress.Xpo.CollectionBindingBehavior">
       <summary>
         <para>Contains values that specify which operations can be performed on a collection.</para>
@@ -3169,6 +3189,16 @@
       </summary>
       <param name="objects">A string specifying objects that cannot be loaded.</param>
     </member>
+    <member name="T:DevExpress.Xpo.Exceptions.CannotReloadPurgedObjectException">
+      <summary>
+        <para>An exception that is thrown when attempting to reload an object that is not present in the persistent data store.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Xpo.Exceptions.CannotReloadPurgedObjectException.#ctor">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.Xpo.Exceptions.CannotReloadPurgedObjectException"/> class with the default settings.</para>
+      </summary>
+    </member>
     <member name="T:DevExpress.Xpo.Exceptions.CannotResolveClassInfoException">
       <summary>
         <para>An exception that is thrown when the <see cref="T:DevExpress.Xpo.Metadata.XPDictionary"/> cannot provide <see cref="T:DevExpress.Xpo.Metadata.XPClassInfo"/> metadata information for the class.</para>
@@ -3297,9 +3327,25 @@
     </member>
     <member name="P:DevExpress.Xpo.Exceptions.PropertyMissingException.ObjectType">
       <summary>
-        <para>Gets the object type that doesn’t contain the DevExpress.Xpo.Exceptions.PropertyMissingException.PropertyName property.</para>
+        <para>Gets the object type that doesn’t contain the <see cref="P:DevExpress.Xpo.Exceptions.PropertyMissingException.PropertyName">PropertyMissingException.PropertyName</see> property.</para>
       </summary>
       <value>A string that specifies the object type’s name.</value>
+    </member>
+    <member name="P:DevExpress.Xpo.Exceptions.PropertyMissingException.PropertyName">
+      <summary>
+        <para>Gets the property name that is missing in the currently processed object type.</para>
+      </summary>
+      <value>A string that specifies the name of the missing property.</value>
+    </member>
+    <member name="T:DevExpress.Xpo.Exceptions.PropertyTypeMismatchException">
+      <summary>
+        <para>An exception that is thrown when an association is incorrectly specified.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Xpo.Exceptions.PropertyTypeMismatchException.#ctor(System.String)">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.Xpo.Exceptions.PropertyTypeMismatchException"/> class.</para>
+      </summary>
     </member>
     <member name="T:DevExpress.Xpo.Exceptions.RequiredAttributeMissingException">
       <summary>
@@ -5293,6 +5339,13 @@
       <param name="memberName">A <see cref="T:System.String"/> value which specifies the member’s name.</param>
       <returns>An <see cref="T:DevExpress.Xpo.Metadata.XPMemberInfo"/> object which represents member metadata. If a member with the specified name isn’t found, an exception is thrown.</returns>
     </member>
+    <member name="M:DevExpress.Xpo.Metadata.XPClassInfo.GetObjectLoading(DevExpress.Xpo.Session)">
+      <summary>
+        <para>Indicates whether the object is currently being initialized within the specified session.</para>
+      </summary>
+      <param name="session">The <see cref="T:DevExpress.Xpo.Session"/> object.</param>
+      <returns>true if the object is currently being initialized; otherwise, false.</returns>
+    </member>
     <member name="M:DevExpress.Xpo.Metadata.XPClassInfo.GetPersistentMember(System.String)">
       <summary>
         <para>Returns information on the persistent member with the specified name.</para>
@@ -5348,6 +5401,12 @@
       </summary>
       <param name="classInfo">An <see cref="T:DevExpress.Xpo.Metadata.XPClassInfo"/> object which describes the type to compare with the current type.</param>
       <returns>true if an instance of the current type can be assigned to an instance of the specified type; otherwise, false.</returns>
+    </member>
+    <member name="P:DevExpress.Xpo.Metadata.XPClassInfo.IsObjectLoading">
+      <summary>
+        <para>Gets whether the object is currently being initialized.</para>
+      </summary>
+      <value>true if the object is currently being initialized; otherwise, false.</value>
     </member>
     <member name="P:DevExpress.Xpo.Metadata.XPClassInfo.KeyProperty">
       <summary>
@@ -6051,6 +6110,12 @@
       <summary>
         <para>This method is intended for internal use.</para>
       </summary>
+    </member>
+    <member name="P:DevExpress.Xpo.Metadata.XPMemberInfo.ManyToManyRelatedProperty">
+      <summary>
+        <para>Gets the metadata information of the persistent field or property which represents the opposite side of a many-to-many association.</para>
+      </summary>
+      <value>An <see cref="T:DevExpress.Xpo.Metadata.XPMemberInfo"/> descendant that provides metadata information on the persistent field or property which represents the opposite side of a many-to-many association. null (Nothing in Visual Basic) if the member isn’t involved in a many-to-many association.</value>
     </member>
     <member name="P:DevExpress.Xpo.Metadata.XPMemberInfo.MappingField">
       <summary>
@@ -7186,7 +7251,7 @@
     </member>
     <member name="T:DevExpress.Xpo.SchemaInitEventHandler">
       <summary>
-        <para>Represents a method that will handle the DevExpress.Xpo.Session.SchemaInit event.</para>
+        <para>Represents a method that will handle the <see cref="E:DevExpress.Xpo.Session.SchemaInit">Session.SchemaInit</see> event.</para>
       </summary>
       <param name="sender">The event source. Identifies the <see cref="T:DevExpress.Xpo.Session"/> that raised the event.</param>
       <param name="e">A <see cref="T:DevExpress.Xpo.SchemaInitEventArgs"/> object that contains event data.</param>
@@ -8053,6 +8118,12 @@
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
       <param name="collections">An array of empty <see cref="T:DevExpress.Xpo.XPBaseCollection"/> type collections that receive persistent objects from a data store.</param>
       <returns>A Task that populates specified collections.</returns>
+    </member>
+    <member name="P:DevExpress.Xpo.Session.CacheBehavior">
+      <summary>
+        <para>Gets or sets the session’s cache behavior.</para>
+      </summary>
+      <value>A <see cref="T:DevExpress.Xpo.CacheBehavior"/> enumeration value that specifies the session’s cache behavior.</value>
     </member>
     <member name="M:DevExpress.Xpo.Session.CancelAsyncRequest(System.Object)">
       <summary>
@@ -9099,6 +9170,11 @@
       </summary>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
       <returns>A Task that saves changes made to persistent objects to a data store and clears a tracked changes list.</returns>
+    </member>
+    <member name="M:DevExpress.Xpo.Session.GetCacheBehavior">
+      <summary>
+        <para>This member supports the .NET Framework infrastructure and cannot be used directly from your code.</para>
+      </summary>
     </member>
     <member name="M:DevExpress.Xpo.Session.GetClassInfo(System.Object)">
       <summary>
@@ -10871,6 +10947,11 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       <param name="theObject">An object which represents the persistent object to save.</param>
       <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken"/> object that delivers a cancellation notice to the running operation.</param>
       <returns>A <see cref="T:System.Threading.Tasks.Task"/> that saves the specified persistent object to a data store.</returns>
+    </member>
+    <member name="E:DevExpress.Xpo.Session.SchemaInit">
+      <summary>
+        <para>Occurs after the data schema is initialized or updated.</para>
+      </summary>
     </member>
     <member name="M:DevExpress.Xpo.Session.SelectData(DevExpress.Xpo.Metadata.XPClassInfo,DevExpress.Data.Filtering.CriteriaOperatorCollection,DevExpress.Data.Filtering.CriteriaOperator,DevExpress.Data.Filtering.CriteriaOperatorCollection,DevExpress.Data.Filtering.CriteriaOperator,System.Boolean,System.Int32,DevExpress.Xpo.SortingCollection)">
       <summary>
@@ -14780,6 +14861,12 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
         <para>Returns the name of the application configuration file’s key that specifies the default connection string. You can add this key to the application configuration file, and specify a connection string. In case the connection string isn’t defined in the application, the connection string specified by this key will be used instead of the XPO’s default Microsoft Access connection string.</para>
         <para />
       </summary>
+    </member>
+    <member name="P:DevExpress.Xpo.XpoDefault.CacheBehavior">
+      <summary>
+        <para>Gets or sets the cache behavior.</para>
+      </summary>
+      <value>A <see cref="T:DevExpress.Xpo.CacheBehavior"/> enumeration value that specifies the cache behavior.</value>
     </member>
     <member name="P:DevExpress.Xpo.XpoDefault.ConnectionString">
       <summary>

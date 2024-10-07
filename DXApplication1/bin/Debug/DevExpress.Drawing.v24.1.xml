@@ -1934,7 +1934,7 @@
     </member>
     <member name="T:DevExpress.Drawing.DXImage">
       <summary>
-        <para>Base class for images in DevExpress controls.</para>
+        <para>An abstract class that contains settings for images.</para>
       </summary>
     </member>
     <member name="M:DevExpress.Drawing.DXImage.Clone">

@@ -1341,7 +1341,7 @@ If this parameter has a value (it’s not null or an empty string) the val param
       <summary>
         <para>Gets or sets the column’s minimum allowed width.</para>
       </summary>
-      <value>An integer value specifying the column’s minimum width in pixels. The minimum allowed width is 10 pixels.</value>
+      <value>An integer value specifying the column’s minimum width in pixels.</value>
     </member>
     <member name="P:DevExpress.XtraGrid.Columns.GridColumn.MRUFilters">
       <summary>
@@ -1585,10 +1585,10 @@ If this parameter has a value (it’s not null or an empty string) the val param
     </member>
     <member name="M:DevExpress.XtraGrid.Columns.GridColumnCollection.ColumnByFieldName(System.String)">
       <summary>
-        <para>Returns a column that is bound to the specified data field.</para>
+        <para>Returns a column specified by its bound field name.</para>
       </summary>
-      <param name="fieldName">The data field name.</param>
-      <returns>A <see cref="T:DevExpress.XtraGrid.Columns.GridColumn"/> object that represents the column bound to the specified data field. null (Nothing in Visual Basic) if the collection does not contain a column bound to the specified data field.</returns>
+      <param name="fieldName">A string value representing the column’s bound field name.</param>
+      <returns>A <see cref="T:DevExpress.XtraGrid.Columns.GridColumn"/> object representing the column bound to the specified field. null (Nothing in Visual Basic) if the collection has no columns bound to the field.</returns>
     </member>
     <member name="M:DevExpress.XtraGrid.Columns.GridColumnCollection.ColumnByName(System.String)">
       <summary>
@@ -7908,7 +7908,7 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
     </member>
     <member name="E:DevExpress.XtraGrid.Views.Base.ColumnView.CustomUnboundColumnData">
       <summary>
-        <para>Allows you to supply data to cells in visible <see href="https://docs.devexpress.com/WindowsForms/1477/controls-and-libraries/data-grid/unbound-columns">unbound columns</see>, and save values entered by users.</para>
+        <para>Fires for all cells of visible <see href="https://docs.devexpress.com/WindowsForms/1477/controls-and-libraries/data-grid/unbound-columns">unbound columns</see>. Allows you to manually supply data to these cells, and save values entered by users at runtime.</para>
       </summary>
     </member>
     <member name="E:DevExpress.XtraGrid.Views.Base.ColumnView.DataError">
@@ -8339,9 +8339,8 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
     </member>
     <member name="M:DevExpress.XtraGrid.Views.Base.ColumnView.GetSelectedRows">
       <summary>
-        <para>Returns <see href="https://docs.devexpress.com/WindowsForms/3484/controls-and-libraries/data-grid/views/grid-view/rows#row_access">handles</see> of the selected rows (or cards).</para>
+        <para>Returns the <see href="https://docs.devexpress.com/WindowsForms/3484/controls-and-libraries/data-grid/views/grid-view/rows#row_access">handles</see> of the selected rows or cards.</para>
       </summary>
-      <returns>An array that contains handles that correspond to selected rows.</returns>
     </member>
     <member name="M:DevExpress.XtraGrid.Views.Base.ColumnView.GetShowEditorMode">
       <summary>
@@ -8906,7 +8905,7 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
     </member>
     <member name="E:DevExpress.XtraGrid.Views.Base.ColumnView.ShowingEditor">
       <summary>
-        <para>Occurs when a cell editor is about to open, and allows you to cancel the action.</para>
+        <para>Occurs when a cell inplace editor is about to open, and allows you to cancel this action.</para>
       </summary>
     </member>
     <member name="E:DevExpress.XtraGrid.Views.Base.ColumnView.ShownEditor">
@@ -9458,9 +9457,9 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
     </member>
     <member name="P:DevExpress.XtraGrid.Views.Base.ColumnViewOptionsSelection.MultiSelect">
       <summary>
-        <para>Gets or sets whether multiple rows, cards, or cells can be selected.</para>
+        <para>Gets or sets whether multiple rows (cards) can be selected.</para>
       </summary>
-      <value>true, to enable multiple row/card/cell selection; otherwise, false.</value>
+      <value>true, to allow multiple row (card) selections; otherwise, false.</value>
     </member>
     <member name="T:DevExpress.XtraGrid.Views.Base.ColumnViewOptionsView">
       <summary>
@@ -14475,9 +14474,9 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
     </member>
     <member name="P:DevExpress.XtraGrid.Views.Grid.GridOptionsView.ColumnAutoWidth">
       <summary>
-        <para>Gets or sets a value that specifies columns automatically adjust their width to fit the grid’s width.</para>
+        <para>Gets or sets a value specifying whether column widths are automatically modified so that the total columns’ width matches the View’s width.</para>
       </summary>
-      <value>true to enable the <see href="https://docs.devexpress.com/WindowsForms/3483/controls-and-libraries/data-grid/views/grid-view/columns#column-width">column auto-width</see> feature; otherwise, false.</value>
+      <value>true to enable the <see href="https://docs.devexpress.com/WindowsForms/3483/controls-and-libraries/data-grid/views/grid-view/columns">column auto width</see> feature; otherwise, false.</value>
     </member>
     <member name="P:DevExpress.XtraGrid.Views.Grid.GridOptionsView.ColumnHeaderAutoHeight">
       <summary>
@@ -14989,7 +14988,7 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
     </member>
     <member name="E:DevExpress.XtraGrid.Views.Grid.GridView.CellMerge">
       <summary>
-        <para>Allows you to manually merge cells.</para>
+        <para>Provides the ability to customize cell merging behavior.</para>
       </summary>
     </member>
     <member name="P:DevExpress.XtraGrid.Views.Grid.GridView.ChildGridLevelName">
@@ -15152,7 +15151,7 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
     </member>
     <member name="E:DevExpress.XtraGrid.Views.Grid.GridView.CustomDrawGroupRow">
       <summary>
-        <para>Allows you to paint <see href="https://docs.devexpress.com/WindowsForms/549/controls-and-libraries/data-grid/visual-elements/grid-view-elements/group-row">group rows</see>.</para>
+        <para>Enables you to paint <see href="https://docs.devexpress.com/WindowsForms/549/controls-and-libraries/data-grid/visual-elements/grid-view-elements/group-row">group rows</see> manually.</para>
       </summary>
     </member>
     <member name="E:DevExpress.XtraGrid.Views.Grid.GridView.CustomDrawGroupRowCell">
@@ -15210,7 +15209,7 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
     </member>
     <member name="E:DevExpress.XtraGrid.Views.Grid.GridView.CustomRowCellEdit">
       <summary>
-        <para>Allows you to assign different in-place editors to individual cells. To avoid performance issues and increased memory consumption, assign repository items that already exist in the GridControl.RepositoryItems collection. Do not create new repository items in this event handler.</para>
+        <para>Allows you to assign custom in-place editors to individual cells. To avoid performance issues and increased memory consumption, assign repository items that already exist in the GridControl.RepositoryItems collection. Do not create new repository items in this handler.</para>
       </summary>
     </member>
     <member name="E:DevExpress.XtraGrid.Views.Grid.GridView.CustomRowCellEditForEditing">
@@ -18556,7 +18555,7 @@ The <see cref="F:DevExpress.XtraGrid.GridControl.InvalidRowHandle">GridControl.I
       <summary>
         <para>Gets or sets the minimum size of a card within the current <see cref="T:DevExpress.XtraGrid.Views.Layout.LayoutView"/>.</para>
       </summary>
-      <value>A System.Drawing.Size structure that specifies a card’s minimum size.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> structure that specifies a card’s minimum size.</value>
     </member>
     <member name="P:DevExpress.XtraGrid.Views.Layout.LayoutView.CardVertInterval">
       <summary>
@@ -19180,7 +19179,7 @@ The <see cref="F:DevExpress.XtraGrid.GridControl.InvalidRowHandle">GridControl.I
       <summary>
         <para>Gets or sets the card’s size. This member supports the internal infrastructure and is not intended to be used directly from your code.</para>
       </summary>
-      <value>A System.Drawing.Size structure that defines the card’s width and height.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> structure that defines the card’s width and height.</value>
     </member>
     <member name="P:DevExpress.XtraGrid.Views.Layout.LayoutViewCard.State">
       <summary>

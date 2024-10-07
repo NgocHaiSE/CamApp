@@ -284,9 +284,7 @@ namespace DXApplication1.UI.ChildForms
                     isRecog: cbIsRecog.SelectedItem.ToString() == "Có" ? 1 : 0
                 );
                 adjustedPerson.Id = personId;
-
                 PersonDAO.Instance.AdjustPerson(adjustedPerson);
-
                 List<ImageEntity> images = imagePaths.Select((path, index) => new ImageEntity
                 {
                     Link = path
@@ -295,7 +293,6 @@ namespace DXApplication1.UI.ChildForms
                 ImageDAO.Instance.AddImages(adjustedPerson.Code, images);
                 PersonAdjusted?.Invoke(this, EventArgs.Empty);
                 MessageBox.Show("Chỉnh sửa thông tin thành công!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
             }
             catch (Exception ex)
             {

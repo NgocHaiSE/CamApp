@@ -1446,7 +1446,7 @@
       <summary>
         <para>Overrides the <see cref="P:System.Windows.Forms.Control.Text"/> property.</para>
       </summary>
-      <value>A <see cref="T:System.String"/> value. Always returns System.String.Empty.</value>
+      <value>A <see cref="T:System.String"/> value. Always returns <see cref="F:System.String.Empty"/>.</value>
     </member>
     <member name="P:DevExpress.XtraCharts.ChartControl.Titles">
       <summary>

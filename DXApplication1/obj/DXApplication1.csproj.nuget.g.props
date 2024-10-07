@@ -13,7 +13,4 @@
     <SourceRoot Include="C:\Users\ProDHai\.nuget\packages\" />
     <SourceRoot Include="C:\Program Files\DevExpress 24.1\Components\Offline Packages\" />
   </ItemGroup>
-  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgjQuery Condition=" '$(PkgjQuery)' == '' ">C:\Users\ProDHai\.nuget\packages\jquery\1.6.4</PkgjQuery>
-  </PropertyGroup>
 </Project>

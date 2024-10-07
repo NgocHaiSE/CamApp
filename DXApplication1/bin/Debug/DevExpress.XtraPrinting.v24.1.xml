@@ -2490,7 +2490,7 @@
       <summary>
         <para>Gets or sets the custom size with which a System.Windows.Forms.RichTextBox control should be printed.</para>
       </summary>
-      <value>A System.Drawing.Size value.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> value.</value>
     </member>
     <member name="P:DevExpress.XtraPrintingLinks.RichTextBoxLinkBase.InfiniteFormatHeight">
       <summary>

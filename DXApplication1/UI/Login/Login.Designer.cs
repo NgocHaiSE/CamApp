@@ -108,7 +108,7 @@
             // 
             // pictureEdit1
             // 
-            this.pictureEdit1.EditValue = global::DXApplication1.Properties.Resources.iconmonstr_user_circle_thin_240;
+            this.pictureEdit1.EditValue = global::DXApplication1.Properties.Resources.avatar_user;
             this.pictureEdit1.Location = new System.Drawing.Point(274, 12);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;

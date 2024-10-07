@@ -53,7 +53,7 @@ namespace DXApplication1.UI.Modules
                 gridView1.FocusedRowChanged += GridView1_FocusedRowChanged;
                 labelControlName.Text = gridView1.GetRowCellValue(0, "Họ tên").ToString();
                 pictureEdit1.Image = Image.FromFile(gridView1.GetRowCellValue(0, "Link ảnh").ToString());
-                richEditControl1.Text = gridView1.GetRowCellValue(0, "Thông tin").ToString();
+                //richEditControl1.Text = gridView1.GetRowCellValue(0, "Thông tin").ToString();
             }
             else
             {
@@ -76,22 +76,22 @@ namespace DXApplication1.UI.Modules
                     pictureEdit1.Image = null;
                 }
                 labelControlName.Text = row["Họ tên"].ToString();
-                richEditControl1.Text = row["Thông tin"].ToString();
+                //richEditControl1.Text = row["Thông tin"].ToString();
             }
         }
 
-        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            EditInfo editInfo = new EditInfo((int) gridView1.GetRowCellValue(0, "ID"), richEditControl1.Text);
-            editInfo.InfoEdited += ucPerson2_Load;
-            editInfo.ShowDialog();
-        }
+        //private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        //{
+        //    EditInfo editInfo = new EditInfo((int) gridView1.GetRowCellValue(0, "ID"), richEditControl1.Text);
+        //    editInfo.InfoEdited += ucPerson2_Load;
+        //    editInfo.ShowDialog();
+        //}
 
-        private void richEditControl1_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            popupMenu1.ShowPopup(barManager1, richEditControl1.PointToScreen(e.Location));
+        //private void richEditControl1_MouseDoubleClick(object sender, MouseEventArgs e)
+        //{
+        //    popupMenu1.ShowPopup(barManager1, richEditControl1.PointToScreen(e.Location));
 
-        }
+        //}
 
         private void barButtonEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {

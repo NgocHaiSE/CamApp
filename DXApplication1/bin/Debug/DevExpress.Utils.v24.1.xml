@@ -2222,7 +2222,7 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
         <para>Calculates the size of a string painted with the font specified by the current object.</para>
       </summary>
       <param name="g">A <see cref="T:System.Drawing.Graphics"/> object which provides painting facilities.</param>
-      <returns>A System.Drawing.Size structure which represents the size (in pixels) of a string.</returns>
+      <returns>A <see cref="T:System.Drawing.Size"/> structure which represents the size (in pixels) of a string.</returns>
     </member>
     <member name="M:DevExpress.Utils.AppearanceObject.CalcTextSize(DevExpress.Utils.Drawing.GraphicsCache,DevExpress.Utils.StringFormatInfo,System.String,System.Int32,System.Int32,System.Boolean@)">
       <summary>
@@ -2359,7 +2359,7 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
       <param name="sf">A StringFormatInfo object that contains formatting information, such as the line spacing and alignment of the string.</param>
       <param name="s">The string to measure.</param>
       <param name="width">An integer value specifying the maximum width of the string (in pixels).</param>
-      <returns>A System.Drawing.Size structure that is the size of the string (in pixels).</returns>
+      <returns>A <see cref="T:System.Drawing.Size"/> structure that is the size of the string (in pixels).</returns>
     </member>
     <member name="M:DevExpress.Utils.AppearanceObject.CalcTextSizeInt(DevExpress.Utils.Drawing.GraphicsCache,System.Drawing.StringFormat,System.String,System.Int32)">
       <summary>
@@ -2369,7 +2369,7 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
       <param name="sf">A <see cref="T:System.Drawing.StringFormat"/> object that contains formatting information, such as the line spacing and alignment of the string.</param>
       <param name="s">The string to measure.</param>
       <param name="width">An integer value specifying the maximum width of the string (in pixels).</param>
-      <returns>A System.Drawing.Size structure that is the size of the string (in pixels).</returns>
+      <returns>A <see cref="T:System.Drawing.Size"/> structure that is the size of the string (in pixels).</returns>
     </member>
     <member name="M:DevExpress.Utils.AppearanceObject.CalcTextSizeInt(DevExpress.Utils.Drawing.GraphicsCache,System.String,System.Int32)">
       <summary>
@@ -2378,7 +2378,7 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
       <param name="cache">A <see cref="T:DevExpress.Utils.Drawing.GraphicsCache"/> object that provides storage for pens, fonts and brushes.</param>
       <param name="s">The string to measure.</param>
       <param name="width">An integer value specifying the maximum width of the string (in pixels).</param>
-      <returns>A System.Drawing.Size structure that is the size of the string (in pixels).</returns>
+      <returns>A <see cref="T:System.Drawing.Size"/> structure that is the size of the string (in pixels).</returns>
     </member>
     <member name="M:DevExpress.Utils.AppearanceObject.CalcTextSizeInt(System.Drawing.Graphics,DevExpress.Utils.StringFormatInfo,System.String,System.Int32)">
       <summary>
@@ -2388,7 +2388,7 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
       <param name="sf">A StringFormatInfo object that contains formatting information, such as the line spacing and alignment of the string.</param>
       <param name="s">The string to measure.</param>
       <param name="width">An integer value specifying the maximum width of the string (in pixels).</param>
-      <returns>A System.Drawing.Size structure that is the size of the string (in pixels).</returns>
+      <returns>A <see cref="T:System.Drawing.Size"/> structure that is the size of the string (in pixels).</returns>
     </member>
     <member name="M:DevExpress.Utils.AppearanceObject.CalcTextSizeInt(System.Drawing.Graphics,System.Drawing.StringFormat,System.String,System.Int32)">
       <summary>
@@ -2398,7 +2398,7 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
       <param name="sf">A <see cref="T:System.Drawing.StringFormat"/> object that contains formatting information, such as the line spacing and alignment of the string.</param>
       <param name="s">The string to measure.</param>
       <param name="width">An integer value specifying the maximum width of the string (in pixels).</param>
-      <returns>A System.Drawing.Size structure that is the size of the string (in pixels).</returns>
+      <returns>A <see cref="T:System.Drawing.Size"/> structure that is the size of the string (in pixels).</returns>
     </member>
     <member name="M:DevExpress.Utils.AppearanceObject.CalcTextSizeInt(System.Drawing.Graphics,System.String,System.Int32)">
       <summary>
@@ -3516,13 +3516,13 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
     </member>
     <member name="P:DevExpress.Utils.ContextButtonBase.Command">
       <summary>
-        <para>Gets or sets the <see cref="T:System.Windows.Input.ICommand"></see> whose <see cref="Overload:System.Windows.Input.ICommand.Execute">Execute(Object)</see> method will be called when the Click event is invoked.</para>
+        <para>Gets or sets the ICommand whose Execute(Object) method will be called when the Click event is invoked.</para>
       </summary>
       <value>The command.</value>
     </member>
     <member name="E:DevExpress.Utils.ContextButtonBase.CommandCanExecuteChanged">
       <summary>
-        <para>Occurs when the <see cref="Overload:System.Windows.Input.ICommand.CanExecute">CanExecute(Object)</see> status of the <see cref="P:DevExpress.Utils.ContextButtonBase.Command"/> has changed.</para>
+        <para>Occurs when the CanExecute(Object) status of the <see cref="P:DevExpress.Utils.ContextButtonBase.Command"/> has changed.</para>
       </summary>
     </member>
     <member name="E:DevExpress.Utils.ContextButtonBase.CommandChanged">
@@ -3806,7 +3806,7 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
       <summary>
         <para>Gets or sets the current item’s size.</para>
       </summary>
-      <value>A System.Drawing.Size structure that specifies the current item’s height and width.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> structure that specifies the current item’s height and width.</value>
     </member>
     <member name="P:DevExpress.Utils.ContextItem.SuperTip">
       <summary>
@@ -4271,13 +4271,13 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
       <summary>
         <para>When implemented by a control, specifies its default maximum size which is in effect when the control is displayed within a Layout Control.</para>
       </summary>
-      <value>A System.Drawing.Size structure that specifies the control’s default maximum size.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> structure that specifies the control’s default maximum size.</value>
     </member>
     <member name="P:DevExpress.Utils.Controls.IXtraResizableControl.MinSize">
       <summary>
         <para>When implemented by a control, specifies its default minimum size which is in effect when the control is displayed within a Layout Control.</para>
       </summary>
-      <value>A System.Drawing.Size structure that specifies the control’s default minimum size.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> structure that specifies the control’s default minimum size.</value>
     </member>
     <member name="T:DevExpress.Utils.DefaultToolTipController">
       <summary>
@@ -6433,7 +6433,7 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
     </member>
     <member name="M:DevExpress.Utils.Drawing.GraphicsCache.FillRectangles(System.Drawing.Brush,System.Drawing.RectangleF[])">
       <summary>
-        <para>Fills the interiors of multiple rectangles. This method is the HDPI-compatible counterpart of the standard <see cref="Overload:System.Drawing.Graphics.FillRectangles">Graphics.FillRectangles</see> method.</para>
+        <para>Fills the interiors of multiple rectangles. This method is the HDPI-compatible counterpart of the standard Graphics.FillRectangles method.</para>
       </summary>
       <param name="brush">The brush that specifies fill settings.</param>
       <param name="rects">Rectangles that should be filled.</param>
@@ -7144,7 +7144,7 @@ The <see cref="F:DevExpress.Utils.DefaultBoolean.Default">DefaultBoolean.Default
       <summary>
         <para>Gets or sets the minimum size of the <see cref="T:DevExpress.Utils.FlyoutPanel"/>.</para>
       </summary>
-      <value>A System.Drawing.Size object that specifies the minimum size of the <see cref="T:DevExpress.Utils.FlyoutPanel"/>.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> object that specifies the minimum size of the <see cref="T:DevExpress.Utils.FlyoutPanel"/>.</value>
     </member>
     <member name="P:DevExpress.Utils.FlyoutPanel.Options">
       <summary>
@@ -8087,7 +8087,7 @@ The <see cref="F:DevExpress.Utils.DefaultBoolean.Default">DefaultBoolean.Default
       <param name="image">An image whose size is returned.</param>
       <param name="images">An object that represents the source of images. This parameter is in effect if the image parameter is set to null.</param>
       <param name="index">The index of the required image in the images list.</param>
-      <returns>A System.Drawing.Size value that specifies the size of a specific image.</returns>
+      <returns>A <see cref="T:System.Drawing.Size"/> value that specifies the size of a specific image.</returns>
     </member>
     <member name="M:DevExpress.Utils.ImageCollection.GetImageListSize(System.Object,System.Nullable{System.Single})">
       <summary>
@@ -8120,7 +8120,7 @@ The <see cref="F:DevExpress.Utils.DefaultBoolean.Default">DefaultBoolean.Default
         <para>Gets or sets the size of images in the image collection.</para>
         <para>For the <see cref="T:DevExpress.Utils.SharedImageCollection"/>, this property specifies the size of images fetched from an image strip (at design time or via the <see cref="M:DevExpress.Utils.ImageCollection.AddImageStrip(System.Drawing.Image)">ImageCollection.AddImageStrip</see> and <see cref="M:DevExpress.Utils.ImageCollection.AddImageStripVertical(System.Drawing.Image)">ImageCollection.AddImageStripVertical</see> methods).</para>
       </summary>
-      <value>A System.Drawing.Size structure which specifies the height and width of the images in the list.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> structure which specifies the height and width of the images in the list.</value>
     </member>
     <member name="P:DevExpress.Utils.ImageCollection.ImageStream">
       <summary>
@@ -9851,13 +9851,13 @@ The <see cref="F:DevExpress.Utils.DefaultBoolean.Default">DefaultBoolean.Default
     </member>
     <member name="P:DevExpress.Utils.Menu.DXMenuItem.Command">
       <summary>
-        <para>Gets or sets the <see cref="T:System.Windows.Input.ICommand"></see> whose <see cref="Overload:System.Windows.Input.ICommand.Execute">Execute(Object)</see> method will be called when the Click event is invoked.</para>
+        <para>Gets or sets the ICommand whose Execute(Object) method will be called when the Click event is invoked.</para>
       </summary>
       <value>The command.</value>
     </member>
     <member name="E:DevExpress.Utils.Menu.DXMenuItem.CommandCanExecuteChanged">
       <summary>
-        <para>Occurs when the <see cref="Overload:System.Windows.Input.ICommand.CanExecute">CanExecute(Object)</see> status of the <see cref="P:DevExpress.Utils.Menu.DXMenuItem.Command"/> has changed.</para>
+        <para>Occurs when the CanExecute(Object) status of the <see cref="P:DevExpress.Utils.Menu.DXMenuItem.Command"/> has changed.</para>
       </summary>
     </member>
     <member name="E:DevExpress.Utils.Menu.DXMenuItem.CommandChanged">
@@ -10870,13 +10870,13 @@ The <see cref="F:DevExpress.Utils.DefaultBoolean.Default">DefaultBoolean.Default
     </member>
     <member name="P:DevExpress.Utils.Taskbar.JumpListItemTask.Command">
       <summary>
-        <para>Gets or sets the <see cref="T:System.Windows.Input.ICommand"></see> whose <see cref="Overload:System.Windows.Input.ICommand.Execute">Execute(Object)</see> method will be called when the Click event is invoked.</para>
+        <para>Gets or sets the ICommand whose Execute(Object) method will be called when the Click event is invoked.</para>
       </summary>
       <value>The command.</value>
     </member>
     <member name="E:DevExpress.Utils.Taskbar.JumpListItemTask.CommandCanExecuteChanged">
       <summary>
-        <para>Occurs when the <see cref="Overload:System.Windows.Input.ICommand.CanExecute">CanExecute(Object)</see> status of the <see cref="P:DevExpress.Utils.Taskbar.JumpListItemTask.Command"/> has changed.</para>
+        <para>Occurs when the CanExecute(Object) status of the <see cref="P:DevExpress.Utils.Taskbar.JumpListItemTask.Command"/> has changed.</para>
       </summary>
     </member>
     <member name="E:DevExpress.Utils.Taskbar.JumpListItemTask.CommandChanged">
@@ -12115,7 +12115,7 @@ The <see cref="F:DevExpress.Utils.DefaultBoolean.Default">DefaultBoolean.Default
       <param name="obj">An object which identifies the element which the tooltip is displayed for. This value is assigned to the <see cref="P:DevExpress.Utils.ToolTipControllerEventArgsBase.SelectedObject">ToolTipControllerEventArgsBase.SelectedObject</see> property.</param>
       <param name="toolTip">A <see cref="T:System.String"/> value which specifies the tooltip’s contents. This value is assigned to the <see cref="P:DevExpress.Utils.ToolTipControllerCalcSizeEventArgs.ToolTip">ToolTipControllerCalcSizeEventArgs.ToolTip</see> property.</param>
       <param name="title">A <see cref="T:System.String"/> value which specifies the tooltip’s title. This value is assigned to the <see cref="P:DevExpress.Utils.ToolTipControllerCalcSizeEventArgs.Title">ToolTipControllerCalcSizeEventArgs.Title</see> property.</param>
-      <param name="size">A System.Drawing.Size structure which specifies the tooltip’s bounds. This value is assigned to the <see cref="P:DevExpress.Utils.ToolTipControllerCalcSizeEventArgs.Size">ToolTipControllerCalcSizeEventArgs.Size</see> property.</param>
+      <param name="size">A <see cref="T:System.Drawing.Size"/> structure which specifies the tooltip’s bounds. This value is assigned to the <see cref="P:DevExpress.Utils.ToolTipControllerCalcSizeEventArgs.Size">ToolTipControllerCalcSizeEventArgs.Size</see> property.</param>
       <param name="position">A <see cref="T:System.Drawing.Point"/> structure which specifies the screen coordinates of the top left tooltip corner. This value is assigned to the <see cref="P:DevExpress.Utils.ToolTipControllerCalcSizeEventArgs.Position">ToolTipControllerCalcSizeEventArgs.Position</see> property.</param>
     </member>
     <member name="M:DevExpress.Utils.ToolTipControllerCalcSizeEventArgs.#ctor(System.Windows.Forms.Control,System.Object,System.String,System.String)">
@@ -12143,7 +12143,7 @@ The <see cref="F:DevExpress.Utils.DefaultBoolean.Default">DefaultBoolean.Default
       <summary>
         <para>Gets or sets the tooltip dimensions.</para>
       </summary>
-      <value>The System.Drawing.Size object specifying the width and height of a tooltip rectangle.</value>
+      <value>The <see cref="T:System.Drawing.Size"/> object specifying the width and height of a tooltip rectangle.</value>
     </member>
     <member name="P:DevExpress.Utils.ToolTipControllerCalcSizeEventArgs.Title">
       <summary>
@@ -13083,13 +13083,13 @@ The <see cref="F:DevExpress.Utils.DefaultBoolean.Default">DefaultBoolean.Default
     </member>
     <member name="P:DevExpress.Utils.VisualEffects.AdornerElement.Command">
       <summary>
-        <para>Gets or sets the <see cref="T:System.Windows.Input.ICommand"></see> whose <see cref="Overload:System.Windows.Input.ICommand.Execute">Execute(Object)</see> method will be called when the Click event is invoked.</para>
+        <para>Gets or sets the ICommand whose Execute(Object) method will be called when the Click event is invoked.</para>
       </summary>
       <value>The command.</value>
     </member>
     <member name="E:DevExpress.Utils.VisualEffects.AdornerElement.CommandCanExecuteChanged">
       <summary>
-        <para>Occurs when the <see cref="Overload:System.Windows.Input.ICommand.CanExecute">CanExecute(Object)</see> status of the <see cref="P:DevExpress.Utils.VisualEffects.AdornerElement.Command"/> has changed.</para>
+        <para>Occurs when the CanExecute(Object) status of the <see cref="P:DevExpress.Utils.VisualEffects.AdornerElement.Command"/> has changed.</para>
       </summary>
     </member>
     <member name="E:DevExpress.Utils.VisualEffects.AdornerElement.CommandChanged">
@@ -15415,21 +15415,6 @@ The <see cref="F:DevExpress.Utils.DefaultBoolean.Default">DefaultBoolean.Default
         <para>A check box is drawn unchecked.</para>
       </summary>
     </member>
-    <member name="T:DevExpress.XtraEditors.CustomBehaviorPreferences">
-      <summary>
-        <para>Lists values that allow you to change application behavior in edge cases.</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.XtraEditors.CustomBehaviorPreferences.Default">
-      <summary>
-        <para>Default application behavior.</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.XtraEditors.CustomBehaviorPreferences.DisableFormPainterWndProcessing">
-      <summary>
-        <para>Improves application behavior during remote desktop sharing but can cause visual artifacts in certain usage scenarios.</para>
-      </summary>
-    </member>
     <member name="T:DevExpress.XtraEditors.DirectXFormBase">
       <summary>
         <para>Exposes core <see cref="T:DevExpress.XtraEditors.DirectXForm"/> properties.</para>
@@ -15602,21 +15587,6 @@ The <see cref="F:DevExpress.Utils.DefaultBoolean.Default">DefaultBoolean.Default
     <member name="F:DevExpress.XtraEditors.FormBorderEffect.Shadow">
       <summary>
         <para>Displays a shadow around the form.</para>
-      </summary>
-    </member>
-    <member name="T:DevExpress.XtraEditors.FormShowMode">
-      <summary>
-        <para>Lists values that specify how to display application forms.</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.XtraEditors.FormShowMode.AfterInitialization">
-      <summary>
-        <para>Displays application forms only after their initialization.</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.XtraEditors.FormShowMode.Default">
-      <summary>
-        <para>Displays application forms immediately.</para>
       </summary>
     </member>
     <member name="T:DevExpress.XtraEditors.GroupCaptionCustomDrawEventArgs">
@@ -15999,13 +15969,13 @@ The <see cref="F:DevExpress.Utils.DefaultBoolean.Default">DefaultBoolean.Default
       <summary>
         <para>Not supported.</para>
       </summary>
-      <value>A System.Drawing.Size object that represents the height and width of the auto-scroll margin, in pixels.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> object that represents the height and width of the auto-scroll margin, in pixels.</value>
     </member>
     <member name="P:DevExpress.XtraEditors.PanelControl.AutoScrollMinSize">
       <summary>
         <para>Not supported.</para>
       </summary>
-      <value>A System.Drawing.Size object that represents the minimum height and width of the control’s scrollbars, in pixels.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> object that represents the minimum height and width of the control’s scrollbars, in pixels.</value>
     </member>
     <member name="P:DevExpress.XtraEditors.PanelControl.BackColor">
       <summary>
@@ -18216,12 +18186,6 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
       </summary>
       <value>Specifies whether the Compact UI mode is enabled. The Default value is equal to False.</value>
     </member>
-    <member name="P:DevExpress.XtraEditors.WindowsFormsSettings.CustomBehaviorPreferences">
-      <summary>
-        <para>Gets or sets settings that change application behavior in edge cases.</para>
-      </summary>
-      <value>Settings that change application behavior in edge cases.</value>
-    </member>
     <member name="P:DevExpress.XtraEditors.WindowsFormsSettings.CustomizationFormSnapMode">
       <summary>
         <para>Gets or sets whether or not customization forms can stick to each other, parent forms or screen edges.</para>
@@ -18793,9 +18757,8 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
     </member>
     <member name="P:DevExpress.XtraEditors.XtraForm.DefaultFormShowMode">
       <summary>
-        <para>Gets or sets how to display application forms.</para>
+        <para>This property supports the internal infrastructure, and is not intended to be used directly from your code.</para>
       </summary>
-      <value>Specifies how to display application forms.</value>
     </member>
     <member name="P:DevExpress.XtraEditors.XtraForm.DisableFormShowHelper">
       <summary>
@@ -18887,7 +18850,7 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
       <summary>
         <para>Gets or sets the maximum allowed client size for a form.</para>
       </summary>
-      <value>A System.Drawing.Size value.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> value.</value>
     </member>
     <member name="P:DevExpress.XtraEditors.XtraForm.MaximumSize">
       <summary>
@@ -18905,7 +18868,7 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
       <summary>
         <para>Gets or sets the minimum allowed client size for a form.</para>
       </summary>
-      <value>A System.Drawing.Size value.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> value.</value>
     </member>
     <member name="P:DevExpress.XtraEditors.XtraForm.MinimumSize">
       <summary>
@@ -19122,13 +19085,13 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
       <summary>
         <para>Gets or sets the size of the auto-scroll margin.</para>
       </summary>
-      <value>A System.Drawing.Size object that represents the height and width of the auto-scroll margin, in pixels.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> object that represents the height and width of the auto-scroll margin, in pixels.</value>
     </member>
     <member name="P:DevExpress.XtraEditors.XtraScrollableControl.AutoScrollMinSize">
       <summary>
         <para>Gets or sets the minimum size of the auto-scroll.</para>
       </summary>
-      <value>A System.Drawing.Size object that represents the minimum height and width of the area through which a user can scroll, in pixels.</value>
+      <value>A <see cref="T:System.Drawing.Size"/> object that represents the minimum height and width of the area through which a user can scroll, in pixels.</value>
     </member>
     <member name="P:DevExpress.XtraEditors.XtraScrollableControl.AutoScrollPosition">
       <summary>

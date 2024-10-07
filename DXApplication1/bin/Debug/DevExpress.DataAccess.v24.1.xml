@@ -6963,11 +6963,6 @@
       </summary>
       <value>A <see cref="T:DevExpress.DataAccess.Sql.Table"/> object.</value>
     </member>
-    <member name="M:DevExpress.DataAccess.Sql.BeforeLoadProviderCustomAssemblyEventArgs.#ctor(System.String)">
-      <summary>
-        <para>Initializes a new instance of the <see cref="T:DevExpress.DataAccess.Sql.BeforeLoadProviderCustomAssemblyEventArgs"/> class with specified settings.</para>
-      </summary>
-    </member>
     <member name="T:DevExpress.DataAccess.Sql.CircularRelationsValidationException">
       <summary>
         <para>An exception thrown when circular relations have been specified in a query.</para>
@@ -8484,11 +8479,6 @@
     <member name="M:DevExpress.DataAccess.Sql.PartialAggregationValidationException.#ctor">
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.DataAccess.Sql.PartialAggregationValidationException"/> class with the default settings.</para>
-      </summary>
-    </member>
-    <member name="M:DevExpress.DataAccess.Sql.ProviderCustomAssemblyLoadingProhibitedException.#ctor(System.String)">
-      <summary>
-        <para>Initializes a new instance of the <see cref="T:DevExpress.DataAccess.Sql.ProviderCustomAssemblyLoadingProhibitedException"/> class with specified settings.</para>
       </summary>
     </member>
     <member name="T:DevExpress.DataAccess.Sql.QueryExecutionException">
